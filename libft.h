@@ -25,6 +25,7 @@ typedef struct		s_list
 }					t_list;
 
 void				ft_putnbr(int n);
+void				ft_lst_strdel(t_list *alst, t_list *first);
 float				ft_root(float num, unsigned int root_index);
 long int			ft_maxmin(char *type, char *maxmin);
 size_t				ft_numch(char *str, char ch);
