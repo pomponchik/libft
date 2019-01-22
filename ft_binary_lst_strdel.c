@@ -17,7 +17,7 @@ static void		binary_zero_and_free(char *str)
 	if (str)
 	{
 		ft_bzero(str, ft_strlen(str));
-		free((*alst)->content);
+		free(str);
 	}
 }
 
@@ -36,8 +36,6 @@ static void		binary_lincker(t_two_list *two)
 
 void			ft_binary_lst_strdel(t_two_list **alst)
 {
-	t_two_list	*temp;
-
 	if (!alst)
 		return ;
 	binary_zero_and_free((char *)(*alst)->content);
