@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void binary_zero_and_free(char *str)
+static void		binary_zero_and_free(char *str)
 {
 	if (str)
 	{
@@ -21,7 +21,7 @@ static void binary_zero_and_free(char *str)
 	}
 }
 
-static void binary_lincker(t_two_list	*two)
+static void		binary_lincker(t_two_list *two)
 {
 	t_two_list	*temp;
 
@@ -34,7 +34,7 @@ static void binary_lincker(t_two_list	*two)
 	free(temp);
 }
 
-void		ft_binary_lst_strdel(t_two_list **alst)
+void			ft_binary_lst_strdel(t_two_list **alst)
 {
 	t_two_list	*temp;
 
