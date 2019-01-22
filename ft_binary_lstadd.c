@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_binary_lstadd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/17 04:05:36 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/01/08 20:50:24 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/01/20 22:58:46 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/01/20 22:58:48 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strrchr(const char *string, int symbol)
+void	ft_binary_lstadd(t_two_list **alst, t_two_list *new)
 {
-	size_t	where;
-	char	*result;
-	char	*temp;
+	t_two_list *temp;
 
-	where = 0;
-	result = NULL;
-	temp = (char *)string;
-	while (1)
+	if (alst && new)
 	{
-		if (temp[where] == (char)symbol)
-			result = (temp + where);
-		if (temp[where] == '\0')
-			break ;
-		where++;
+		temp = *alst;
+		while (temp->back)
+			temp = temp->back;
+		new->next = temp;
+		*alst = new;
 	}
-	return (result);
 }

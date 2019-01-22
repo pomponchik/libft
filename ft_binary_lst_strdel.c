@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_strdel.c                                    :+:      :+:    :+:   */
+/*   ft_binary_lst_strdel.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,33 +12,46 @@
 
 #include "libft.h"
 
-void		ft_lst_strdel(t_list *alst, t_list *first)
+static void binary_zero_and_free(char *str)
 {
-	t_list	*temp;
+	if (str)
+	{
+		ft_bzero(str, ft_strlen(str));
+		free((*alst)->content);
+	}
+}
+
+static void binary_lincker(t_two_list	*two)
+{
+	t_two_list	*temp;
+
+	if ((two->next)->next)
+		((two->next)->next)->back = two;
+	two->content = (two->next)->content;
+	two->content_size = (two->next)->content_size;
+	temp = two->next;
+	two->next = (two->next)->next;
+	free(temp);
+}
+
+void		ft_binary_lst_strdel(t_two_list **alst)
+{
+	t_two_list	*temp;
 
 	if (!alst)
 		return ;
-	ft_bzero(alst->content, ft_strlen((char *)alst->content));
-	free(alst->content);
-	if (alst->next)
-	{
-		alst->content = (alst->next)->content;
-		alst->content_size = (alst->next)->content_size;
-		temp = alst->next;
-		alst->next = (alst->next)->next;
-		free(temp);
-	}
+	binary_zero_and_free((char *)(*alst)->content);
+	if ((*alst)->next)
+		binary_lincker(*alst);
 	else
 	{
-		if (alst != first)
+		if ((*alst)->back)
 		{
-			while (first->next != alst && first->next)
-				first = first->next;
-			if (first->next == alst)
-			{
-				first->next = NULL;
-				free(alst);
-			}
+			((*alst)->back)->next = NULL;
+			free(*alst);
 		}
+		else
+			free(*alst);
 	}
+	*alst = NULL;
 }

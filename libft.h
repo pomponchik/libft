@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/01/05 21:50:41 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/01/20 23:09:06 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,23 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				ft_putnbr(int n);
-void				ft_lst_strdel(t_list *alst, t_list *first);
+typedef struct		s_two_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_two_list	*next;
+	struct s_two_list	*back;
+}					t_two_list;
+
+void				ft_binary_lst_strdel(t_two_list **alst);
+void				ft_binary_lstadd(t_two_list **alst, t_two_list *new);
+t_two_list			*ft_binary_lstnew(void const *content, size_t content_size);
 float				ft_root(float num, unsigned int root_index);
 long int			ft_maxmin(char *type, char *maxmin);
 size_t				ft_numch(char *str, char ch);
 char				*ft_letter_replacement(char *str, char previous, char new);
 void				ft_print_two_dimensional_array(char **str);
+void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
