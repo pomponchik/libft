@@ -1,6 +1,6 @@
 #include "libft.h"
 
-t_two_list *ft_binary_lst_strdel(t_two_list *alst, size_t to_search)
+t_two_list *ft_binary_lst_search_cs(t_two_list *alst, size_t to_search)
 {
   t_two_list *temp;
 
