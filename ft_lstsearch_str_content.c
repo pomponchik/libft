@@ -4,6 +4,8 @@ t_list *ft_lstsearch_str_content(t_list *lst, char *to_search)
 {
 	t_list *temp;
 
+	  if (!lst || !to_search)
+    return (NULL);
 	temp = lst;
 	while (temp)
 	{
