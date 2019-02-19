@@ -26,7 +26,7 @@ ft_putendl_fd.c ft_toupper.c ft_putnbr.c ft_binary_lstnew.c \
 ft_binary_lstadd.c ft_binary_lst_strdel.c \
 ft_binary_lst_search_content.c ft_binary_lst_search_cs.c \
 ft_binary_lst_search_str_content.c ft_lstsearch_content.c ft_lstsearch_cs.c \
-ft_lstsearch_str_content.c
+ft_lstsearch_str_content.c get_next_line.c
 OUT = *.o
 INCLUDES = libft.h
 
