@@ -80,6 +80,8 @@ t_list					*ft_lstsearch_str_content(t_list *lst, char *to_search);
 void					ft_lst_free_chain(t_list *chain);
 t_list					*ft_lst_turn(t_list *begin);
 void					ft_lst_putendl(t_list *lst);
+size_t					ft_lst_chain_len(t_list *begin);
+t_list					*ft_lst_unit_transfer(t_list *lst);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);

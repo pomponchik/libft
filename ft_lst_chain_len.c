@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_turn.c                                      :+:      :+:    :+:   */
+/*   ft_lst_chain_len.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/19 22:02:51 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/02/20 00:52:18 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/02/20 00:23:12 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/02/20 00:23:27 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lst_turn(t_list *begin)
+size_t		ft_lst_chain_len(t_list *begin)
 {
-	t_list	*new;
-	t_list	*new_chain;
-	t_list	*begin_temp;
+	size_t	index;
 
-	new_chain = NULL;
+	index = 0;
 	while (begin)
 	{
-		new = ft_lst_unit_transfer(begin);
-		begin_temp = begin->next;
-		free(begin);
-		begin = begin_temp;
-		ft_lstadd(&new_chain, new);
+		index++;
+		begin = begin->next;
 	}
-	return (new_chain);
+	return (index);
 }
