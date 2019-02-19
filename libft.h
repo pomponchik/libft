@@ -12,10 +12,12 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 20
 
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 typedef struct			s_list
 {
@@ -31,6 +33,14 @@ typedef struct			s_two_list
 	struct s_two_list	*next;
 	struct s_two_list	*back;
 }						t_two_list;
+
+typedef struct	s_iterators
+{
+	int			in;
+	char		*str;
+	int			work;
+	char		*chr;
+}				t_iter;
 
 void					ft_binary_lst_strdel(t_two_list **alst);
 void					ft_binary_lstadd(t_two_list **alst, t_two_list *new);
@@ -116,5 +126,6 @@ char					*ft_strsub(char const *s, unsigned int start, \
 char					*ft_strtrim(char const *s);
 int						ft_tolower(int ch);
 int						ft_toupper(int ch);
+int						get_next_line(const int fd, char **line);
 
 #endif
