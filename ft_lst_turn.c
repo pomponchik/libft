@@ -31,13 +31,14 @@ t_list			*ft_lst_turn(t_list *begin)
 	t_list		*end;
 
 	temp_begin = begin;
+	end = NULL;
 	while (end != temp_begin)
 	{
 		end = begin;
 		while (end->next)
 			end = end->next;
 		if (end != temp_begin)
-			begin = lst_reverse_helper(begin, end);
+			begin = lst_turn_helper(begin, end);
 	}
 	return (begin);
 }
