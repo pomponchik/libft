@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/02/18 23:55:58 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/02/19 21:50:46 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ typedef struct			s_two_list
 	struct s_two_list	*back;
 }						t_two_list;
 
-typedef struct	s_iterators
+typedef struct			s_iterators
 {
-	int			in;
-	char		*str;
-	int			work;
-	char		*chr;
-}				t_iter;
+	int					in;
+	char				*str;
+	int					work;
+	char				*chr;
+}						t_iter;
 
 void					ft_binary_lst_strdel(t_two_list **alst);
 void					ft_binary_lstadd(t_two_list **alst, t_two_list *new);
@@ -77,6 +77,9 @@ t_list					*ft_lstnew(void const *content, size_t content_size);
 t_list					*ft_lstsearch_cs(t_list *lst, size_t fd);
 t_list					*ft_lstsearch_content(t_list *lst, void *to_search);
 t_list					*ft_lstsearch_str_content(t_list *lst, char *to_search);
+void					ft_lst_free_chain(t_list *chain);
+t_list					*ft_lst_turn(t_list *begin);
+void					ft_lst_putendl(t_list *lst);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);
