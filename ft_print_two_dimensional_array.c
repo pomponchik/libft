@@ -21,7 +21,7 @@ void		ft_print_two_dimensional_array(char **str)
 	index = 0;
 	while (str[index])
 	{
-		ft_putstr(str[index]);
+		ft_putendl(str[index]);
 		index++;
 	}
 }
