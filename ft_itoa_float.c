@@ -23,8 +23,6 @@ static float	post_dot_size_num(float residue)
 
 static int		one_num_from_multi_num(char *num)
 {
-	int			temp;
-
 	if (!*(num + 1))
 		return ((int)(num - '0'));
 	if (one_num_from_multi_num(num + 1) >= 5)
