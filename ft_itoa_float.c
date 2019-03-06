@@ -5,6 +5,8 @@ char				*ft_itoa_long(long int n);
 
 static float post_dot_size_num(float residue)
 {
+  if (residue < 0)
+    residue *= -1.0;
   while (residue - ft_math_rounding_down_float(residue))
     residue *= 10;
   return (residue);
@@ -69,7 +71,7 @@ char *ft_itoa_float(float num)
 #include <stdio.h>
 int main()
 {
-  float a = 168.765739;
+  float a = -168.7;
   printf("%f, %s", a, ft_itoa_float(a));
   return 0;
 }
