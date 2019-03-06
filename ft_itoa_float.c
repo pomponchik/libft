@@ -10,6 +10,37 @@ static float post_dot_size_num(float residue)
   return (residue);
 }
 
+static int one_num_from_multi_num(char *num)
+{
+  int temp;
+
+  if (!*(num + 1))
+    return ((int)(num - '0'));
+  if (one_num_from_multi_num(num + 1) >= 5)
+  {
+    if (*num - '0' + 1 <= 9)
+      return ((int)(*num - '0' + 1));
+    else
+      return (9);
+  }
+  return ((int)*num);
+}
+
+static char *ft_rounding_endstr(char *num)
+{
+  char *result;
+
+  if (ft_strlen(num) > 6)
+  {
+    num[5] = (char)one_num_from_multi_num(num + 5) + '0';
+    num[6] = '\0';
+    result = ft_strdup(num);
+    free(num);
+    return (result);
+  }
+  return (num);
+}
+
 char *ft_itoa_float(float num)
 {
   long int intermediate;
@@ -29,7 +60,7 @@ char *ft_itoa_float(float num)
     return (temp);
   }
   intermediate = ft_math_rounding_down_float(post_dot_size_num(residue));
-  temp = ft_itoa_long(intermediate);
+  temp = ft_rounding_endstr(ft_itoa_long(intermediate));
   result = ft_strjoin(result, temp);
   free(temp);
   return (result);
@@ -38,6 +69,7 @@ char *ft_itoa_float(float num)
 #include <stdio.h>
 int main()
 {
-  printf(ft_itoa_float(168.765739));
+  float a = 168.765739;
+  printf("%f, %s", a, ft_itoa_float(a));
   return 0;
 }
