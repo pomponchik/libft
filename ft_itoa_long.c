@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 07:08:01 by ahalmon-          #+#    #+#             */
-/*   Updated: 2018/12/25 17:55:41 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/03/06 19:14:07 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int			numeric(long int c)
 {
-	int		result;
+	int				result;
 
 	if (!c)
 		return (1);
@@ -29,12 +29,12 @@ static int			numeric(long int c)
 	return (result);
 }
 
-static long int			shorter(long int *n, char *result)
+static long int		shorter(long int *n, char *result)
 {
-	long int				temp;
-	long int				temp_temp;
-	long int				correct;
-	long int				correct2;
+	long int		temp;
+	long int		temp_temp;
+	long int		correct;
+	long int		correct2;
 
 	temp = ft_maxmin("long", "min");
 	correct = numeric(*n) - 2;
