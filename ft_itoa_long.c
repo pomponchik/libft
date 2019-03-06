@@ -29,21 +29,6 @@ static int			numeric(long int c)
 	return (result);
 }
 
-static long int			check_maxmin(void)
-{
-	size_t			index;
-	long int				result;
-
-	index = sizeof(long int) * 8 - 1;
-	result = 1;
-	while (index)
-	{
-		result *= 2;
-		index--;
-	}
-	return (result * -1);
-}
-
 static long int			shorter(long int *n, char *result)
 {
 	long int				temp;
