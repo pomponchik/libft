@@ -140,7 +140,7 @@ int						ft_tolower(int ch);
 int						ft_toupper(int ch);
 int						get_next_line(const int fd, char **line);
 long int				ft_math_rounding_down_float(float num);
-long long int			ft_math_rounding_down_float(double num);
+long long int			ft_math_rounding_down_double(double num);
 long long int			ft_math_rounding_down_long_double(long double num);
 
 #endif

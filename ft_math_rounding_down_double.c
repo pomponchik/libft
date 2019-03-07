@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-long long int		ft_math_rounding_down_float(double num)
+long long int		ft_math_rounding_down_double(double num)
 {
 	long long int	result;
 

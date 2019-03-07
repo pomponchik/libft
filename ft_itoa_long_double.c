@@ -16,7 +16,7 @@ static long double	post_dot_size_num_ld(long double residue)
 {
 	if (residue < 0)
 		residue *= -1.0;
-	while (residue - ft_math_rounding_down_float(residue))
+	while (residue - ft_math_rounding_down_long_double(residue))
 		residue *= 10;
 	return (residue);
 }
@@ -57,7 +57,7 @@ char				*ft_itoa_long_double(long double num)
 	char			*temp;
 	long double		residue;
 
-	intermediate = ft_math_rounding_down_double(num);
+	intermediate = ft_math_rounding_down_long_double(num);
 	temp = ft_itoa_long_long(intermediate);
 	result = ft_strjoin(temp, ".");
 	free(temp);
@@ -68,8 +68,8 @@ char				*ft_itoa_long_double(long double num)
 		free(result);
 		return (temp);
 	}
-	intermediate = ft_math_rounding_down_double(post_dot_size_num_d(residue));
-	temp = ft_rounding_endstr_d(ft_itoa_long_long(intermediate));
+	intermediate = ft_math_rounding_down_long_double(post_dot_size_num_ld(residue));
+	temp = ft_rounding_endstr_ld(ft_itoa_long_long(intermediate));
 	result = ft_strjoin(result, temp);
 	free(temp);
 	return (result);

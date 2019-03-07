@@ -16,7 +16,7 @@ static double		post_dot_size_num_d(double residue)
 {
 	if (residue < 0)
 		residue *= -1.0;
-	while (residue - ft_math_rounding_down_float(residue))
+	while (residue - ft_math_rounding_down_double(residue))
 		residue *= 10;
 	return (residue);
 }
