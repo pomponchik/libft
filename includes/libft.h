@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/02/19 21:50:46 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/03/07 13:42:21 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,10 @@ int						ft_isdigit(int ch);
 int						ft_isprint(int ch);
 char					*ft_itoa(int n);
 char					*ft_itoa_long(long int n);
+char					*ft_itoa_long_long(long long int n);
 char					*ft_itoa_float(float num);
+char					*ft_itoa_double(double num);
+char					*ft_itoa_long_double(long double num);
 void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void					ft_lstdelone(t_list **alst, \
@@ -137,5 +140,7 @@ int						ft_tolower(int ch);
 int						ft_toupper(int ch);
 int						get_next_line(const int fd, char **line);
 long int				ft_math_rounding_down_float(float num);
+long long int			ft_math_rounding_down_float(double num);
+long long int			ft_math_rounding_down_long_double(long double num);
 
 #endif
