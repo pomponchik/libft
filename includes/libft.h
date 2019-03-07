@@ -142,5 +142,6 @@ int						get_next_line(const int fd, char **line);
 long int				ft_math_rounding_down_float(float num);
 long long int			ft_math_rounding_down_double(double num);
 long long int			ft_math_rounding_down_long_double(long double num);
+int						ft_math_numlen_long(long int num);
 
 #endif
