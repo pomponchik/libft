@@ -6,19 +6,19 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 13:43:22 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/07 13:46:57 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/03/07 16:56:51 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char			*z_c_ld(char *num_str, long double num)
+static char				*z_c_ld(char *num_str, long double num)
 {
-	size_t			index;
+	size_t				index;
 	long double			temp;
-	char			str[7];
-	char			*str_temp;
-	char			*result;
+	char				str[7];
+	char				*str_temp;
+	char				*result;
 
 	index = 0;
 	temp = 0.1;
@@ -47,7 +47,7 @@ static long double		post_dot_size_num_ld(long double residue)
 	return (residue);
 }
 
-static int			one_num_from_multi_num_ld(char *num)
+static int				one_num_from_multi_num_ld(char *num)
 {
 	if (!*(num + 1))
 		return ((int)(num - '0'));
@@ -61,9 +61,9 @@ static int			one_num_from_multi_num_ld(char *num)
 	return ((int)*num - '0');
 }
 
-static char			*ft_round_endstr_ld(char *num)
+static char				*ft_round_endstr_ld(char *num)
 {
-	char			*result;
+	char				*result;
 
 	if (ft_strlen(num) > 12)
 	{
@@ -76,11 +76,11 @@ static char			*ft_round_endstr_ld(char *num)
 	return (num);
 }
 
-char				*ft_itoa_long_double(long double num)
+char					*ft_itoa_long_double(long double num)
 {
-	long long int	intermediate;
-	char			*result;
-	char			*temp;
+	long long int		intermediate;
+	char				*result;
+	char				*temp;
 	long double			residue;
 
 	intermediate = ft_math_rounding_down_double(num);
