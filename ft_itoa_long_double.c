@@ -25,7 +25,7 @@ static int			one_num_from_multi_num_ld(char *num)
 {
 	if (!*(num + 1))
 		return ((int)(num - '0'));
-	if (one_num_from_multi_num(num + 1) >= 5)
+	if (one_num_from_multi_num_ld(num + 1) >= 5)
 	{
 		if (*num - '0' + 1 <= 9)
 			return ((int)(*num - '0' + 1));
@@ -41,7 +41,7 @@ static char			*ft_rounding_endstr_ld(char *num)
 
 	if (ft_strlen(num) > 12)
 	{
-		num[11] = (char)one_num_from_multi_num(num + 5) + '0';
+		num[11] = (char)one_num_from_multi_num_ld(num + 11) + '0';
 		num[12] = '\0';
 		result = ft_strdup(num);
 		free(num);
