@@ -12,41 +12,6 @@
 
 #include "libft.h"
 
-static char				*z_c_ld(char *num_str, long double num)
-{
-	size_t				index;
-	long double			temp;
-	char				str[7];
-	char				*str_temp;
-	char				*result;
-
-	index = 0;
-	temp = 0.1;
-	while (num < temp && index != 6)
-	{
-		temp /= 10.0;
-		index++;
-	}
-	if (!index)
-		return (num_str);
-	ft_memset(str, '0', index);
-	str[index] = '\0';
-	if (!(str_temp = ft_strdup(str)))
-		return (NULL);
-	result = ft_strjoin(str_temp, num_str);
-	free(str_temp);
-	return (result);
-}
-
-static long double		post_dot_size_num_ld(long double residue)
-{
-	if (residue < 0)
-		residue *= -1.0;
-	while (residue - ft_math_rounding_down_double(residue))
-		residue *= 10;
-	return (residue);
-}
-
 static int				one_num_from_multi_num_ld(char *num)
 {
 	if (!*(num + 1))
@@ -61,14 +26,23 @@ static int				one_num_from_multi_num_ld(char *num)
 	return ((int)*num - '0');
 }
 
-static char				*ft_round_endstr_ld(char *num)
+static char				*ft_round_endstr_ld(char *num, size_t accuracy)
 {
 	char				*result;
+	// char *temp;
 
-	if (ft_strlen(num) > 12)
+	if (ft_strlen(num) > accuracy)
 	{
-		num[5] = (char)one_num_from_multi_num_ld(num + 5) + '0';
-		num[6] = '\0';
+		if (!accuracy)
+		{
+			num[0] = '0';
+			num[1] = '\0';
+			result = ft_strdup(num);
+			free(num);
+			return (result);
+		}
+		num[accuracy - 1] = (char)one_num_from_multi_num_ld(num + accuracy - 1) + '0';
+		num[accuracy] = '\0';
 		result = ft_strdup(num);
 		free(num);
 		return (result);
@@ -76,27 +50,48 @@ static char				*ft_round_endstr_ld(char *num)
 	return (num);
 }
 
-char					*ft_itoa_long_double(long double num)
+char *str_from_long_double(char *str, long double num, size_t size)
 {
-	long long int		intermediate;
-	char				*result;
-	char				*temp;
-	long double			residue;
+	size_t count;
+	size_t index;
+	long double temp;
+	char dot_indicate;
 
-	intermediate = ft_math_rounding_down_double(num);
-	temp = ft_itoa_long_long(intermediate);
-	result = ft_strjoin(temp, ".");
-	free(temp);
-	residue = num - intermediate;
-	if (!residue)
+	index = 0;
+	dot_indicate = 0;
+	count = ft_math_long_double_normilize(&num);
+	while (index != size)
 	{
-		temp = ft_strjoin(result, "0");
-		free(result);
-		return (temp);
+		temp = (long double)ft_math_rounding_down_float(num);
+		str[index] = (char)temp + '0';
+		num -= temp;
+		num *= 10;
+		count--;
+		if (!count && !dot_indicate)
+		{
+			index++;
+			str[index] = '.';
+			dot_indicate++;
+		}
+		index++;
 	}
-	intermediate = post_dot_size_num_ld(residue);
-	temp = ft_round_endstr_ld(z_c_ld(ft_itoa_long_long(intermediate), residue));
-	result = ft_strjoin(result, temp);
-	free(temp);
+	return (str);
+}
+
+char					*ft_itoa_long_double(long double num, size_t accuracy)
+{
+	char *result;
+	size_t size;
+
+	size = ft_math_numlen_long_double(num);
+	if (num - ft_math_rounding_down_long_double(num))
+		size++;
+	if (!(result = (char *)malloc(size + 1)))
+		return (NULL);
+	result = str_from_long_double(result, num, size);
+	result[size] = '\0';
+	//accuracy += 2;
+	if (ft_strlen(ft_strchr(result, '.')) > accuracy + 1)
+		result = ft_round_endstr_ld(ft_strchr(result, '.') + 1, accuracy);
 	return (result);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math_how_long_this_decimal_long_double          :+:      :+:    :+:   */
+/*   ft_math_numlen_long_double.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -44,11 +44,9 @@ static size_t	how_long_fractional_part_in_tdld(long double num)
 	return (count);
 }
 
-size_t			ft_math_how_long_this_decimal_long_double(long double num)
+size_t			ft_math_numlen_long_double(long double num)
 {
 	size_t		result;
-	size_t		count;
-	long double	temp;
 
 	if (!num)
 		return (1);

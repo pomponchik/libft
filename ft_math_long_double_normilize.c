@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math_rounding_down_float.c                      :+:      :+:    :+:   */
+/*   ft_math_long_double_normilize.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 19:05:59 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/15 04:25:38 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/03/15 04:54:38 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/03/15 04:54:41 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float			ft_math_rounding_down_float(float num)
+size_t ft_math_long_double_normilize(long double *num)
 {
-	long int	res_temp;
-	float		result;
+	size_t count;
 
-	res_temp = (long int)num;
-	result = (float)res_temp;
-	if (result >= 0 && result <= num)
-		return (result);
-	else if (result >= 0 && result > num)
-		return (result - 1.0);
-	else if (result < 0 && result >= num)
-		return (result);
-	return (result + 1.0);
+	count = 1;
+	if (*num >= 10.0)
+	{
+		while (*num >= 10.0)
+		{
+			count++;
+			*num /= 10;
+		}
+	}
+	return (count);
 }

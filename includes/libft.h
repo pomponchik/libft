@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/07 13:42:21 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/03/15 04:24:37 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char					*ft_itoa_long(long int n);
 char					*ft_itoa_long_long(long long int n);
 char					*ft_itoa_float(float num);
 char					*ft_itoa_double(double num);
-char					*ft_itoa_long_double(long double num);
+char					*ft_itoa_long_double(long double num, size_t accuracy);
 void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void					ft_lstdelone(t_list **alst, \
@@ -139,10 +139,11 @@ char					*ft_strtrim(char const *s);
 int						ft_tolower(int ch);
 int						ft_toupper(int ch);
 int						get_next_line(const int fd, char **line);
-long int				ft_math_rounding_down_float(float num);
+float					ft_math_rounding_down_float(float num);
 long long int			ft_math_rounding_down_double(double num);
-long long int			ft_math_rounding_down_long_double(long double num);
-int						ft_math_numlen_long(long int num);
-size_t					ft_math_how_long_this_decimal_long_double(long double num);
+long double				ft_math_rounding_down_long_double(long double num);
+size_t					ft_math_numlen_long(long int num);
+size_t					ft_math_numlen_long_double(long double num);
+size_t					ft_math_long_double_normilize(long double *num);
 
 #endif

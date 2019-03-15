@@ -12,16 +12,39 @@
 
 #include "libft.h"
 
-long long int	ft_math_rounding_down_long_double(long double num)
+static long double	round_ld_alghorithm(long double num, size_t count)
 {
-	long long int	result;
+	long double temp;
+	long double result;
 
-	result = (long long int)num;
-	if (result >= 0 && (long double)result <= num)
-		return (result);
-	else if (result >= 0 && (long double)result > num)
-		return (result - 1);
-	else if (result < 0 && (long double)result >= num)
-		return (result);
-	return (result + 1);
+	result = 0;
+	while (count)
+	{
+		temp = (long double)(ft_math_rounding_down_float(num));
+		result = result * 10 + temp;
+		num -= temp;
+		num *= 10;
+		count--;
+	}
+	return (result);
+}
+
+long double	ft_math_rounding_down_long_double(long double num)
+{
+	size_t count;
+	size_t minus;
+
+	minus = 0;
+	if (num < 0)
+	{
+		num *= -1.0;
+		minus++;
+	}
+	if (num < 1)
+		return (0);
+	count = ft_math_long_double_normilize(&num);
+	num = round_ld_alghorithm(num, count);
+	if (minus)
+		num *= -1.0;
+	return (num);
 }

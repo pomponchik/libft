@@ -32,7 +32,7 @@ ft_lstsearch_index.c ft_lstadd_to_end.c ft_math_rounding_down_float.c \
 ft_itoa_float.c ft_itoa_long.c ft_itoa_double.c ft_itoa_long_double.c \
 ft_itoa_long_long.c ft_math_rounding_down_double.c \
 ft_math_rounding_down_long_double.c ft_math_numlen_long.c \
-ft_math_how_long_this_decimal_long_double.c
+ft_math_numlen_long_double.c ft_math_long_double_normilize.c
 OUT = *.o
 INCLUDES = includes/
 

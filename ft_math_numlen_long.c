@@ -6,15 +6,15 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 21:56:51 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/07 21:56:53 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/03/15 04:29:13 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_math_numlen_long(long int num)
+size_t		ft_math_numlen_long(long int num)
 {
-	int		result;
+	size_t	result;
 
 	if (!num)
 		return (1);
