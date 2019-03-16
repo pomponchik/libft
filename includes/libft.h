@@ -145,5 +145,9 @@ long double				ft_math_rounding_down_long_double(long double num);
 size_t					ft_math_numlen_long(long int num);
 size_t					ft_math_numlen_long_double(long double num);
 size_t					ft_math_long_double_normilize(long double *num);
+char					*ft_strjoin_free_1(char *s1, char *s2);
+char					*ft_strjoin_free_2(char *s1, char *s2);
+char					*ft_strjoin_free_both(char *s1, char *s2);
+char					*ft_new_null_str(size_t size);
 
 #endif

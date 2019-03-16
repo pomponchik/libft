@@ -32,7 +32,9 @@ ft_lstsearch_index.c ft_lstadd_to_end.c ft_math_rounding_down_float.c \
 ft_itoa_float.c ft_itoa_long.c ft_itoa_double.c ft_itoa_long_double.c \
 ft_itoa_long_long.c ft_math_rounding_down_double.c \
 ft_math_rounding_down_long_double.c ft_math_numlen_long.c \
-ft_math_numlen_long_double.c ft_math_long_double_normilize.c
+ft_math_numlen_long_double.c ft_math_long_double_normilize.c \
+ft_strjoin_free_both.c ft_strjoin_free_1.c ft_strjoin_free_2.c \
+ft_new_null_str.c
 OUT = *.o
 INCLUDES = includes/
 
@@ -40,7 +42,7 @@ all:  $(NAME)
 
 
 $(NAME):
-	gcc -Wall -Werror -Wextra -c $(FILES) -I $(INCLUDES)
+	gcc -g -Wall -Werror -Wextra -c $(FILES) -I $(INCLUDES)
 		ar rc $(NAME) $(OUT)
 			ranlib $(NAME)
 

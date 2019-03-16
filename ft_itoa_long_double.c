@@ -11,43 +11,85 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static int				one_num_from_multi_num_ld(char *num)
+static int				one_num_from_multi_num_ld(char *num, size_t *ind_in)
 {
+	size_t ind_out;
+
 	if (!*(num + 1))
-		return ((int)(num - '0'));
-	if (one_num_from_multi_num_ld(num + 1) >= 5)
 	{
-		if (*num - '0' + 1 <= 9)
-			return ((int)(*num - '0' + 1));
-		else
-			return (9);
+		*ind_in = 0;
+		return ((int)(num - '0'));
 	}
-	return ((int)*num - '0');
+	if (one_num_from_multi_num_ld(num + 1, &ind_out) + ind_out >= 5)
+	{
+		if (*num - '0' + 1 + ind_out <= 9)
+		{
+			*ind_in = 0;
+			return ((int)(*num - '0' + ind_out));
+		}
+		else
+		{
+			*ind_in = 1;
+			return ((*num - '0' + ind_out) - 10);
+		}
+	}
+	return ((int)*num - '0' + ind_out);
 }
 
-static char				*ft_round_endstr_ld(char *num, size_t accuracy)
+static void ft_round_end_ld2(char *num, size_t acc, char **or, long double n)
 {
-	char				*result;
-	// char *temp;
+	size_t ind_out;
+	char *temp;
 
-	if (ft_strlen(num) > accuracy)
+	num[acc - 1] = (char)one_num_from_multi_num_ld(num + acc - 1, &ind_out) + '0';
+	num[acc] = '\0';
+	if (ind_out)
 	{
-		if (!accuracy)
+		while (acc)
 		{
-			num[0] = '0';
-			num[1] = '\0';
-			result = ft_strdup(num);
-			free(num);
-			return (result);
+			if (num[acc - 1] - '0' + ind_out > 9)
+				num[acc - 1] = '0';
+			else
+			{
+				num[acc - 1] = num[acc - 1] + 1;
+				ind_out = 0;
+				break ;
+			}
+			acc--;
 		}
-		num[accuracy - 1] = (char)one_num_from_multi_num_ld(num + accuracy - 1) + '0';
-		num[accuracy] = '\0';
-		result = ft_strdup(num);
-		free(num);
-		return (result);
+		if (ind_out)
+		{
+			temp = ft_itoa_long_double(ft_math_rounding_down_long_double(n) + 1, acc);
+			free(*or);
+			*or = temp;
+		}
 	}
-	return (num);
+}
+
+static void ft_round_endstr_ld(char *num, size_t acc, char **or, long double n)
+{
+	size_t difference;
+	char *temp;
+
+	if (!acc)
+	{
+		//printf("HEY 1\n");
+		ft_memcmp(num, "0", 2);
+	}
+	else if (ft_strlen(num) > acc)
+	{
+		//printf("HEY 2\n");
+		ft_round_end_ld2(num, acc, or, n);
+	}
+	else if (ft_strlen(num) < acc)
+	{
+		//printf("HEY 3\n");
+		temp = *or;
+		difference = acc - ft_strlen(num);
+		*or = ft_strjoin_free_both(*or, ft_new_null_str(difference));
+	}
 }
 
 char *str_from_long_double(char *str, long double num, size_t size)
@@ -60,12 +102,11 @@ char *str_from_long_double(char *str, long double num, size_t size)
 	index = 0;
 	dot_indicate = 0;
 	count = ft_math_long_double_normilize(&num);
-	while (index != size)
+	while (index < size)
 	{
-		temp = (long double)ft_math_rounding_down_float(num);
+		temp = ft_math_rounding_down_long_double(num);
 		str[index] = (char)temp + '0';
-		num -= temp;
-		num *= 10;
+		num = (num - temp) * 10;
 		count--;
 		if (!count && !dot_indicate)
 		{
@@ -81,6 +122,7 @@ char *str_from_long_double(char *str, long double num, size_t size)
 char					*ft_itoa_long_double(long double num, size_t accuracy)
 {
 	char *result;
+	char *temp;
 	size_t size;
 
 	size = ft_math_numlen_long_double(num);
@@ -90,8 +132,11 @@ char					*ft_itoa_long_double(long double num, size_t accuracy)
 		return (NULL);
 	result = str_from_long_double(result, num, size);
 	result[size] = '\0';
-	//accuracy += 2;
+	temp = result;
 	if (ft_strlen(ft_strchr(result, '.')) > accuracy + 1)
-		result = ft_round_endstr_ld(ft_strchr(result, '.') + 1, accuracy);
+		ft_round_endstr_ld(ft_strchr(result, '.') + 1, accuracy, &temp, num);
+	if (!(result = ft_strdup(temp)))
+		return (NULL);
+	free(temp);
 	return (result);
 }
