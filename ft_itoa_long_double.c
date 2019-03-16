@@ -124,8 +124,15 @@ char					*ft_itoa_long_double(long double num, size_t accuracy)
 	char *result;
 	char *temp;
 	size_t size;
+	int minus;
 
+	minus = 0;
 	size = ft_math_numlen_long_double(num);
+	if (num < 0)
+	{
+		num *= -1;
+		minus = 1;
+	}
 	if (num - ft_math_rounding_down_long_double(num))
 		size++;
 	if (!(result = (char *)malloc(size + 1)))
@@ -138,5 +145,7 @@ char					*ft_itoa_long_double(long double num, size_t accuracy)
 	if (!(result = ft_strdup(temp)))
 		return (NULL);
 	free(temp);
+	if (minus)
+		result = ft_strjoin_free_2("-", result);
 	return (result);
 }
