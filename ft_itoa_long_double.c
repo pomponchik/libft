@@ -24,7 +24,7 @@ static int				one_num_from_multi_num_ld(char *num, size_t *ind_in)
 	}
 	if (one_num_from_multi_num_ld(num + 1, &ind_out) + ind_out >= 5)
 	{
-		if (*num - '0' + 1 + ind_out <= 9)
+		if (*num - '0' + ind_out <= 9)
 		{
 			*ind_in = 0;
 			return ((int)(*num - '0' + ind_out));
@@ -43,7 +43,7 @@ static void ft_round_end_ld2(char *num, size_t acc, char **or, long double n)
 	size_t ind_out;
 	char *temp;
 
-	num[acc - 1] = (char)one_num_from_multi_num_ld(num + acc - 1, &ind_out) + '0';
+	num[acc - 1] = (char)one_num_from_multi_num_ld(num + acc - 1, &ind_out) + ind_out + '0';
 	num[acc] = '\0';
 	if (ind_out)
 	{

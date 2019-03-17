@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/06 19:44:18 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/06 19:44:19 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/03/17 22:43:53 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static long double	round_ld_alghorithm(long double num, size_t count)
 {
-	long double temp;
-	long double result;
+	long double		temp;
+	long double		result;
 
 	result = 0;
 	while (count)
@@ -29,10 +29,10 @@ static long double	round_ld_alghorithm(long double num, size_t count)
 	return (result);
 }
 
-long double	ft_math_rounding_down_long_double(long double num)
+long double			ft_math_rounding_down_long_double(long double num)
 {
-	size_t count;
-	size_t minus;
+	size_t			count;
+	size_t			minus;
 
 	minus = 0;
 	if (num < 0)

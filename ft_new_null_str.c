@@ -6,16 +6,16 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 06:31:20 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/16 06:31:22 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/03/17 22:42:46 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_new_null_str(size_t size)
+char		*ft_new_null_str(size_t size)
 {
-	char *result;
-	size_t index;
+	char	*result;
+	size_t	index;
 
 	if (!size)
 		return (NULL);

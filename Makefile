@@ -34,7 +34,7 @@ ft_itoa_long_long.c ft_math_rounding_down_double.c \
 ft_math_rounding_down_long_double.c ft_math_numlen_long.c \
 ft_math_numlen_long_double.c ft_math_long_double_normilize.c \
 ft_strjoin_free_both.c ft_strjoin_free_1.c ft_strjoin_free_2.c \
-ft_new_null_str.c
+ft_new_null_str.c ft_range_str.c ft_lstdel_complite.c
 OUT = *.o
 INCLUDES = includes/
 

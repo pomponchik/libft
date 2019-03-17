@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/15 04:24:37 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/03/17 20:38:26 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ size_t					ft_lst_chain_len(t_list *begin);
 t_list					*ft_lst_unit_transfer(t_list *lst);
 t_list					*ft_lstsearch_index(t_list *lst, size_t index);
 void					ft_lstadd_to_end(t_list **alst, t_list *new);
+void					ft_lstdel_complite(t_list **this, t_list **first_elem);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);
@@ -149,5 +150,6 @@ char					*ft_strjoin_free_1(char *s1, char *s2);
 char					*ft_strjoin_free_2(char *s1, char *s2);
 char					*ft_strjoin_free_both(char *s1, char *s2);
 char					*ft_new_null_str(size_t size);
+char					ft_range_str(char *str);
 
 #endif
