@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_root.c                                          :+:      :+:    :+:   */
+/*   ft_math_root.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -84,7 +84,7 @@ static float		root_helper_2(float n, unsigned int r, float res, float c)
 	return (res);
 }
 
-float				ft_root(float num, unsigned int root_index)
+float				ft_math_root(float num, unsigned int root_index)
 {
 	float			core;
 	float			result;

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap_n_bytes.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/20 18:14:45 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/03/20 18:27:35 by ahalmon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_swap_n_bytes(void *a, void *b, size_t n)
+void		ft_swap_n_bytes(void *a, void *b, size_t n)
 {
-	size_t index;
+	size_t	index;
 
 	if (!a || !b || !n || !(a == b))
 		return ;

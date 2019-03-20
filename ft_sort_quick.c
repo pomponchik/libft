@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_quick.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/20 18:15:36 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/03/20 18:28:25 by ahalmon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_sort_quick(void *a, size_t size, size_t amount, int (*f)(void *, void *))
+void		ft_sort_quick(void *a, size_t size, size_t amount, int (*f)(void *, void *))
 {
-	void *temp;
-	size_t index;
+	void	*temp;
+	size_t	index;
 
 	if (!a || !f || amount <= 1 || !size)
 		return ;

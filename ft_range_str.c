@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static t_list		*range_begin_str(t_list **lst, char *str)
 {

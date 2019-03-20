@@ -51,7 +51,7 @@ t_two_list				*ft_binary_lstsea_cs(t_two_list *alst, \
 t_two_list				*ft_binary_lstseaconb(t_two_list *alst, \
 	void *to_search);
 t_two_list				*ft_binary_lstseacon(t_two_list *alst, char *to_search);
-float					ft_root(float num, unsigned int root_index);
+float					ft_math_root(float num, unsigned int root_index);
 long int				ft_maxmin(char *type, char *maxmin);
 size_t					ft_numch(char *str, char ch);
 char					*ft_letter_replacement(char *str, char previous, \
