@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # define BUFF_SIZE 20
+# define BLOCK_SIZE 10000
 
 # include <string.h>
 # include <stdlib.h>
@@ -41,6 +42,22 @@ typedef struct			s_iterators
 	int					work;
 	char				*chr;
 }						t_iter;
+
+typedef struct			s_block
+{
+	void				*blocks;
+	size_t				block_size;
+	size_t				free_size;
+	struct s_manage		*next;
+}						t_block;
+
+typedef struct			s_manage
+{
+	void				*biggest_block;
+	size_t				biggest_free_size;
+	t_block *begin;
+	t_block *end;
+}						t_man;
 
 void					ft_binary_lst_strdel(t_two_list **alst);
 void					ft_binary_lstadd(t_two_list **alst, t_two_list *new);
