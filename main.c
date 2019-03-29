@@ -3,8 +3,8 @@
 
 int main()
 {
-	long double num = 15;
-	printf("%.3Lg, %s\n", num, ft_itoa_long_double(num, 5));
+	long double num = 15.3;
+	printf("%.5Lg, %s\n", num, ft_itoa_long_double(num,5));
 	return (0);
 }
 
@@ -18,5 +18,14 @@ int main()
 // 	{
 // 		printf("%c%c", a, b);
 // 	}
+// 	return (0);
+// }
+
+
+// int main()
+// {
+// 	char str [] = "12340000";
+// 	ft_str_disnuller_end(str);
+// 	printf("%s", str);
 // 	return (0);
 // }

@@ -173,5 +173,6 @@ void					ft_swap_byte(void *x, void *y);
 void					ft_swap_n_bytes(void *a, void *b, size_t n);
 void					*ft_jump_pointer_to_n(void *pointer, size_t n);
 void					ft_sort_quick(void *arr, size_t size, size_t amount, int (*f)(void *, void *));
+char					*ft_str_disnuller_end(char *str);
 
 #endif

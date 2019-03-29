@@ -35,6 +35,7 @@ static int				one_num_from_multi_num_ld(char *num, size_t *ind_in)
 			return ((*num - '0' + ind_out) - 10);
 		}
 	}
+	*ind_in = 0;
 	return ((int)*num - '0' + ind_out);
 }
 
@@ -75,17 +76,14 @@ static void ft_round_endstr_ld(char *num, size_t acc, char **or, long double n)
 
 	if (!acc)
 	{
-		//printf("HEY 1\n");
 		ft_memcmp(num, "0", 2);
 	}
 	else if (ft_strlen(num) > acc)
 	{
-		//printf("HEY 2\n");
 		ft_round_end_ld2(num, acc, or, n);
 	}
 	else if (ft_strlen(num) < acc)
 	{
-		//printf("HEY 3\n");
 		temp = *or;
 		difference = acc - ft_strlen(num);
 		*or = ft_strjoin_free_both(*or, ft_new_null_str(difference));
@@ -142,7 +140,7 @@ char					*ft_itoa_long_double(long double num, size_t accuracy)
 	temp = result;
 	if (ft_strlen_safe(ft_strchr(result, '.')) > accuracy + 1)
 		ft_round_endstr_ld(ft_strchr(result, '.') + 1, accuracy, &temp, num);
-	if (!(result = ft_strdup(temp)))
+	if (!(result = ft_strdup(ft_str_disnuller_end(temp))))
 		return (NULL);
 	free(temp);
 	if (minus)
