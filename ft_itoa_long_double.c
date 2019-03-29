@@ -140,7 +140,7 @@ char					*ft_itoa_long_double(long double num, size_t accuracy)
 	result = str_from_long_double(result, num, size);
 	result[size] = '\0';
 	temp = result;
-	if (ft_strlen(ft_strchr(result, '.')) > accuracy + 1)
+	if (ft_strlen_safe(ft_strchr(result, '.')) > accuracy + 1)
 		ft_round_endstr_ld(ft_strchr(result, '.') + 1, accuracy, &temp, num);
 	if (!(result = ft_strdup(temp)))
 		return (NULL);

@@ -136,6 +136,7 @@ void					ft_striteri(char *s, void (*f)(unsigned int, char *));
 char					*ft_strjoin(char const *s1, char const *s2);
 size_t					ft_strlcat(char *str1, const char *str2, size_t num);
 size_t					ft_strlen(const char *string);
+size_t					ft_strlen_safe(const char *string);
 char					*ft_strmap(char const *s, char (*f)(char));
 char					*ft_strmapi(char const *s, \
 	char (*f)(unsigned int, char));

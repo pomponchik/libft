@@ -16,7 +16,7 @@ static void		nuller_two_pointers_and_free_1(t_list **p1, t_list **p2)
 {
 	if (!*p1)
 		return ;
-	free(*this);
+	free(*p1);
 	*p1 = NULL;
 	*p2 = NULL;
 }
