@@ -12,12 +12,20 @@
 
 #include "libft.h"
 
-void		*ft_jump_pointer_to_n(void *pointer, size_t n)
+void		*ft_jump_pointer_to_n(void *pointer, int n)
 {
 	char	*temp_pointer;
+	size_t n_temp;
 
 	if (!pointer)
 		return (NULL);
 	temp_pointer = (char *)pointer;
-	return (temp_pointer + n);
+	if (n >= 0)
+		n_temp = (size_t)n;
+	else
+	{
+		n_temp = (size_t)(n * -1);
+		return (temp_pointer - n_temp);
+	}
+	return (temp_pointer + n_temp);
 }

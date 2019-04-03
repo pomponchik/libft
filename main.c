@@ -1,12 +1,33 @@
 #include "libft.h"
 #include <stdio.h>
 
+
+int fun(void *q1, void *q2)
+{
+	char *w1 = (char *)q1;
+	char *w2 = (char *)q2;
+
+	char res = (*w1 - *w2);
+	int ret = (int)res;
+	return (ret);
+}
+
 int main()
 {
-	long double num = 15.3;
-	printf("%.5Lg, %s\n", num, ft_itoa_long_double(num,5));
+	char k [] = "4321";
+
+	ft_sort_quick(k, sizeof(char), ft_strlen(k), &fun);
+	printf("%s\n", k);
 	return (0);
 }
+
+
+// int main()
+// {
+// 	long double num = 15.3;
+// 	printf("%.5Lg, %s\n", num, ft_itoa_long_double(num,5));
+// 	return (0);
+// }
 
 // int main()
 // {
