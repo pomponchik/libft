@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 13:43:22 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/07 16:56:51 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/04/06 19:23:03 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int				one_num_from_multi_num_ld(char *num, size_t *ind_in)
 {
-	size_t ind_out;
+	size_t				ind_out;
 
 	if (!*(num + 1))
 	{
@@ -39,40 +39,39 @@ static int				one_num_from_multi_num_ld(char *num, size_t *ind_in)
 	return ((int)*num - '0' + ind_out);
 }
 
-static void ft_round_end_ld2(char *num, size_t acc, char **or, long double n)
+static void				ft_round_en(char *u, size_t a, char **o, long double n)
 {
-	size_t ind_out;
-	char *temp;
+	size_t				i;
 
-	num[acc - 1] = (char)one_num_from_multi_num_ld(num + acc - 1, &ind_out) + ind_out + '0';
-	num[acc] = '\0';
-	if (ind_out)
+	u[a - 1] = (char)one_num_from_multi_num_ld(u + a - 1, &i) + i + '0';
+	u[a] = '\0';
+	if (i)
 	{
-		while (acc)
+		while (a)
 		{
-			if (num[acc - 1] - '0' + ind_out > 9)
-				num[acc - 1] = '0';
+			if (u[a - 1] - '0' + i > 9)
+				u[a - 1] = '0';
 			else
 			{
-				num[acc - 1] = num[acc - 1] + 1;
-				ind_out = 0;
+				u[a - 1] = u[a - 1] + 1;
+				i = 0;
 				break ;
 			}
-			acc--;
+			a--;
 		}
-		if (ind_out)
+		if (i)
 		{
-			temp = ft_itoa_long_double(ft_math_rounding_down_long_double(n) + 1, acc);
-			free(*or);
-			*or = temp;
+			free(*o);
+			*o = ft_itoa_long_double(ft_math_rounding_down_l_double(n) + 1, a);
 		}
 	}
 }
 
-static void ft_round_endstr_ld(char *num, size_t acc, char **or, long double n)
+static void				ft_round_endstr_ld(char *num, \
+	size_t acc, char **or, long double n)
 {
-	size_t difference;
-	char *temp;
+	size_t				difference;
+	char				*temp;
 
 	if (!acc)
 	{
@@ -80,7 +79,7 @@ static void ft_round_endstr_ld(char *num, size_t acc, char **or, long double n)
 	}
 	else if (ft_strlen(num) > acc)
 	{
-		ft_round_end_ld2(num, acc, or, n);
+		ft_round_en(num, acc, or, n);
 	}
 	else if (ft_strlen(num) < acc)
 	{
@@ -90,39 +89,40 @@ static void ft_round_endstr_ld(char *num, size_t acc, char **or, long double n)
 	}
 }
 
-char *str_from_long_double(char *str, long double num, size_t size)
+static char				*str_from_l_double(char *s, long double n, size_t size)
 {
-	size_t count;
-	size_t index;
-	long double temp;
-	char dot_indicate;
+	size_t				count;
+	size_t				index;
+	long double			temp;
+	char				dot_indicate;
 
 	index = 0;
 	dot_indicate = 0;
-	count = ft_math_long_double_normilize(&num);
+	count = ft_math_long_double_normilize(&n);
 	while (index < size)
 	{
-		temp = ft_math_rounding_down_long_double(num);
-		str[index] = (char)temp + '0';
-		num = (num - temp) * 10;
+		temp = ft_math_rounding_down_l_double(n);
+		s[index] = (char)temp + '0';
+		n = (n - temp) * 10;
 		count--;
 		if (!count && !dot_indicate)
 		{
 			index++;
-			str[index] = '.';
+			s[index] = '.';
 			dot_indicate++;
 		}
 		index++;
 	}
-	return (str);
+	s[size] = '\0';
+	return (s);
 }
 
 char					*ft_itoa_long_double(long double num, size_t accuracy)
 {
-	char *result;
-	char *temp;
-	size_t size;
-	int minus;
+	char				*result;
+	char				*temp;
+	size_t				size;
+	int					minus;
 
 	minus = 0;
 	size = ft_math_numlen_long_double(num);
@@ -131,18 +131,16 @@ char					*ft_itoa_long_double(long double num, size_t accuracy)
 		num *= -1;
 		minus = 1;
 	}
-	if (num - ft_math_rounding_down_long_double(num))
+	if (num - ft_math_rounding_down_l_double(num))
 		size++;
 	if (!(result = (char *)malloc(size + 1)))
 		return (NULL);
-	result = str_from_long_double(result, num, size);
-	result[size] = '\0';
+	result = str_from_l_double(result, num, size);
 	temp = result;
 	if (ft_strlen_safe(ft_strchr(result, '.')) > accuracy + 1)
 		ft_round_endstr_ld(ft_strchr(result, '.') + 1, accuracy, &temp, num);
-	if (!(result = ft_strdup(ft_str_disnuller_end(temp))))
+	if (!(result = ft_strdup_free(ft_str_disnuller_end(temp))))
 		return (NULL);
-	free(temp);
 	if (minus)
 		result = ft_strjoin_free_2("-", result);
 	return (result);

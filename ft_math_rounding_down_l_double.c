@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math_rounding_down_long_double.c                :+:      :+:    :+:   */
+/*   ft_math_rounding_down_l_double.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -29,7 +29,7 @@ static long double	round_ld_alghorithm(long double num, size_t count)
 	return (result);
 }
 
-long double			ft_math_rounding_down_long_double(long double num)
+long double			ft_math_rounding_down_l_double(long double num)
 {
 	size_t			count;
 	size_t			minus;
