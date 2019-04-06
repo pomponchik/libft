@@ -14,7 +14,7 @@ int fun(void *q1, void *q2)
 
 int main()
 {
-	char k [] = "4321";
+	char k [] = "59781632405599771100";
 
 	ft_sort_quick(k, sizeof(char), ft_strlen(k), &fun);
 	printf("%s\n", k);
