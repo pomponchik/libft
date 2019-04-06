@@ -43,22 +43,6 @@ typedef struct			s_iterators
 	char				*chr;
 }						t_iter;
 
-typedef struct			s_block
-{
-	void				*blocks;
-	size_t				block_size;
-	size_t				free_size;
-	struct s_manage		*next;
-}						t_block;
-
-typedef struct			s_manage
-{
-	void				*biggest_block;
-	size_t				biggest_free_size;
-	t_block *begin;
-	t_block *end;
-}						t_man;
-
 void					ft_binary_lst_strdel(t_two_list **alst);
 void					ft_binary_lstadd(t_two_list **alst, t_two_list *new);
 t_two_list				*ft_binary_lstnew(void const *content, \
@@ -172,7 +156,8 @@ char					ft_range_str(char *str);
 void					ft_swap_byte(void *x, void *y);
 void					ft_swap_n_bytes(void *a, void *b, size_t n);
 void					*ft_jump_pointer_to_n(void *pointer, int n);
-void					ft_sort_quick(void *arr, size_t size, size_t amount, int (*f)(void *, void *));
+void					ft_sort_quick(void *arr, size_t size, \
+	size_t amount, int (*f)(void *, void *));
 char					*ft_str_disnuller_end(char *str);
 
 #endif
