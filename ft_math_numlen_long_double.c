@@ -35,8 +35,8 @@ static size_t	how_long_fractional_part_in_tdld(long double num)
 
 	count = 0;
 	if (num >= 1.0)
-		num -= ft_math_rounding_down_long_double(num);
-	while (num - ft_math_rounding_down_long_double(num))
+		num -= ft_math_rounding_down_l_double(num);
+	while (num - ft_math_rounding_down_l_double(num))
 	{
 		count++;
 		num *= 10;
