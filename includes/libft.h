@@ -82,6 +82,10 @@ t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list					*ft_lstnew(void const *content, size_t content_size);
 t_list					*ft_lstnew_without_copy(void *content, \
 	size_t content_size);
+t_list					*ft_lstnew_monolith(void *content, \
+	void *new_lst, size_t content_size);
+t_list					*ft_lst_from_array_monolith(void *arr, \
+	size_t size, size_t amount);
 t_list					*ft_lstsearch_cs(t_list *lst, size_t fd);
 t_list					*ft_lstsearch_content(t_list *lst, void *to_search);
 t_list					*ft_lstsearch_str_content(t_list *lst, char *to_search);
