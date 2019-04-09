@@ -37,7 +37,9 @@ ft_strjoin_free_both.c ft_strjoin_free_1.c ft_strjoin_free_2.c \
 ft_new_null_str.c ft_range_str.c ft_lstdel_complite.c ft_sort_quick.c \
 ft_jump_pointer_to_n.c ft_swap_byte.c ft_swap_n_bytes.c ft_strlen_safe.c \
 ft_str_disnuller_end.c ft_strdup_free.c ft_lst_from_array_notfree.c \
-ft_lstnew_without_copy.c
+ft_lstnew_without_copy.c ft_lst_to_array.c ft_lst_to_array_nullterm.c \
+ft_lst_to_array_free.c ft_lst_to_array_nullterm_free.c \
+ft_lst_sort_quick.c
 OUT = *.o
 INCLUDES = includes/
 
