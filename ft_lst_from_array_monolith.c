@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_from_array_notfree.c                        :+:      :+:    :+:   */
+/*   ft_lst_from_array_monolith.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_list		*ft_lst_from_array_notfree(void *arr, size_t size, size_t amount)
+t_list		*ft_lst_from_array_monolith(void *arr, size_t size, size_t amount)
 {
 	t_list	*result;
 	t_list	*temp;

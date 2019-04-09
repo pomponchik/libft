@@ -93,7 +93,7 @@ t_list					*ft_lst_unit_transfer(t_list *lst);
 t_list					*ft_lstsearch_index(t_list *lst, size_t index);
 void					ft_lstadd_to_end(t_list **alst, t_list *new);
 void					ft_lstdel_complite(t_list **this, t_list **first_elem);
-t_list					*ft_lst_from_array_notfree(void *arr, \
+t_list					*ft_lst_from_array_monolith(void *arr, \
 	size_t size, size_t amount);
 void					*ft_lst_to_array(t_list *lst);
 void					*ft_lst_to_array_free(t_list *lst);
