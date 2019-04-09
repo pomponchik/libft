@@ -28,10 +28,11 @@ void		*ft_lst_to_array_nullterm(t_list *lst)
 	temp_arr = result;
 	while (temp_lst)
 	{
-		ft_memcpy(temp_arr, temp_lst->content, size);
-		temp_arr = ft_jump_pointer_to_n(temp_arr, size);
+		ft_memcpy(temp_arr, temp_lst->content, lst->content_size);
+		temp_arr = ft_jump_pointer_to_n(temp_arr, lst->content_size);
 		temp_lst = temp_lst->next;
 	}
-	ft_bzero(ft_jump_pointer_to_n(result, size * len), size);
+	len *= lst->content_size;
+	ft_bzero(ft_jump_pointer_to_n(result, len), lst->content_size);
 	return (result);
 }
