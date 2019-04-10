@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_from_array_monolith.c                       :+:      :+:    :+:   */
+/*   ft_lst_monolith_from_array.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_list		*ft_lst_from_array_monolith(void *arr, size_t size, size_t amount)
+t_list		*ft_lst_monolith_from_array(void *arr, size_t size, size_t amount)
 {
 	t_list	*result;
 	t_list	*temp_lst;
@@ -23,7 +23,7 @@ t_list		*ft_lst_from_array_monolith(void *arr, size_t size, size_t amount)
 		return (NULL);
 	while (amount)
 	{
-		temp_lst = ft_lstnew_monolith(arr, temp_arr, size);
+		temp_lst = ft_lst_monolith_lstnew(arr, temp_arr, size);
 		ft_lstadd_to_end(&result, temp_lst);
 		arr = ft_jump_pointer_to_n(arr, size);
 		temp_lst = ft_jump_pointer_to_n(temp_lst, sizeof(t_list));

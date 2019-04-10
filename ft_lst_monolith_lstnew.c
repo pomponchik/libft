@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_sort_quick.c                                :+:      :+:    :+:   */
+/*   ft_lst_monolith_lstnew.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 21:56:45 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/04/09 22:32:33 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/04/09 22:59:12 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/04/09 23:08:39 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lst_sort_quick(t_list *lst, int (*f)(void *, void *))
+t_list		*ft_lst_monolith_lstnew(void *content, \
+	void *new_lst, size_t content_size)
 {
-	void	*temp;
-	size_t	size;
-	size_t	len;
-	t_list	*result;
+	t_list	*new;
 
-	if (!lst || !f)
-		return (NULL);
-	size = lst->content_size;
-	len = ft_lst_chain_len(lst);
-	temp = ft_lst_to_array_free(lst);
-	ft_sort_quick(temp, size, len, f);
-	result = ft_lst_monolith_from_array(temp, size, len);
-	return (result);
+	new = (t_list	*)new_lst;
+	new->content = content;
+	if (!content_size)
+	{
+		new->content = NULL;
+		new->content_size = 0;
+	}
+	else
+		new->content_size = content_size;
+	new->next = NULL;
+	return (new);
 }
