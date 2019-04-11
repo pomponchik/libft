@@ -106,6 +106,7 @@ void					*ft_lst_to_array_nullterm(t_list *lst);
 void					*ft_lst_to_array_nullterm_free(t_list *lst);
 t_list					*ft_lst_sort_quick(t_list *lst, \
 	int (*f)(void *, void *));
+t_list					*ft_lst_get_end(t_list *lst);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);
