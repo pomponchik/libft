@@ -176,5 +176,6 @@ void					*ft_jump_pointer_to_n(void *pointer, int n);
 void					ft_sort_quick(void *arr, size_t size, \
 	size_t amount, int (*f)(void *, void *));
 char					*ft_str_disnuller_end(char *str);
+int						ft_this_files_is_same(char *fn1, char *fn2);
 
 #endif

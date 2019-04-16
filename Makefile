@@ -6,7 +6,7 @@
 #    By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/25 21:16:10 by ahalmon-          #+#    #+#              #
-#    Updated: 2018/12/25 21:16:14 by ahalmon-         ###   ########.fr        #
+#    Updated: 2019/04/13 20:16:14 by ahalmon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,18 +40,18 @@ ft_str_disnuller_end.c ft_strdup_free.c ft_lst_monolith_from_array.c \
 ft_lstnew_without_copy.c ft_lst_to_array.c ft_lst_to_array_nullterm.c \
 ft_lst_to_array_free.c ft_lst_to_array_nullterm_free.c \
 ft_lst_sort_quick.c ft_lst_monolith_lstnew.c ft_lst_monolith_sort_quick.c \
-ft_lst_monolith_convert_to_monolith.c ft_lst_get_end.c
-OUT = *.o
+ft_lst_monolith_convert_to_monolith.c ft_lst_get_end.c \
+ft_this_files_is_same.c
+OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
 all:  $(NAME)
 
 
-$(NAME):
+$(NAME): $(FILES)
 	gcc -g -Wall -Werror -Wextra -c $(FILES) -I $(INCLUDES)
 		ar rc $(NAME) $(OUT)
 			ranlib $(NAME)
-
 clean:
 	/bin/rm -f $(OUT)
 

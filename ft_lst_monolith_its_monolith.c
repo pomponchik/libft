@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_free_1.c                                :+:      :+:    :+:   */
+/*   ft_lst_monolith_its_monolith.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/16 05:56:27 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/16 05:56:29 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/04/13 19:06:11 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/04/16 20:55:45 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin_free_1(char *s1, char *s2)
+int		ft_lst_monolith_its_monolith(t_list *lst)
 {
-	char	*result;
-
-	result = ft_strjoin(s1, s2);
-	free(s1);
-	return (result);
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		if (lst->next)
+		{
+			if (lst->next != \
+				(t_list *)ft_jump_pointer_to_n(lst, sizeof(t_list)))
+				return (0);
+		}
+		lst = lst->next;
+	}
+	return (1);
 }
