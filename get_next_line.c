@@ -59,7 +59,8 @@ static char			*joiner(char *s1, char *s2, t_iter *i)
 
 	i->work = 1;
 	s2[i->in] = '\0';
-	result = ft_strjoin_free_1(s1, s2);
+	result = ft_strjoin(s1, s2);
+	free(s1);
 	return (result);
 }
 

@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_free_both.c                             :+:      :+:    :+:   */
+/*   ft_free_both.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/16 05:53:12 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/16 05:53:15 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/04/16 21:25:25 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/04/16 21:25:27 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin_free_both(char *s1, char *s2)
+void ft_free_both(void *p1, void *p2)
 {
-	char	*result;
-
-	result = ft_strjoin(s1, s2);
-	ft_free_both(s1, s2);
-	return (result);
+	free(p1);
+	free(p2);
 }

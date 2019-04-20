@@ -35,16 +35,23 @@ static int	ft_this_files_is_same_loop(int fd1, int fd2)
 		r2 = get_next_line(fd2, &line_2);
 		if (((r1 <= 0) && (r2 > 0)) || ((r2 <= 0) && (r1 > 0)))
 		{
-			free(line_1);
-			free(line_2);
+			ft_free_both(line_1, line_2);
 			if (r1 < 0 || r2 < 0)
 				return (-1);
 			return (0);
 		}
 		if (ft_strcmp(line_1, line_2))
+		{
+			ft_putstr("1: <");
+			ft_putstr(line_1);
+			ft_putstr(">\n");
+			ft_putstr("2: <");
+			ft_putstr(line_2);
+			ft_putstr(">\n");
+			//ft_free_both(line_1, line_2);
 			return (0);
-		free(line_1);
-		free(line_2);
+		}
+		ft_free_both(line_1, line_2);
 		if (!r1 && r1 == r2)
 			break ;
 	}
