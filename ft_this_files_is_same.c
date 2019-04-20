@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 19:54:41 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/04/16 20:35:40 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/04/20 16:09:29 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ static int	ft_this_files_is_same_opener(char *path)
 	if (fd > 0)
 		return (fd);
 	return (-1);
+}
+
+static int	ft_this_files_is_same_return(void *s1, void *s2)
+{
+	ft_free_both(s1, s2);
+	return (0);
 }
 
 static int	ft_this_files_is_same_loop(int fd1, int fd2)
@@ -40,20 +46,11 @@ static int	ft_this_files_is_same_loop(int fd1, int fd2)
 				return (-1);
 			return (0);
 		}
-		if (ft_strcmp(line_1, line_2))
-		{
-			ft_putstr("1: <");
-			ft_putstr(line_1);
-			ft_putstr(">\n");
-			ft_putstr("2: <");
-			ft_putstr(line_2);
-			ft_putstr(">\n");
-			//ft_free_both(line_1, line_2);
-			return (0);
-		}
-		ft_free_both(line_1, line_2);
 		if (!r1 && r1 == r2)
 			break ;
+		if (ft_strcmp(line_1, line_2))
+			return (ft_this_files_is_same_return(line_1, line_2));
+		ft_free_both(line_1, line_2);
 	}
 	return (1);
 }
