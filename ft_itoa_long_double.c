@@ -95,8 +95,6 @@ static char				*str_from_l_double(char *s, long double *n, size_t size)
 	long double			temp;
 	char				dot_indicate;
 
-	if (*n == -0.0)
-		*n = 0.0;
 	index = 0;
 	dot_indicate = 0;
 	count = ft_math_long_double_normilize(n);
