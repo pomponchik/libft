@@ -113,6 +113,7 @@ t_list					*ft_lst_stack_new_stack(size_t channel);
 void					*ft_lst_stack_pop(size_t channel);
 int						ft_lst_stack_push(size_t channel, \
 	void *content, size_t content_size);
+void					*ft_lst_stack_top(size_t channel);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);
