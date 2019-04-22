@@ -108,7 +108,7 @@ t_list					*ft_lst_sort_quick(t_list *lst, \
 	int (*f)(void *, void *));
 t_list					*ft_lst_get_end(t_list *lst);
 int						ft_lst_stack_is_empty(size_t channel);
-t_list					**ft_lst_stack_keep_stacks(void);
+t_list					**ft_lst_stack_keep_stacks(int free_all);
 t_list					*ft_lst_stack_new_stack(size_t channel);
 void					*ft_lst_stack_pop(size_t channel);
 int						ft_lst_stack_push(size_t channel, \

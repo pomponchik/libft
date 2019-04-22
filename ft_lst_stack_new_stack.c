@@ -18,7 +18,7 @@ t_list		*ft_lst_stack_new_stack(size_t channel)
 	t_list	*stacks;
 	t_list	*temp;
 
-	keeper = ft_lst_stack_keep_stacks();
+	keeper = ft_lst_stack_keep_stacks(0);
 	stacks = *keeper;
 	if ((temp = ft_lstsearch_cs(stacks, channel)))
 		return (temp);
