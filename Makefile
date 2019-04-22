@@ -41,7 +41,9 @@ ft_lstnew_without_copy.c ft_lst_to_array.c ft_lst_to_array_nullterm.c \
 ft_lst_to_array_free.c ft_lst_to_array_nullterm_free.c \
 ft_lst_sort_quick.c ft_lst_monolith_lstnew.c ft_lst_monolith_sort_quick.c \
 ft_lst_monolith_convert_to_monolith.c ft_lst_get_end.c \
-ft_this_files_is_same.c ft_free_both.c ft_itoa_long_double_wrapper.c
+ft_this_files_is_same.c ft_free_both.c ft_itoa_long_double_wrapper.c \
+ft_lst_stack_is_empty.c ft_lst_stack_keep_stacks.c ft_lst_stack_new_stack.c \
+ft_lst_stack_pop.c ft_lst_stack_push.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
