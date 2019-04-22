@@ -12,17 +12,16 @@
 
 #include "libft.h"
 
-char *ft_itoa_long_double_wrapper(long double num, size_t accuracy, size_t weight)
+char *ft_itoa_long_double_wrapper(long double num, size_t accuracy)
 {
 	char *result;
 	char *dot;
 	size_t size;
 
-	if (num != 0.0 && num != 0.0)
+	if (num != -0.0 && num != 0.0)
 		result = ft_itoa_long_double(num, accuracy);
 	else
-		result = ft_strdup("0");
-	weight++;
+		return (ft_strjoin_free_2("0.", ft_new_null_str(accuracy)));
 	if ((dot = ft_strchr(result, '.')))
 	{
 		if ((size = ft_strlen(dot)) < accuracy + 1)

@@ -179,6 +179,6 @@ char					*ft_str_disnuller_end(char *str);
 int						ft_this_files_is_same(char *fn1, char *fn2);
 void					ft_free_both(void *p1, void *p2);
 char					*ft_itoa_long_double_wrapper(long double num, \
-	size_t accuracy, size_t weight);
+	size_t accuracy);
 
 #endif
