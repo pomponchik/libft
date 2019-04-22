@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int				one_num_from_multi_num_ld(char *num, size_t *ind_in)
 {
@@ -89,21 +88,23 @@ static void				ft_round_endstr_ld(char *num, \
 	}
 }
 
-static char				*str_from_l_double(char *s, long double n, size_t size)
+static char				*str_from_l_double(char *s, long double *n, size_t size)
 {
 	size_t				count;
 	size_t				index;
 	long double			temp;
 	char				dot_indicate;
 
+	if (*n == -0.0)
+		*n = 0.0;
 	index = 0;
 	dot_indicate = 0;
-	count = ft_math_long_double_normilize(&n);
+	count = ft_math_long_double_normilize(n);
 	while (index < size)
 	{
-		temp = ft_math_rounding_down_l_double(n);
+		temp = ft_math_rounding_down_l_double(*n);
 		s[index] = (char)temp + '0';
-		n = (n - temp) * 10;
+		*n = (*n - temp) * 10;
 		count--;
 		if (!count && !dot_indicate)
 		{
@@ -126,7 +127,7 @@ char					*ft_itoa_long_double(long double num, size_t accuracy)
 
 	minus = 0;
 	size = ft_math_numlen_long_double(num);
-	if (num < 0)
+	if (num < 0.0)
 	{
 		num *= -1;
 		minus = 1;
@@ -135,7 +136,7 @@ char					*ft_itoa_long_double(long double num, size_t accuracy)
 		size++;
 	if (!(result = (char *)malloc(size + 1)))
 		return (NULL);
-	result = str_from_l_double(result, num, size);
+	result = str_from_l_double(result, &num, size);
 	temp = result;
 	if (ft_strlen_safe(ft_strchr(result, '.')) > accuracy + 1)
 		ft_round_endstr_ld(ft_strchr(result, '.') + 1, accuracy, &temp, num);

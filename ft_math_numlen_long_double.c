@@ -50,6 +50,8 @@ size_t			ft_math_numlen_long_double(long double num)
 
 	if (!num)
 		return (1);
+	if (num == -0.0)
+		return (1);
 	result = 0;
 	if (num < 0)
 	{

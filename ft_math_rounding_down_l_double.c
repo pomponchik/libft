@@ -35,7 +35,9 @@ long double			ft_math_rounding_down_l_double(long double num)
 	size_t			minus;
 
 	minus = 0;
-	if (num < 0)
+	if (num == -0.0)
+		num = 0.0;
+	else if (num < 0)
 	{
 		num *= -1.0;
 		minus++;
