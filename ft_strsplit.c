@@ -24,7 +24,7 @@ static char		*space_to_letters(const char *str, char c)
 			break ;
 		index++;
 	}
-	if (!(result = (char *)malloc(index + 1)))
+	if (index + 1 <= index || !(result = (char *)malloc(index + 1)))
 		return (NULL);
 	result[index] = '\0';
 	index = 0;

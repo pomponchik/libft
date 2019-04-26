@@ -18,8 +18,5 @@ size_t		ft_strlen_safe(const char *string)
 
 	if (!string)
 		return (0);
-	index = 0;
-	while (string[index])
-		index++;
-	return (index);
+	return (ft_strlen(string));
 }

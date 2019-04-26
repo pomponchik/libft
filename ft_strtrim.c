@@ -59,7 +59,7 @@ char			*ft_strtrim(char const *s)
 	if (!s)
 		return (NULL);
 	size = clear_len((char *)s);
-	if (!(result = (char *)malloc(size + 1)))
+	if (size + 1 <= size || !(result = (char *)malloc(size + 1)))
 		return (NULL);
 	result[size] = '\0';
 	make_job((char *)s, result);
