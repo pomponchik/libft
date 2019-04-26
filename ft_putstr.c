@@ -14,7 +14,10 @@
 
 void	ft_putstr(char const *s)
 {
+	size_t size;
+
 	if (!s)
 		return ;
-	write(1, s, ft_strlen(s));
+	if ((size = ft_strlen(s)))
+		write(1, s, size);
 }

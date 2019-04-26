@@ -14,7 +14,7 @@
 
 char	*ft_putstr_len_fd(char const *s, size_t len, int fd)
 {
-	if (!s || len || fd <= 0)
+	if (!s || !len || fd <= 0)
 		return (NULL);
 	write(fd, s, len);
 	return ((char *)s + len);
