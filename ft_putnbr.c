@@ -29,21 +29,6 @@ static int			numeric(int c)
 	return (result);
 }
 
-static int			check_maxmin(void)
-{
-	size_t			index;
-	int				result;
-
-	index = sizeof(int) * 8 - 1;
-	result = 1;
-	while (index)
-	{
-		result *= 2;
-		index--;
-	}
-	return (result * -1);
-}
-
 static int			shorter(int n)
 {
 	int				temp;
@@ -51,7 +36,7 @@ static int			shorter(int n)
 	int				correct;
 	int				correct2;
 
-	temp = check_maxmin();
+	temp = ft_maxmin("int", "min");
 	correct = numeric(n) - 2;
 	correct2 = 1;
 	if (n == temp)

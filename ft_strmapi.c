@@ -16,18 +16,20 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*result;
 	unsigned	int	index;
+	size_t size;
 
 	if (!s || !f)
 		return (NULL);
-	if (!(result = (char *)malloc(ft_strlen(s) + 1)))
+	size = ft_strlen(s);
+	if (size + 1 <= size || !(result = (char *)malloc(size + 1)))
 		return (NULL);
 	index = 0;
-	ft_memcpy(result, s, ft_strlen(s));
+	ft_memcpy(result, s, size);
 	while (s[index])
 	{
 		result[index] = f(index, s[index]);
 		index++;
 	}
-	result[ft_strlen(s)] = '\0';
+	result[size] = '\0';
 	return (result);
 }

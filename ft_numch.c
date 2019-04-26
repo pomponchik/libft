@@ -17,6 +17,8 @@ size_t		ft_numch(char *str, char ch)
 	size_t	num;
 	size_t	index;
 
+	if (!str)
+		return (0);
 	num = 0;
 	index = 0;
 	while (str[index])

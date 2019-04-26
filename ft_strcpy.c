@@ -14,6 +14,11 @@
 
 char	*ft_strcpy(char *str1, const char *str2)
 {
-	str1 = ft_memcpy(str1, str2, ft_strlen(str2) + 1);
+	size_t size;
+
+	size = ft_strlen(str2);
+	if (size + 1 <= size)
+		return (NULL);
+	str1 = ft_memcpy(str1, str2, size + 1);
 	return (str1);
 }

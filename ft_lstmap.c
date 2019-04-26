@@ -14,17 +14,7 @@
 
 static t_list	*error_processing(t_list *first_elem)
 {
-	t_list		*i;
-
-	if (!first_elem)
-		return (NULL);
-	while (first_elem->next)
-	{
-		i = first_elem->next;
-		free(first_elem->content);
-		free(first_elem);
-		first_elem = i;
-	}
+	ft_lst_free_chain(first_elem);
 	return (NULL);
 }
 

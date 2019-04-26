@@ -14,6 +14,11 @@
 
 void	ft_strclr(char *s)
 {
-	if (s)
-		ft_bzero(s, ft_strlen(s));
+	if (!s)
+		return ;
+	while (*s)
+	{
+		*s = '\0';
+		s++;
+	}
 }

@@ -23,18 +23,13 @@ static void				add_digit(char let, long int *digit, int *error)
 		*error = 1;
 }
 
-static long int			check_maxlong(void)
-{
-	return ((long int)(~((unsigned long int)0) / 2));
-}
-
 static int				error_checker(long int digit, int minus, int error)
 {
 	if (error && minus == 1)
 		return (-1);
 	if (error && minus == -1)
 		return (0);
-	if (digit == check_maxlong() && minus == 1)
+	if (digit == ft_maxmin("long", "max") && minus == 1)
 		return ((int)digit);
 	return ((int)(digit * (long int)minus));
 }
