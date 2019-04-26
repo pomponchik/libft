@@ -67,6 +67,7 @@ int						ft_isalpha(int ch);
 int						ft_isascii(int ch);
 int						ft_isdigit(int ch);
 int						ft_isprint(int ch);
+int						ft_isspace(int ch);
 char					*ft_itoa(int n);
 char					*ft_itoa_long(long int n);
 char					*ft_itoa_long_long(long long int n);
@@ -192,5 +193,6 @@ int						ft_this_files_is_same(char *fn1, char *fn2);
 void					ft_free_both(void *p1, void *p2);
 char					*ft_itoa_long_double_wrapper(long double num, \
 	size_t accuracy);
+int						ft_strcmp_no_space(const char *str1, const char *str2);
 
 #endif

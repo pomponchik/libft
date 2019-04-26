@@ -45,7 +45,8 @@ ft_this_files_is_same.c ft_free_both.c ft_itoa_long_double_wrapper.c \
 ft_lst_stack_is_empty.c ft_lst_stack_keep_stacks.c ft_lst_stack_new_stack.c \
 ft_lst_stack_pop.c ft_lst_stack_push.c ft_lst_stack_top.c \
 ft_lst_stack_empty_stack_num_tightly.c ft_lst_stack_empty_stack_num.c \
-ft_lst_stack_size.c ft_putstr_len.c ft_putstr_len_fd.c
+ft_lst_stack_size.c ft_putstr_len.c ft_putstr_len_fd.c ft_isspace.c \
+ft_strcmp_no_space.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
