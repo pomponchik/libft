@@ -193,6 +193,6 @@ int						ft_this_files_is_same(char *fn1, char *fn2);
 void					ft_free_both(void *p1, void *p2);
 char					*ft_itoa_long_double_wrapper(long double num, \
 	size_t accuracy);
-int						ft_strcmp_no_space(const char *str1, const char *str2);
+int						ft_strcmp_no_spaces(const char *str1, const char *str2);
 
 #endif

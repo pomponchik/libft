@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp_no_space.c                               :+:      :+:    :+:   */
+/*   ft_strcmp_no_spaces.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int			ft_strcmp_no_space(const char *str1, const char *str2)
+int			ft_strcmp_no_spaces(const char *str1, const char *str2)
 {
 	size_t	index1;
 	size_t	index2;
