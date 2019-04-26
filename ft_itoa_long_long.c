@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/06 19:31:12 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/06 19:34:09 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/04/26 17:13:27 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,42 @@ static long long int	shorter(long long int *n, char *result)
 	return (*n * -1);
 }
 
+static long long int	what_is_fucking_long_long(long long int n)
+{
+	n /= 10;
+	n *= -1;
+	return (n);
+}
+
+static char				*print_min_long_long(void)
+{
+	long long int		print;
+	size_t				len;
+	char				*result;
+
+	len = 2;
+	print = ft_maxmin("long long", "min");
+	print = what_is_fucking_long_long(print);
+	while (print)
+	{
+		print /= 10;
+		len++;
+	}
+	if (!(result = (char *)ft_strnew(len)))
+		return (NULL);
+	result[0] = '-';
+	print = ft_maxmin("long long", "min");
+	result[len-- - 1] = print % 10;
+	print = what_is_fucking_long_long(print);
+	while (len - 1)
+	{
+		result[len - 1] = print % 10;
+		print /= 10;
+		len--;
+	}
+	return (result);
+}
+
 char					*ft_itoa_long_long(long long int n)
 {
 	char				*result;
@@ -63,6 +99,8 @@ char					*ft_itoa_long_long(long long int n)
 	int					hren_indicate;
 
 	index = numeric(n);
+	if (n == ft_maxmin("long long", "min"))
+		return (print_min_long_long());
 	if (!(result = (char *)malloc(numeric(n) + 1)))
 		return (NULL);
 	hren_indicate = 0;

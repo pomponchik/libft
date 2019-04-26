@@ -52,35 +52,39 @@ static char			char_max(void)
 	return (temp);
 }
 
-static long int		ft_min(char *type)
+static long long int		ft_min(char *type)
 {
 	if (!ft_strcmp(type, "long") || !ft_strcmp(type, "long int"))
-		return (~((long int)(~((unsigned long int)0) / 2)));
+		return (~((long long int)(~((unsigned long int)0) / 2)));
+	if (!ft_strcmp(type, "long long") || !ft_strcmp(type, "long long int"))
+		return (~((long long int)(~((unsigned long long int)0) / 2)));
 	if (!ft_strcmp(type, "int"))
-		return (~((long int)((int)(~((unsigned int)0) / 2))));
+		return (~((long long int)((int)(~((unsigned int)0) / 2))));
 	if (!ft_strcmp(type, "short") || !ft_strcmp(type, "short int"))
-		return (~(long int)short_max());
+		return (~(long long int)short_max());
 	if (!ft_strcmp(type, "char"))
-		return (~(long int)(char_max()));
+		return (~(long long int)(char_max()));
 	return (0);
 }
 
-long int			ft_maxmin(char *type, char *maxmin)
+long long int			ft_maxmin(char *type, char *maxmin)
 {
 	if (!ft_strcmp(maxmin, "max"))
 	{
 		if (!ft_strcmp(type, "long") || !ft_strcmp(type, "long int"))
-			return ((long int)(~((unsigned long int)0) / 2));
+			return ((long long int)(~((unsigned long int)0) / 2));
+		if (!ft_strcmp(type, "long long") || !ft_strcmp(type, "long long int"))
+			return ((long long int)(~((unsigned long long int)0) / 2));
 		if (!ft_strcmp(type, "int"))
-			return ((long int)((int)(~((unsigned int)0) / 2)));
+			return ((long long int)((int)(~((unsigned int)0) / 2)));
 		if (!ft_strcmp(type, "unsigned int") || !ft_strcmp(type, "unsigned"))
-			return ((long int)(~((unsigned int)0)));
+			return ((long long int)(~((unsigned int)0)));
 		if (!ft_strcmp(type, "short") || !ft_strcmp(type, "short int"))
-			return ((long int)short_max());
+			return ((long long int)short_max());
 		if (!ft_strcmp(type, "char"))
-			return ((long int)(char_max()));
+			return ((long long int)(char_max()));
 		if (!ft_strcmp(type, "unsigned char"))
-			return ((long int)char_max() * 2 + 1);
+			return ((long long int)char_max() * 2 + 1);
 	}
 	if (!ft_strcmp(maxmin, "min"))
 		return (ft_min(type));

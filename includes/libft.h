@@ -53,7 +53,7 @@ t_two_list				*ft_binary_lstseaconb(t_two_list *alst, \
 	void *to_search);
 t_two_list				*ft_binary_lstseacon(t_two_list *alst, char *to_search);
 float					ft_math_root(float num, unsigned int root_index);
-long int				ft_maxmin(char *type, char *maxmin);
+long long int				ft_maxmin(char *type, char *maxmin);
 size_t					ft_numch(char *str, char ch);
 char					*ft_letter_replacement(char *str, char previous, \
 	char new);
@@ -95,6 +95,8 @@ t_list					*ft_lstsearch_str_content(t_list *lst, char *to_search);
 void					ft_lst_free_chain(t_list *chain);
 t_list					*ft_lst_turn(t_list *begin);
 void					ft_lst_putendl(t_list *lst);
+char					*ft_putstr_len(char const *s, size_t len);
+char					*ft_putstr_len_fd(char const *s, size_t len, int fd);
 size_t					ft_lst_chain_len(t_list *begin);
 t_list					*ft_lst_unit_transfer(t_list *lst);
 t_list					*ft_lstsearch_index(t_list *lst, size_t index);
@@ -114,6 +116,9 @@ void					*ft_lst_stack_pop(size_t channel);
 int						ft_lst_stack_push(size_t channel, \
 	void *content, size_t content_size);
 void					*ft_lst_stack_top(size_t channel);
+size_t					ft_lst_stack_empty_stack_num(void);
+size_t					ft_lst_stack_empty_stack_num_tightly(void);
+size_t					ft_lst_stack_size(size_t channel);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);
