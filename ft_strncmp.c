@@ -21,7 +21,7 @@ int					ft_strncmp(const char *str1, const char *str2, size_t num)
 	index = 0;
 	s1 = (unsigned char *)str1;
 	s2 = (unsigned char *)str2;
-	if (!num)
+	if (!str1 || str2)
 		return (0);
 	while ((s1[index] || s2[index]) && (index != num))
 	{
