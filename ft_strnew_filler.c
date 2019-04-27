@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_safe.c                                   :+:      :+:    :+:   */
+/*   ft_strnew_filler.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 23:31:27 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/28 23:31:29 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/04/27 23:14:39 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/04/27 23:30:44 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen_safe(const char *string)
+char		*ft_strnew_filler(size_t size, char filler)
 {
-	if (!string)
-		return (0);
-	return (ft_strlen(string));
+	char	*result;
+
+	if (size + 1 > size)
+	{
+		if (!(result = (char *)malloc(size + 1)))
+			return (NULL);
+		ft_memset(result, (int)filler, size);
+		result[size] = '\0';
+		return (result);
+	}
+	return (NULL);
 }

@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_safe.c                                   :+:      :+:    :+:   */
+/*   ft_strdup_n_free.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 23:31:27 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/28 23:31:29 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/04/27 23:01:05 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/04/27 23:01:07 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen_safe(const char *string)
+char		*ft_strdup_n_free(char *src, size_t n)
 {
-	if (!string)
-		return (0);
-	return (ft_strlen(string));
+	char	*result;
+
+	result = ft_strdup_n(src, n);
+	free(src);
+	return (result);
 }

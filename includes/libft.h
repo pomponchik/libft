@@ -194,5 +194,12 @@ void					ft_free_both(void *p1, void *p2);
 char					*ft_itoa_long_double_wrapper(long double num, \
 	size_t accuracy);
 int						ft_strcmp_no_spaces(const char *str1, const char *str2);
+char					*ft_strnew_filler(size_t size, char filler);
+char					*ft_strdup_n(const char *src, size_t n);
+char					*ft_strdup_n_free(char *src, size_t n);
+char					*ft_str_fix_width_of_line(char *str, \
+	char filler, size_t len, int dont_cut);
+char					*ft_str_fix_width_of_line_free(char *str, \
+	char filler, size_t len, int dont_cut);
 
 #endif

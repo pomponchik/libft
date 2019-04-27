@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_safe.c                                   :+:      :+:    :+:   */
+/*   ft_strdup_n.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 23:31:27 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/28 23:31:29 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/04/27 22:55:12 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/04/27 22:55:14 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen_safe(const char *string)
+char		*ft_strdup_n(const char *src, size_t n)
 {
-	if (!string)
-		return (0);
-	return (ft_strlen(string));
+	char	*result;
+	size_t size;
+
+	size = ft_strlen(src);
+	if (size > n)
+		size = n;
+	if (!n || (size + 1 <= size) || !(result = (char *)malloc(size + 1)))
+		return (NULL);
+	result = ft_memcpy(result, src, size + 1);
+	return (result);
 }
