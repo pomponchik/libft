@@ -47,7 +47,8 @@ ft_lst_stack_pop.c ft_lst_stack_push.c ft_lst_stack_top.c \
 ft_lst_stack_empty_stack_num_tightly.c ft_lst_stack_empty_stack_num.c \
 ft_lst_stack_size.c ft_putstr_len.c ft_putstr_len_fd.c ft_isspace.c \
 ft_strcmp_no_spaces.c ft_strnew_filler.c ft_strdup_n.c ft_strdup_n_free.c \
-ft_str_fix_width_of_line.c ft_str_fix_width_of_line_free.c
+ft_str_fix_width_of_line.c ft_str_fix_width_of_line_free.c \
+ft_free_two_dimensional_array.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 

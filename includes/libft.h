@@ -201,5 +201,6 @@ char					*ft_str_fix_width_of_line(char *str, \
 	char filler, size_t len, int dont_cut);
 char					*ft_str_fix_width_of_line_free(char *str, \
 	char filler, size_t len, int dont_cut);
+void					ft_free_two_dimensional_array(void **arr);
 
 #endif

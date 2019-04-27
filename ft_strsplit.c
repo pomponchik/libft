@@ -88,16 +88,6 @@ static int		make_job(char **result, const char *s, char c)
 	return (1);
 }
 
-static void		free_words(char **result)
-{
-	while (*result)
-	{
-		free(*result);
-		result++;
-	}
-	free(result);
-}
-
 char			**ft_strsplit(char const *s, char c)
 {
 	char		**result;
@@ -109,7 +99,7 @@ char			**ft_strsplit(char const *s, char c)
 	result[number_words(s, c)] = NULL;
 	if (!(make_job(result, s, c)))
 	{
-		free_words(result);
+		ft_free_two_dimensional_array((void **)result);
 		return (NULL);
 	}
 	return (result);
