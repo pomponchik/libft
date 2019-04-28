@@ -63,7 +63,7 @@ char				*ft_itoa_long(long int n)
 	int				hren_indicate;
 
 	index = numeric(n);
-	if (!(result = (char *)malloc(numeric(n) + 1)))
+	if (!(result = (char *)malloc(index + 1)))
 		return (NULL);
 	hren_indicate = 0;
 	result[index] = '\0';

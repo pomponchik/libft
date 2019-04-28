@@ -67,10 +67,16 @@
 
 #include <stdio.h>
 
+// int main()
+// {
+// 	double lol = 1.0;
+// 	printf("%.1f\n", lol);
+// 	printf("%s\n", ft_itoa_long_double_wrapper(lol, 1, 1));
+// 	return 0;
+// }
+
 int main()
 {
-	double lol = 1.0;
-	printf("%.1f\n", lol);
-	printf("%s\n", ft_itoa_long_double_wrapper(lol, 1, 1));
+	printf("%s\n", ft_str_fix_width_of_line("11", '0', 9, 1));
 	return 0;
 }

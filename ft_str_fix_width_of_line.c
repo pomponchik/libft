@@ -30,7 +30,7 @@ char *ft_str_fix_width_of_line(char *str, char filler, size_t len, int dont_cut)
 		if (half)
 			str = ft_strjoin_free_1(ft_strnew_filler(half, filler), str);
 		if ((half = different - half))
-			str = ft_strjoin_free_2(str, ft_strnew_filler(half, filler));
+			str = ft_strjoin_free_both(str, ft_strnew_filler(half, filler));
 		return (str);
 	}
 	if (len < size && !dont_cut)
