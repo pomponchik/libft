@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-t_list		*ft_lstsearch_cs(t_list *lst, size_t fd)
+t_list		*ft_lstsearch_cs(t_list *lst, size_t cs)
 {
 	t_list	*temp;
 
 	temp = lst;
 	while (temp)
 	{
-		if (temp->content_size == fd)
+		if (temp->content_size == cs)
 			return (temp);
 		temp = temp->next;
 	}
