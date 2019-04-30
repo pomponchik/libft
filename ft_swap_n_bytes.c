@@ -18,13 +18,10 @@ void		ft_swap_n_bytes(void *a, void *b, size_t n)
 
 	if (!a || !b || !n)
 		return ;
-	ft_putstr("1\n");
 	index = 0;
 	while (index != n)
 	{
-		ft_putstr("2\n");
 		ft_swap_byte(a + index, b + index);
-		ft_putstr("3\n");
 		index++;
 	}
 }

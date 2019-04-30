@@ -77,6 +77,8 @@
 
 int main()
 {
-	printf("%s\n", ft_str_fix_width_of_line("1234567890", '0', 6, "crop: end"));
+	char str [] = "1234567890";
+	ft_str_reverse(str);
+	printf("%s\n", str);
 	return 0;
 }
