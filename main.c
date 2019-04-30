@@ -77,6 +77,6 @@
 
 int main()
 {
-	printf("%s\n", ft_str_fix_width_of_line("1234567890", '0', 6, "crop: begin"));
+	printf("%s\n", ft_str_fix_width_of_line("1234567890", '0', 6, "crop: end"));
 	return 0;
 }

@@ -36,17 +36,8 @@ static char	*ft_fix_join_width(char *str, char filler, size_t len, char *flags)
 
 static char	*ft_fix_crop_begin(char *str, size_t len, size_t size)
 {
-	char	*result;
-
-	ft_mem_reverse(str, 1, size);
-	if (!(result = ft_strdup_n(str, len)))
-	{
-		//ft_mem_reverse(str, 1, size);
-		return (NULL);
-	}
-	// ft_mem_reverse(result, 1, len);
-	// ft_mem_reverse(str, 1, len);
-	return (result);
+	str = ft_jump_pointer_to_n(str, (int)(size - len));
+	return (ft_strdup(str));
 }
 
 char		*ft_str_fix_width_of_line(char *str, char filler, \

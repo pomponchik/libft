@@ -22,6 +22,7 @@ char		*ft_strdup_n(const char *src, size_t n)
 		size = n;
 	if (!n || (size + 1 <= size) || !(result = (char *)malloc(size + 1)))
 		return (NULL);
-	result = ft_memcpy(result, src, size + 1);
+	result = ft_memcpy(result, src, size);
+	result[size] = '\0';
 	return (result);
 }

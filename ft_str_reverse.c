@@ -14,6 +14,6 @@
 
 char	*ft_str_reverse(char *str)
 {
-	ft_mem_reverse(str, 1, ft_strlen(str));
+	ft_mem_reverse(str, sizeof(char), ft_strlen(str));
 	return (str);
 }

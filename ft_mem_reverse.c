@@ -22,7 +22,7 @@ void		ft_mem_reverse(void *mem, size_t size, size_t amount)
 	end = ft_jump_pointer_to_n(mem, (amount - 1) * size);
 	while (end > mem)
 	{
-		ft_swap_n_bytes(mem, end, size);
+		ft_swap_n_bytes(end, mem, size);
 		mem = ft_jump_pointer_to_n(mem, size);
 		end = ft_jump_pointer_to_n(end, (int)size * -1);
 	}
