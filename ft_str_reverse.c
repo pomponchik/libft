@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_fix_width_of_line_free.c                    :+:      :+:    :+:   */
+/*   ft_str_reverse.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/27 23:27:39 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/04/27 23:30:26 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/04/30 20:44:38 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/04/30 20:46:56 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_str_fix_width_of_line_free(char *str, \
-	char filler, size_t len, char *flags)
+char	*ft_str_reverse(char *str)
 {
-	char	*result;
-
-	result = ft_str_fix_width_of_line(str, filler, len, flags);
-	if (result != str)
-		free(str);
-	return (result);
+	ft_mem_reverse(str, 1, ft_strlen(str));
+	return (str);
 }
