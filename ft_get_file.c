@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_to_array.c                                  :+:      :+:    :+:   */
+/*   ft_get_file.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 21:13:06 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/04/09 22:34:31 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/05/01 19:11:42 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/05/01 19:11:43 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_lst_to_array(t_list *lst)
+void *ft_get_file(char *path, size_t *size)
 {
-	void	*result;
-	void	*temp_arr;
-	t_list	*temp_lst;
+	int re;
+	int fd;
+	char			buf[BUFF_SIZE];
+	t_list	*lst;
 
-	if (!lst)
+	*size = 0;
+	if ((fd = ft_open_file_readonly(path)) \
+	|| BUFF_SIZE < 1 || read(fd, buf, 0) < 0)
 		return (NULL);
-	if (!(result = (void *)malloc(ft_lst_all_content_size(lst))))
-		return (NULL);
-	temp_lst = lst;
-	temp_arr = result;
-	while (temp_lst)
+	lst = NULL;
+	while ((re = read(fd, buf, BUFF_SIZE)))
 	{
-		ft_memcpy(temp_arr, temp_lst->content, lst->content_size);
-		temp_arr = ft_jump_pointer_to_n(temp_arr, lst->content_size);
-		temp_lst = temp_lst->next;
+		*size += (size_t)re;
+		ft_lstadd(&lst, ft_lstnew((void *)buf, (size_t)re));
 	}
-	return (result);
+	return (ft_lst_to_array_free(ft_lst_turn(lst)));
 }

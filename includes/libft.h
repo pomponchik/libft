@@ -13,7 +13,6 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # define BUFF_SIZE 20
-# define BLOCK_SIZE 10000
 
 # include <string.h>
 # include <stdlib.h>
@@ -206,5 +205,8 @@ char					*ft_str_fix_width_of_line_free(char *str, \
 void					ft_free_two_dimensional_array(void **arr);
 void					ft_mem_reverse(void *mem, size_t size, size_t amount);
 char					*ft_str_reverse(char *str);
+int						ft_open_file_readonly(char *path);
+size_t					ft_lst_all_content_size(t_list *lst);
+void					*ft_get_file(char *path, size_t *size);
 
 #endif

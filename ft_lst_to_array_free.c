@@ -14,15 +14,13 @@
 
 void		*ft_lst_to_array_free(t_list *lst)
 {
-	size_t	len;
 	void	*result;
 	void	*temp_arr;
 	t_list	*temp_lst;
 
 	if (!lst)
 		return (NULL);
-	len = ft_lst_chain_len(lst);
-	if (!(result = (void *)malloc(len * lst->content_size)))
+	if (!(result = (void *)malloc(ft_lst_all_content_size(lst))))
 		return (NULL);
 	temp_lst = lst;
 	temp_arr = result;
