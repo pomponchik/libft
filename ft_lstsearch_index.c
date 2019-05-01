@@ -14,6 +14,8 @@
 
 t_list		*ft_lstsearch_index(t_list *lst, size_t index)
 {
+	if (!lst)
+		return (NULL);
 	while (index)
 	{
 		if (lst->next)
