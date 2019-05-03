@@ -24,7 +24,7 @@ void		*ft_get_file(char *path, size_t *size)
 	|| BUFF_SIZE < 1 || read(fd, buf, 0) < 0)
 		return (NULL);
 	lst = NULL;
-	while ((re = read(fd, buf, BUFF_SIZE)))
+	while ((re = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		*size += (size_t)re;
 		ft_lstadd(&lst, ft_lstnew((void *)buf, (size_t)re));
