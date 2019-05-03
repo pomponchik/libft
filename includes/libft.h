@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/03/17 20:38:26 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/03 17:09:57 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_two_list				*ft_binary_lstseaconb(t_two_list *alst, \
 	void *to_search);
 t_two_list				*ft_binary_lstseacon(t_two_list *alst, char *to_search);
 float					ft_math_root(float num, unsigned int root_index);
-long long int				ft_maxmin(char *type, char *maxmin);
+long long int			ft_maxmin(char *type, char *maxmin);
 size_t					ft_numch(char *str, char ch);
 char					*ft_letter_replacement(char *str, char previous, \
 	char new);

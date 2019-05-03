@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 08:54:52 by ahalmon-          #+#    #+#             */
-/*   Updated: 2018/12/25 17:43:46 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/03 17:02:01 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*result;
-	unsigned	int	index;
-	size_t size;
+	unsigned int	index;
+	size_t			size;
 
 	if (!s || !f)
 		return (NULL);

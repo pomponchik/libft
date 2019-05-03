@@ -6,15 +6,15 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 23:18:36 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/01 23:18:38 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/03 17:06:49 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_lst_all_content_size(t_list *lst)
+size_t		ft_lst_all_content_size(t_list *lst)
 {
-	size_t result;
+	size_t	result;
 
 	result = 0;
 	while (lst)

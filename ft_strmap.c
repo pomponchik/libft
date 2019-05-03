@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 03:57:54 by ahalmon-          #+#    #+#             */
-/*   Updated: 2018/12/25 17:19:58 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/03 17:00:24 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char		*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*result;
 	size_t	index;
-	size_t size;
+	size_t	size;
 
 	if (!s || !f)
 		return (NULL);

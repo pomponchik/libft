@@ -6,16 +6,16 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 23:10:22 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/01/05 23:50:08 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/03 17:05:46 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static short int	short_max(void)
+static short int		short_max(void)
 {
-	short int		temp;
-	size_t			index;
+	short int			temp;
+	size_t				index;
 
 	if (sizeof(short int) == 2)
 		return (32767);
@@ -32,10 +32,10 @@ static short int	short_max(void)
 	return (temp);
 }
 
-static char			char_max(void)
+static char				char_max(void)
 {
-	char			temp;
-	size_t			index;
+	char				temp;
+	size_t				index;
 
 	if (sizeof(char) == 1)
 		return (127);
@@ -52,7 +52,7 @@ static char			char_max(void)
 	return (temp);
 }
 
-static long long int		ft_min(char *type)
+static long long int	ft_min(char *type)
 {
 	if (!ft_strcmp(type, "long") || !ft_strcmp(type, "long int"))
 		return (~((long long int)(~((unsigned long int)0) / 2)));
