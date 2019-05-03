@@ -97,6 +97,7 @@ t_list					*ft_lstsearch_str_content(t_list *lst, char *to_search);
 void					ft_lst_free_chain(t_list *chain);
 t_list					*ft_lst_turn(t_list *begin);
 void					ft_lst_putendl(t_list *lst);
+char					*ft_lst_strjoin(t_list *lst);
 char					*ft_putstr_len(char const *s, size_t len);
 char					*ft_putstr_len_fd(char const *s, size_t len, int fd);
 size_t					ft_lst_chain_len(t_list *begin);
@@ -111,6 +112,7 @@ void					*ft_lst_to_array_nullterm_free(t_list *lst);
 t_list					*ft_lst_sort_quick(t_list *lst, \
 	int (*f)(void *, void *));
 t_list					*ft_lst_get_end(t_list *lst);
+size_t					ft_lst_strlen(t_list *lst);
 int						ft_lst_stack_is_empty(size_t channel);
 t_list					**ft_lst_stack_keep_stacks(int free_all);
 t_list					*ft_lst_stack_new_stack(size_t channel);
