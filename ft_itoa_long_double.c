@@ -84,7 +84,7 @@ static void				ft_round_endstr_ld(char *num, \
 	{
 		temp = *or;
 		difference = acc - ft_strlen(num);
-		*or = ft_strjoin_free_both(*or, ft_new_null_str(difference));
+		*or = ft_strjoin_fr_both(*or, ft_new_null_str(difference));
 	}
 }
 

@@ -30,7 +30,7 @@ static char	*ft_fix_join_width(char *str, char filler, size_t len, char *flags)
 	if (half)
 		str = ft_strjoin_free_1(ft_strnew_filler(half, filler), str);
 	if ((half = different - half))
-		str = ft_strjoin_free_both(str, ft_strnew_filler(half, filler));
+		str = ft_strjoin_fr_both(str, ft_strnew_filler(half, filler));
 	return (str);
 }
 

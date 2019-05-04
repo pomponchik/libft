@@ -37,6 +37,7 @@ static char			*adder(t_list **lst, int fd, t_iter *i)
 	i->work = 0;
 	i->in = 0;
 	i->chr = NULL;
+	i->lst = NULL;
 	temp = *lst;
 	while (temp)
 	{
@@ -53,15 +54,11 @@ static char			*adder(t_list **lst, int fd, t_iter *i)
 	return ((char *)(temp->content));
 }
 
-static char			*joiner(char *s1, char *s2, t_iter *i)
+static void joiner(char *buf, t_iter *i)
 {
-	char			*result;
-
 	i->work = 1;
-	s2[i->in] = '\0';
-	result = ft_strjoin(s1, s2);
-	free(s1);
-	return (result);
+	buf[i->in] = '\0';
+	ft_lstadd(&(i->l), ft_lst_strnew(buf));
 }
 
 static char			*convert(char *old, t_list *lst, t_iter *i)
@@ -85,27 +82,29 @@ static char			*convert(char *old, t_list *lst, t_iter *i)
 
 int					get_next_line(const int fd, char **line)
 {
-	static t_list	*lst;
+	static t_iter			i;
 	char			buf[BUFF_SIZE + 1];
-	t_iter			i;
 
 	if (fd < 0 || !line || BUFF_SIZE < 1 || read(fd, buf, 0) < 0)
 		return (-1);
-	i.str = adder(&lst, fd, &i);
-	while ((i.in = read(fd, buf, BUFF_SIZE)))
+	i.s = adder(&i.lst, fd, &i);
+	while ((i.in = read(fd, buf, BUFF_SIZE)) > 0)
 	{
-		i.str = joiner(i.str, buf, &i);
-		if (ft_strchr(i.str, '\n') || i.in < BUFF_SIZE)
+		joiner(buf, &i);
+		if (ft_strchr(i.s, '\n') || i.in < BUFF_SIZE)
+		{
+			i.s = ft_strjoin_fr_both(i.s, ft_lst_strjoin_fr(ft_lst_turn(i.l)));
 			break ;
+		}
 	}
-	if (!(i.chr = ft_strchr(i.str, '\n')) && i.in < BUFF_SIZE)
-		(search_lst(lst, fd, &i.work))->content_size = -1;
-	if (i.in < BUFF_SIZE && !ft_strlen(i.str))
+	if (!(i.chr = ft_strchr(i.s, '\n')) && i.in < BUFF_SIZE)
+		(search_lst(i.lst, fd, &i.work))->content_size = -1;
+	if (i.in < BUFF_SIZE && !ft_strlen(i.s))
 		return (0);
 	if (i.chr)
-		i.str = convert(i.str, search_lst(lst, fd, &i.work), &i);
+		i.s = convert(i.s, search_lst(i.lst, fd, &i.work), &i);
 	if (!i.work)
-		(search_lst(lst, fd, &i.work))->content_size = -1;
-	*line = i.str;
+		(search_lst(i.lst, fd, &i.work))->content_size = -1;
+	*line = i.s;
 	return (1);
 }

@@ -36,10 +36,12 @@ typedef struct			s_two_list
 
 typedef struct			s_iterators
 {
+	t_list *lst;
 	int					in;
-	char				*str;
+	char				*s;
 	int					work;
 	char				*chr;
+	t_list *l;
 }						t_iter;
 
 void					ft_binary_lst_strdel(t_two_list **alst);
@@ -98,6 +100,7 @@ void					ft_lst_free_chain(t_list *chain);
 t_list					*ft_lst_turn(t_list *begin);
 void					ft_lst_putendl(t_list *lst);
 char					*ft_lst_strjoin(t_list *lst);
+char					*ft_lst_strjoin_fr(t_list *lst);
 char					*ft_putstr_len(char const *s, size_t len);
 char					*ft_putstr_len_fd(char const *s, size_t len, int fd);
 size_t					ft_lst_chain_len(t_list *begin);
@@ -113,6 +116,7 @@ t_list					*ft_lst_sort_quick(t_list *lst, \
 	int (*f)(void *, void *));
 t_list					*ft_lst_get_end(t_list *lst);
 size_t					ft_lst_strlen(t_list *lst);
+t_list					*ft_lst_strnew(char *str);
 int						ft_lst_stack_is_empty(size_t channel);
 t_list					**ft_lst_stack_keep_stacks(int free_all);
 t_list					*ft_lst_stack_new_stack(size_t channel);
@@ -185,12 +189,13 @@ size_t					ft_math_long_double_normilize(long double *num);
 int						ft_math_module_int(int num);
 char					*ft_strjoin_free_1(char *s1, char *s2);
 char					*ft_strjoin_free_2(char *s1, char *s2);
-char					*ft_strjoin_free_both(char *s1, char *s2);
+char					*ft_strjoin_fr_both(char *s1, char *s2);
 char					*ft_new_null_str(size_t size);
 char					ft_range_str(char *str);
 void					ft_swap_byte(void *x, void *y);
 void					ft_swap_n_bytes(void *a, void *b, size_t n);
 void					*ft_jump_pointer_to_n(void *pointer, int n);
+void					*ft_jump_pointer_size_t(void *pointer, size_t n);
 void					ft_sort_quick(void *arr, size_t size, \
 	size_t amount, int (*f)(void *, void *));
 char					*ft_str_disnuller_end(char *str);

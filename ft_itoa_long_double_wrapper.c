@@ -25,13 +25,13 @@ char		*ft_itoa_long_double_wrapper(long double num, size_t accuracy)
 	if ((dot = ft_strchr(result, '.')))
 	{
 		if ((size = ft_strlen(dot)) < accuracy + 1)
-			result = ft_strjoin_free_both(result, \
+			result = ft_strjoin_fr_both(result, \
 				ft_new_null_str(size - 1 - accuracy));
 	}
 	else
 	{
 		result = ft_strjoin_free_1(result, ".");
-		result = ft_strjoin_free_both(result, ft_new_null_str(accuracy));
+		result = ft_strjoin_fr_both(result, ft_new_null_str(accuracy));
 	}
 	return (result);
 }
