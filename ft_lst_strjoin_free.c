@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/04 23:24:55 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/04 23:24:57 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/05 00:01:33 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_lst_strjoin_fr(t_list *lst)
 	char	*result;
 	void	*temp;
 	size_t	size;
-	t_list *t;
+	t_list	*t;
 
 	if (!lst || !(result = (char *)malloc(ft_lst_strlen(lst) + 1)))
 		return (NULL);

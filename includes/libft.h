@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/03 17:09:57 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/04 23:59:46 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ typedef struct			s_two_list
 
 typedef struct			s_iterators
 {
-	t_list *lst;
+	t_list				*lst;
 	int					in;
 	char				*s;
 	int					work;
 	char				*chr;
-	t_list *l;
+	t_list				*l;
 }						t_iter;
 
 void					ft_binary_lst_strdel(t_two_list **alst);

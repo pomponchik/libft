@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 21:05:47 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/02/09 22:18:23 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/04 23:59:09 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char			*adder(t_list **lst, int fd, t_iter *i)
 	return ((char *)(temp->content));
 }
 
-static void joiner(char *buf, t_iter *i)
+static void			joiner(char *buf, t_iter *i)
 {
 	i->work = 1;
 	buf[i->in] = '\0';
@@ -82,7 +82,7 @@ static char			*convert(char *old, t_list *lst, t_iter *i)
 
 int					get_next_line(const int fd, char **line)
 {
-	static t_iter			i;
+	static t_iter	i;
 	char			buf[BUFF_SIZE + 1];
 
 	if (fd < 0 || !line || BUFF_SIZE < 1 || read(fd, buf, 0) < 0)
