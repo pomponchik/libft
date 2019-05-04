@@ -21,7 +21,7 @@ int		ft_lst_monolith_its_monolith(t_list *lst)
 		if (lst->next)
 		{
 			if (lst->next != \
-				(t_list *)ft_jump_pointer_to_n(lst, sizeof(t_list)))
+				(t_list *)ft_jump_pointer_size_t(lst, sizeof(t_list)))
 				return (0);
 		}
 		lst = lst->next;

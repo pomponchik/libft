@@ -27,7 +27,7 @@ void		*ft_lst_to_array_free(t_list *lst)
 	while (temp_lst)
 	{
 		ft_memcpy(temp_arr, temp_lst->content, lst->content_size);
-		temp_arr = ft_jump_pointer_to_n(temp_arr, lst->content_size);
+		temp_arr = ft_jump_pointer_size_t(temp_arr, lst->content_size);
 		temp_lst = temp_lst->next;
 	}
 	ft_lst_free_chain(lst);

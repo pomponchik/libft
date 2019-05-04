@@ -25,7 +25,7 @@ char		*ft_lst_strjoin(t_list *lst)
 	{
 		size = ft_strlen((char *)lst->content);
 		ft_memcpy(temp, lst->content, size);
-		temp = ft_jump_pointer_to_n(temp, (int)size);
+		temp = ft_jump_pointer_size_t(temp, size);
 		lst = lst->next;
 	}
 	*((char *)temp) = '\0';
