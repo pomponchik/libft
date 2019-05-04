@@ -73,7 +73,7 @@ static char			*convert(char *old, t_list *lst, t_iter *i)
 	index = 0;
 	while (old[index] && old[index] != '\n')
 		index++;
-	if (!(new = ft_strnew(index)))
+	if (!(new = ft_strnew_not_bzero(index)))
 		return (NULL);
 	ft_memcpy(new, old, index);
 	residue = ft_strdup((ft_strchr(old, '\n') + 1));

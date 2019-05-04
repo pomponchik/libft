@@ -164,6 +164,7 @@ char					*ft_strncpy(char *dest, const char *source, \
 	size_t count);
 int						ft_strnequ(char const *s1, char const *s2, size_t n);
 char					*ft_strnew(size_t size);
+char					*ft_strnew_not_bzero(size_t size);
 char					*ft_strnstr(const char *str1, const char *str2, \
 	size_t len);
 char					*ft_strrchr(const char *string, int symbol);

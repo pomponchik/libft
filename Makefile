@@ -51,7 +51,7 @@ ft_str_fix_width_of_line.c ft_str_fix_width_of_line_free.c \
 ft_free_two_dimensional_array.c ft_lst_cut.c ft_lstsearch_cs_replace.c \
 ft_mem_reverse.c ft_str_reverse.c ft_open_file_readonly.c ft_get_file.c \
 ft_lst_all_content_size.c ft_math_module_int.c ft_lst_strlen.c \
-ft_lst_strjoin.c
+ft_lst_strjoin.c ft_strnew_not_bzero.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
