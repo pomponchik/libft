@@ -94,10 +94,12 @@ t_list					*ft_lst_monolith_from_array(void *arr, \
 	size_t size, size_t amount);
 t_list					*ft_lstsearch_cs(t_list *lst, size_t cs);
 t_list					*ft_lstsearch_cs_replace(t_list **lst, size_t cs);
+t_list					*ft_lstsearch_cs_del(t_list *lst, size_t cs);
 t_list					*ft_lstsearch_content(t_list *lst, void *to_search);
 t_list					*ft_lstsearch_str_content(t_list *lst, char *to_search);
 void					ft_lst_free_chain(t_list *chain);
 t_list					*ft_lst_turn(t_list *begin);
+t_list					*ft_lst_join(t_list *first, t_list *second);
 void					ft_lst_putendl(t_list *lst);
 char					*ft_lst_strjoin(t_list *lst);
 char					*ft_lst_strjoin_fr(t_list *lst);

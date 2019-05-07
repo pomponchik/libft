@@ -17,10 +17,10 @@ char		*ft_strdup_n(const char *src, size_t n)
 	char	*result;
 	size_t	size;
 
-	size = ft_strlen(src);
+	size = ft_strlen_safe(src);
 	if (size > n)
 		size = n;
-	if (!n || (size + 1 <= size) || !(result = (char *)malloc(size + 1)))
+	if (!src || (size + 1 <= size) || !(result = (char *)malloc(size + 1)))
 		return (NULL);
 	result = ft_memcpy(result, src, size);
 	result[size] = '\0';
