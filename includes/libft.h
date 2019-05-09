@@ -219,5 +219,7 @@ char					*ft_str_reverse(char *str);
 int						ft_open_file_readonly(char *path);
 size_t					ft_lst_all_content_size(t_list *lst);
 void					*ft_get_file(char *path, size_t *size);
+char					*ft_str_lower(char *str);
+char					*ft_str_upper(char *str);
 
 #endif
