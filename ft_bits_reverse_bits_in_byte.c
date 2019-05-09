@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsearch_cs_del.c                              :+:      :+:    :+:   */
+/*   ft_bits_reverse_bits_in_byte.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/07 22:37:59 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/09 19:50:50 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/05/09 19:31:02 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/05/09 19:51:30 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstsearch_cs_del(t_list *lst, size_t cs)
+void				ft_bits_reverse_bits_in_byte(void *byte)
 {
-	t_list	*temp;
-	t_list	*begin;
-	t_list	*result;
+	unsigned char	temp;
+	size_t			index;
 
-	if (!lst)
-		return (NULL);
-	temp = NULL;
-	begin = lst;
-	while (lst)
+	index = 0;
+	while (index < 8)
 	{
-		if (lst->content_size == cs)
-		{
-			result = lst->next;
-			if (temp)
-				temp->next = lst->next;
-			ft_free_both(lst->content, (void *)lst);
-			if (!temp)
-				return (begin);
-			else
-				return (result);
-		}
-		temp = lst;
-		lst = lst->next;
+		ft_bits_write_bit(&temp, index, ft_bits_read_bit(byte, 7 - index));
+		index++;
 	}
-	return (begin);
+	*((unsigned char *)byte) = temp;
 }

@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/04 23:59:46 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/09 19:50:07 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,5 +221,12 @@ size_t					ft_lst_all_content_size(t_list *lst);
 void					*ft_get_file(char *path, size_t *size);
 char					*ft_str_lower(char *str);
 char					*ft_str_upper(char *str);
+void					ft_bits_write_bit(void *byte, \
+	size_t num_bit, unsigned char value);
+unsigned char			ft_bits_read_bit(void *byte, size_t num_bit);
+void					ft_bits_reverse_bits_in_byte(void *byte);
+void					ft_bits_reverse_bits_in_bytes(void *byte, \
+	size_t num_bytes);
+void					ft_bits_reverse_memory(void *memory, size_t mem_size);
 
 #endif
