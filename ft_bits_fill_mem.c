@@ -6,13 +6,13 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 21:47:08 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/09 21:47:10 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/10 13:29:03 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void ft_bits_fill_from_begin(void *mem, size_t first_bit, \
+static void	ft_bits_fill_from_begin(void *mem, size_t first_bit, \
 	size_t *num_bits, unsigned char value)
 {
 	while (first_bit < 8 && *num_bits)
@@ -23,10 +23,10 @@ static void ft_bits_fill_from_begin(void *mem, size_t first_bit, \
 	}
 }
 
-static void ft_bits_fill_from_end(void *mem, size_t *num_bits, \
+static void	ft_bits_fill_from_end(void *mem, size_t *num_bits, \
 	unsigned char value)
 {
-	size_t index;
+	size_t	index;
 
 	index = 0;
 	while (num_bits)
@@ -37,11 +37,11 @@ static void ft_bits_fill_from_end(void *mem, size_t *num_bits, \
 	}
 }
 
-void ft_bits_fill_mem(void *mem, size_t first_bit, \
+void		ft_bits_fill_mem(void *mem, size_t first_bit, \
 	size_t num_bits, unsigned char value)
 {
-	size_t num_bytes;
-	int val;
+	size_t	num_bytes;
+	int		val;
 
 	if (!mem || !num_bits || value > 1 || ~((size_t)0) - first_bit < num_bits)
 		return ;
@@ -49,7 +49,7 @@ void ft_bits_fill_mem(void *mem, size_t first_bit, \
 	{
 		mem = ft_jump_pointer_size_t(mem, (first_bit / 8) - \
 		(first_bit - (first_bit / 8)));
-		first_bit -= (first_bit / 8) -	(first_bit - (first_bit / 8)) * 8;
+		first_bit -= (first_bit / 8) - (first_bit - (first_bit / 8)) * 8;
 	}
 	ft_bits_fill_from_begin(mem, first_bit, &num_bits, value);
 	if (!num_bits)
