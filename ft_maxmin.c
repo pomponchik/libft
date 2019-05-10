@@ -87,6 +87,8 @@ long long int			ft_maxmin(char *type, char *maxmin)
 			return ((long long int)(char_max()));
 		if (!ft_strcmp(type, "unsigned char"))
 			return ((long long int)char_max() * 2 + 1);
+		if (!ft_strcmp(type, "size_t"))
+			return ((long long int)(~(size_t)0));
 	}
 	if (!ft_strcmp(maxmin, "min"))
 		return (ft_min(type));
