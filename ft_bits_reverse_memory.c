@@ -14,6 +14,8 @@
 
 void	ft_bits_reverse_memory(void *memory, size_t mem_size)
 {
+	if (!memory || !mem_size)
+		return ;
 	ft_mem_reverse(memory, 1, mem_size);
 	ft_bits_reverse_bits_in_bytes(memory, mem_size);
 }

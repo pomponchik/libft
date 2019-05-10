@@ -17,6 +17,8 @@ void				ft_bits_write_bit(void *byte, size_t num_bit, \
 {
 	unsigned char	temp;
 
+	if (!byte || value > 1 || num_bit > 7)
+		return ;
 	temp = *((unsigned char *)byte);
 	if (value)
 		temp |= (1 << num_bit);

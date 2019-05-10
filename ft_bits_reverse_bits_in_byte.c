@@ -17,6 +17,8 @@ void				ft_bits_reverse_bits_in_byte(void *byte)
 	unsigned char	temp;
 	size_t			index;
 
+	if (!byte)
+		return ;
 	index = 0;
 	while (index < 8)
 	{

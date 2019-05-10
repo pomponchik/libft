@@ -69,6 +69,8 @@ static long long int	ft_min(char *type)
 
 long long int			ft_maxmin(char *type, char *maxmin)
 {
+	if (!type || !maxmin)
+		return (0);
 	if (!ft_strcmp(maxmin, "max"))
 	{
 		if (!ft_strcmp(type, "long") || !ft_strcmp(type, "long int"))

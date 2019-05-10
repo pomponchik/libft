@@ -16,7 +16,7 @@ void	*ft_memset(void *destination, int c, size_t n)
 {
 	while (n)
 	{
-		((char *)destination)[n - 1] = (char)c;
+		((unsigned char *)destination)[n - 1] = (unsigned char)c;
 		n--;
 	}
 	return (destination);

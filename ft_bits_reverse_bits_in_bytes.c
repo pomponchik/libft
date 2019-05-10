@@ -14,6 +14,8 @@
 
 void	ft_bits_reverse_bits_in_bytes(void *byte, size_t num_bytes)
 {
+	if (!byte || !num_bytes)
+		return ;
 	while (num_bytes)
 	{
 		ft_bits_reverse_bits_in_byte(byte + num_bytes - 1);

@@ -14,5 +14,7 @@
 
 unsigned char ft_bits_read_bit(void *byte, size_t num_bit)
 {
+	if (!byte || num_bit > 7)
+		return (0);
 	return ((unsigned char)(*((unsigned char *)byte) & (1 << num_bit)));
 }

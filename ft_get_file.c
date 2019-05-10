@@ -20,7 +20,7 @@ void		*ft_get_file(char *path, size_t *size)
 	t_list	*lst;
 
 	*size = 0;
-	if ((fd = ft_open_file_readonly(path)) \
+	if (!(fd = ft_open_file_readonly(path)) \
 	|| BUFF_SIZE < 1 || read(fd, buf, 0) < 0)
 		return (NULL);
 	lst = NULL;
