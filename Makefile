@@ -56,7 +56,7 @@ ft_lst_strnew.c ft_jump_pointer_size_t.c ft_lst_join.c \
 ft_lstsearch_cs_del.c ft_str_upper.c ft_str_lower.c ft_bits_write_bit.c \
 ft_bits_reverse_bits_in_byte.c ft_bits_reverse_bits_in_bytes.c \
 ft_bits_reverse_memory.c ft_bits_read_bit.c ft_bits_fill_mem.c \
-ft_bits_shift_left.c
+ft_bits_shift_left.c ft_bits_shift_right.c ft_bits_shift.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 

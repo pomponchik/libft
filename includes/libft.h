@@ -230,7 +230,10 @@ void					ft_bits_reverse_bits_in_bytes(void *byte, \
 void					ft_bits_reverse_memory(void *memory, size_t mem_size);
 void					ft_bits_fill_mem(void *mem, size_t first_bit, \
 	size_t num_bits, unsigned char value);
-void					ft_bits_shift_left(void *mem, size_t size_bytes, \
+void					ft_bits_shift_right(void *mem, size_t size_bytes, \
 	size_t shift_bits);
+void					ft_bits_shift_left(void *mem, size_t size_bytes, size_t shift_bits);
+void					ft_bits_shift(void *mem, size_t size_bytes, \
+	size_t shift_bits, char *direction);
 
 #endif
