@@ -34,12 +34,12 @@ char		*ft_lst_strjoin_fr(t_list *lst)
 			ft_memcpy(temp, lst->content, size);
 			temp = ft_jump_pointer_size_t(temp, size);
 		}
-		lst = lst->next;
 		if (lst->content)
 		{
 			free(t->content);
 			free(t);
 		}
+		lst = lst->next;
 	}
 	result[max] = '\0';
 	return (result);
