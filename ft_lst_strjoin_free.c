@@ -27,13 +27,19 @@ char		*ft_lst_strjoin_fr(t_list *lst)
 	while (lst)
 	{
 		t = lst;
-		size = ft_strlen((char *)lst->content);
+		size = ft_strlen_safe((char *)lst->content);
 		max += size;
-		ft_memcpy(temp, lst->content, size);
-		temp = ft_jump_pointer_size_t(temp, size);
+		if (lst->content)
+		{
+			ft_memcpy(temp, lst->content, size);
+			temp = ft_jump_pointer_size_t(temp, size);
+		}
 		lst = lst->next;
-		free(t->content);
-		free(t);
+		if (lst->content)
+		{
+			free(t->content);
+			free(t);
+		}
 	}
 	result[max] = '\0';
 	return (result);
