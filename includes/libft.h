@@ -235,5 +235,7 @@ void					ft_bits_shift_right(void *mem, size_t size_bytes, \
 void					ft_bits_shift_left(void *mem, size_t size_bytes, size_t shift_bits);
 void					ft_bits_shift(void *mem, size_t size_bytes, \
 	size_t shift_bits, char *direction);
+int						ft_issorted(void *array, size_t arr_size, \
+	size_t piece_size, int (*f)(void *, void *));
 
 #endif
