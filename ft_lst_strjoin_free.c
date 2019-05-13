@@ -35,11 +35,9 @@ char		*ft_lst_strjoin_fr(t_list *lst)
 			temp = ft_jump_pointer_size_t(temp, size);
 		}
 		if (lst->content)
-		{
 			free(t->content);
-			free(t);
-		}
 		lst = lst->next;
+		free(t);
 	}
 	result[max] = '\0';
 	return (result);
