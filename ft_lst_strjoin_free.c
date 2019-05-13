@@ -15,30 +15,8 @@
 char		*ft_lst_strjoin_fr(t_list *lst)
 {
 	char	*result;
-	void	*temp;
-	size_t	size;
-	t_list	*t;
-	size_t max;
 
-	if (!lst || !(result = (char *)malloc(ft_lst_strlen(lst) + 1)))
-		return (NULL);
-	temp = (void *)result;
-	max = 0;
-	while (lst)
-	{
-		t = lst;
-		size = ft_strlen_safe((char *)lst->content);
-		max += size;
-		if (lst->content)
-		{
-			ft_memcpy(temp, lst->content, size);
-			temp = ft_jump_pointer_size_t(temp, size);
-		}
-		if (lst->content)
-			free(lst->content);
-		lst = lst->next;
-		free(t);
-	}
-	result[max] = '\0';
+	result = ft_lst_strjoin(lst);
+	ft_lst_free_chain(lst);
 	return (result);
 }
