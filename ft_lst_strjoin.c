@@ -17,17 +17,20 @@ char		*ft_lst_strjoin(t_list *lst)
 	char	*result;
 	void	*temp;
 	size_t	size;
+	size_t max;
 
 	if (!lst || !(result = (char *)malloc(ft_lst_strlen(lst) + 1)))
 		return (NULL);
 	temp = (void *)result;
+	max = 0;
 	while (lst)
 	{
 		size = ft_strlen((char *)lst->content);
+		max += size;
 		ft_memcpy(temp, lst->content, size);
 		temp = ft_jump_pointer_size_t(temp, size);
 		lst = lst->next;
 	}
-	*((char *)temp) = '\0';
+	result[max] = '\0';
 	return (result);
 }
