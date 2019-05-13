@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_fix_width_of_line_free.c                    :+:      :+:    :+:   */
+/*   ft_issorted.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/27 23:27:39 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/04/27 23:30:26 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/05/12 21:52:00 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/05/12 21:52:01 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_str_fix_width_of_line_free(char *str, \
-	char filler, size_t len, char *flags)
+int ft_issorted(void *array, size_t arr_size, size_t piece_size, int (*f)(void *, void *))
 {
-	char	*result;
+	size_t index;
 
-	result = ft_str_fix_width_of_line(str, filler, len, flags);
-	free(str);
-	return (result);
+	if (!array || !arr_size || !piece_size || !f)
+		return (0);
+	index = 0;
+	while (index < arr_size - 1)
+	{
+		if (f(array, ))
+		index++;
+	}
 }
