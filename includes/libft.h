@@ -104,8 +104,10 @@ t_list					*ft_lst_join(t_list *first, t_list *second);
 void					ft_lst_putendl(t_list *lst);
 char					*ft_lst_strjoin(t_list *lst);
 char					*ft_lst_strjoin_fr(t_list *lst);
-char					*ft_lst_strjoin_counter_out(t_list *lst, size_t *counter);
-char					*ft_lst_strjoin_counter_out_free(t_list *lst, size_t *counter);
+char					*ft_lst_strjoin_counter_out(t_list *lst, \
+	size_t *counter);
+char					*ft_lst_strjoin_counter_out_free(t_list *lst, \
+	size_t *counter);
 char					*ft_putstr_len(char const *s, size_t len);
 char					*ft_putstr_len_fd(char const *s, size_t len, int fd);
 size_t					ft_lst_chain_len(t_list *begin);
@@ -235,7 +237,8 @@ void					ft_bits_fill_mem(void *mem, size_t first_bit, \
 	size_t num_bits, unsigned char value);
 void					ft_bits_shift_right(void *mem, size_t size_bytes, \
 	size_t shift_bits);
-void					ft_bits_shift_left(void *mem, size_t size_bytes, size_t shift_bits);
+void					ft_bits_shift_left(void *mem, \
+	size_t size_bytes, size_t shift_bits);
 void					ft_bits_shift(void *mem, size_t size_bytes, \
 	size_t shift_bits, char *direction);
 int						ft_issorted(void *array, size_t arr_size, \
