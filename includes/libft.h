@@ -89,6 +89,7 @@ t_list					*ft_lst_monolith_lstnew(void *content, \
 	void *new_lst, size_t content_size);
 void					ft_lst_monolith_sort_quick(t_list *lst_mono, \
 	int (*f)(void *, void *));
+void					ft_lst_putstr_free(t_list *lst);
 t_list					*ft_lst_monolith_convert_to_monolith(t_list *lst);
 t_list					*ft_lst_monolith_from_array(void *arr, \
 	size_t size, size_t amount);
@@ -103,6 +104,8 @@ t_list					*ft_lst_join(t_list *first, t_list *second);
 void					ft_lst_putendl(t_list *lst);
 char					*ft_lst_strjoin(t_list *lst);
 char					*ft_lst_strjoin_fr(t_list *lst);
+char					*ft_lst_strjoin_counter_out(t_list *lst, size_t *counter);
+char					*ft_lst_strjoin_counter_out_free(t_list *lst, size_t *counter);
 char					*ft_putstr_len(char const *s, size_t len);
 char					*ft_putstr_len_fd(char const *s, size_t len, int fd);
 size_t					ft_lst_chain_len(t_list *begin);

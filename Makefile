@@ -57,7 +57,8 @@ ft_lstsearch_cs_del.c ft_str_upper.c ft_str_lower.c ft_bits_write_bit.c \
 ft_bits_reverse_bits_in_byte.c ft_bits_reverse_bits_in_bytes.c \
 ft_bits_reverse_memory.c ft_bits_read_bit.c ft_bits_fill_mem.c \
 ft_bits_shift_left.c ft_bits_shift_right.c ft_bits_shift.c \
-ft_issorted.c
+ft_issorted.c ft_lst_putstr_free.c ft_lst_strjoin_counter_out.c \
+ft_lst_strjoin_counter_out_free.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
