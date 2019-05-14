@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/09 19:50:07 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/14 18:40:58 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,5 +240,6 @@ void					ft_bits_shift(void *mem, size_t size_bytes, \
 	size_t shift_bits, char *direction);
 int						ft_issorted(void *array, size_t arr_size, \
 	size_t piece_size, int (*f)(void *, void *));
+unsigned long long int	ft_atoi_llu(char *str);
 
 #endif

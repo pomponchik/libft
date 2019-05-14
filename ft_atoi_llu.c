@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_putstr_free.c                               :+:      :+:    :+:   */
+/*   ft_atoi_llu.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/14 16:17:39 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/14 16:32:59 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/05/14 18:32:42 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/05/14 18:32:44 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_lst_putstr_free(t_list *lst)
+unsigned long long int ft_atoi_llu(char *str)
 {
-	char	*str;
-	size_t	str_size;
+	unsigned long long int result;
 
-	if (!lst || !(str = ft_lst_strjoin_counter_out_free(lst, &str_size)))
-		return ;
-	ft_putstr_len(str, str_size);
-	free(str);
+	if (!str)
+		return (0);
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '+')
+		str++;
+	result = 0;
+	while (ft_isdigit(*str))
+	{
+		result = result * 10 + *str - '0';
+		str++;
+	}
+	return (result);
 }
