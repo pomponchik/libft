@@ -18,7 +18,7 @@ size_t		ft_lst_putstr_free(t_list *lst)
 	size_t	str_size;
 
 	if (!lst || !(str = ft_lst_strjoin_counter_out_free(lst, &str_size)))
-		return ;
+		return (0);
 	ft_putstr_len(str, str_size);
 	free(str);
 	return (str_size);
