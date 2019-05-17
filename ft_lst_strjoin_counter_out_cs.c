@@ -19,7 +19,7 @@ char		*ft_lst_strjoin_counter_out_cs(t_list *lst, size_t *counter)
 	size_t	size;
 
 	*counter = 0;
-	if (!lst || !(result = (char *)malloc(ft_lst_strlen_cs(lst) + 1)))
+	if (!lst || !(result = (char *)malloc(ft_lst_all_content_size(lst) + 1)))
 		return (NULL);
 	temp = (void *)result;
 	while (lst)
