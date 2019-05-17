@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void		ft_lst_putstr_free(t_list *lst)
+size_t		ft_lst_putstr_free(t_list *lst)
 {
 	char	*str;
 	size_t	str_size;
@@ -21,4 +21,5 @@ void		ft_lst_putstr_free(t_list *lst)
 		return ;
 	ft_putstr_len(str, str_size);
 	free(str);
+	return (str_size);
 }

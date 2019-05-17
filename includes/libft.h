@@ -89,7 +89,7 @@ t_list					*ft_lst_monolith_lstnew(void *content, \
 	void *new_lst, size_t content_size);
 void					ft_lst_monolith_sort_quick(t_list *lst_mono, \
 	int (*f)(void *, void *));
-void					ft_lst_putstr_free(t_list *lst);
+size_t					ft_lst_putstr_free(t_list *lst);
 t_list					*ft_lst_monolith_convert_to_monolith(t_list *lst);
 t_list					*ft_lst_monolith_from_array(void *arr, \
 	size_t size, size_t amount);
@@ -244,5 +244,6 @@ void					ft_bits_shift(void *mem, size_t size_bytes, \
 int						ft_issorted(void *array, size_t arr_size, \
 	size_t piece_size, int (*f)(void *, void *));
 unsigned long long int	ft_atoi_llu(char *str);
+char					*ft_itoa_llu(unsigned long long int num);
 
 #endif
