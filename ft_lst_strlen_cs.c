@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_strjoin_counter_out_free.c                  :+:      :+:    :+:   */
+/*   ft_lst_strlen_cs.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/14 16:29:02 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/14 16:33:25 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/05/17 19:21:05 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/05/17 19:21:07 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_lst_strjoin_counter_out_free(t_list *lst, size_t *counter)
+size_t		ft_lst_strlen_cs(t_list *lst)
 {
-	char	*result;
+	size_t	result;
 
-	if (!lst || !counter)
-		return (NULL);
-	result = ft_lst_strjoin_counter_out(lst, counter);
-	ft_lst_free_chain(lst);
+	if (!lst)
+		return (0);
+	result = 0;
+	while (lst)
+	{
+		result += lst->content_size;
+		lst = lst->next;
+	}
 	return (result);
 }
