@@ -18,10 +18,10 @@ char		*ft_lst_strjoin_counter_out(t_list *lst, size_t *counter)
 	void	*temp;
 	size_t	size;
 
+	*counter = 0;
 	if (!lst || !(result = (char *)malloc(ft_lst_strlen(lst) + 1)))
 		return (NULL);
 	temp = (void *)result;
-	*counter = 0;
 	while (lst)
 	{
 		size = ft_strlen((char *)lst->content);
