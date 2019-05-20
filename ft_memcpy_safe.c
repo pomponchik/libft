@@ -17,7 +17,7 @@ void	*ft_memcpy_safe(void *destptr, const void *srcptr, size_t num)
 	if (destptr == (void *)srcptr)
 		return ((void *)srcptr);
 	if (!destptr || !srcptr)
-		return (destptr);
+		return (NULL);
 	while (num)
 	{
 		((char *)destptr)[num - 1] = ((char *)srcptr)[num - 1];
