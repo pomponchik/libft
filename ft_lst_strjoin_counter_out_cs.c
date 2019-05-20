@@ -25,8 +25,11 @@ char		*ft_lst_strjoin_counter_out_cs(t_list *lst, size_t *counter)
 	while (lst)
 	{
 		size = lst->content_size;
-		*counter += size;
-		ft_memcpy(temp, lst->content, size);
+		if (size)
+		{
+			*counter += size;
+			ft_memcpy_safe(temp, lst->content, size);
+		}
 		temp = ft_jump_pointer_size_t(temp, size);
 		lst = lst->next;
 	}

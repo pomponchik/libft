@@ -60,7 +60,7 @@ ft_bits_shift_left.c ft_bits_shift_right.c ft_bits_shift.c \
 ft_issorted.c ft_lst_putstr_free.c ft_lst_strjoin_counter_out.c \
 ft_lst_strjoin_counter_out_free.c ft_atoi_llu.c ft_itoa_llu.c \
 ft_lst_strjoin_counter_out_free_cs.c ft_lst_putstr_free_cs.c \
-ft_lst_strjoin_counter_out_cs.c
+ft_lst_strjoin_counter_out_cs.c ft_memcpy_safe.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
@@ -68,13 +68,13 @@ all:  $(NAME)
 
 
 $(NAME): $(FILES)
-	gcc -g -Wall -Werror -Wextra -c $(FILES) -I $(INCLUDES)
-		ar rc $(NAME) $(OUT)
-			ranlib $(NAME)
+	@gcc -g -Wall -Werror -Wextra -c $(FILES) -I $(INCLUDES)
+		@ar rc $(NAME) $(OUT)
+			@ranlib $(NAME)
 clean:
-	/bin/rm -f $(OUT)
+	@/bin/rm -f $(OUT)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all

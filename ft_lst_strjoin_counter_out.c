@@ -24,9 +24,9 @@ char		*ft_lst_strjoin_counter_out(t_list *lst, size_t *counter)
 	temp = (void *)result;
 	while (lst)
 	{
-		size = ft_strlen((char *)lst->content);
+		size = ft_strlen_safe((char *)lst->content);
 		*counter += size;
-		ft_memcpy(temp, lst->content, size);
+		ft_memcpy_safe(temp, lst->content, size);
 		temp = ft_jump_pointer_size_t(temp, size);
 		lst = lst->next;
 	}

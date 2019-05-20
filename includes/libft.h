@@ -135,8 +135,10 @@ size_t					ft_lst_stack_empty_stack_num(void);
 size_t					ft_lst_stack_empty_stack_num_tightly(void);
 size_t					ft_lst_stack_size(size_t channel);
 size_t					ft_lst_strlen_cs(t_list *lst);
-char					*ft_lst_strjoin_counter_out_free_cs(t_list *lst, size_t *counter);
-char					*ft_lst_strjoin_counter_out_cs(t_list *lst, size_t *counter);
+char					*ft_lst_strjoin_counter_out_free_cs(t_list *lst, \
+	size_t *counter);
+char					*ft_lst_strjoin_counter_out_cs(t_list *lst, \
+	size_t *counter);
 size_t					ft_lst_putstr_free_cs(t_list *lst);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
@@ -249,5 +251,7 @@ int						ft_issorted(void *array, size_t arr_size, \
 	size_t piece_size, int (*f)(void *, void *));
 unsigned long long int	ft_atoi_llu(char *str);
 char					*ft_itoa_llu(unsigned long long int num);
+void					*ft_memcpy_safe(void *destptr, const void *srcptr, \
+	size_t num);
 
 #endif

@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_llu.c                                      :+:      :+:    :+:   */
+/*   ft_memcpy_safe.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/14 18:32:42 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/20 19:42:22 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/05/20 19:35:33 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/05/20 19:39:55 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long long int		ft_atoi_llu(char *str)
+void	*ft_memcpy_safe(void *destptr, const void *srcptr, size_t num)
 {
-	unsigned long long int	result;
-
-	if (!str)
-		return (0);
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '+')
-		str++;
-	result = 0;
-	while (ft_isdigit(*str))
+	if (destptr == (void *)srcptr)
+		return ((void *)srcptr);
+	if (!destptr || !srcptr)
+		return (destptr);
+	while (num)
 	{
-		result = result * 10 + *str - '0';
-		str++;
+		((char *)destptr)[num - 1] = ((char *)srcptr)[num - 1];
+		num--;
 	}
-	return (result);
+	return (destptr);
 }
