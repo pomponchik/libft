@@ -36,7 +36,7 @@ static long long int	shorter(long long int *n, char *result)
 	long long int		correct;
 	long long int		correct2;
 
-	temp = ft_maxmin("long", "min");
+	temp = ft_maxmin("long long", "min");
 	correct = numeric(*n) - 2;
 	correct2 = 1;
 	if (*n == temp)
