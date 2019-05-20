@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/06 19:31:12 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/04/26 17:13:27 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/20 22:07:34 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,94 +29,55 @@ static int				numeric(long long int c)
 	return (result);
 }
 
-static long long int	shorter(long long int *n, char *result)
+static long long int	ft_itoa_long_long_shorter(t_list **lst, long long int n)
 {
-	long long int		temp;
-	long long int		temp_temp;
-	long long int		correct;
-	long long int		correct2;
+	int					size;
+	long long int		minus;
 
-	temp = ft_maxmin("long long", "min");
-	correct = numeric(*n) - 2;
-	correct2 = 1;
-	if (*n == temp)
+	size = numeric(n) - 2;
+	minus = n;
+	while (1)
 	{
-		while (correct--)
-			correct2 *= 10;
-		while (temp)
-		{
-			temp_temp = temp;
-			temp /= 10;
-		}
-		temp = temp_temp * -1;
-		result[1] = (char)(temp + '0');
-		temp = *n + (temp * correct2);
-		return (temp * -1);
+		if (!(minus / 10))
+			break ;
+		minus /= 10;
 	}
-	return (*n * -1);
-}
-
-static long long int	what_is_fucking_long_long(long long int n)
-{
-	n /= 10;
-	n *= -1;
+	minus *= -1;
+	*lst = ft_lstnew_without_copy(ft_strnew_filler(1, minus + '0'), 1);
+	while (size)
+	{
+		minus *= 10;
+		size -= 1;
+	}
+	n += minus;
 	return (n);
-}
-
-static char				*print_min_long_long(void)
-{
-	long long int		print;
-	size_t				len;
-	char				*result;
-
-	len = 2;
-	print = ft_maxmin("long long", "min");
-	print = what_is_fucking_long_long(print);
-	while (print)
-	{
-		print /= 10;
-		len++;
-	}
-	if (!(result = (char *)ft_strnew(len)))
-		return (NULL);
-	result[0] = '-';
-	print = ft_maxmin("long long", "min");
-	result[len-- - 1] = print % 10;
-	print = what_is_fucking_long_long(print);
-	while (len - 1)
-	{
-		result[len - 1] = print % 10;
-		print /= 10;
-		len--;
-	}
-	return (result);
 }
 
 char					*ft_itoa_long_long(long long int n)
 {
-	char				*result;
-	int					index;
-	int					hren_indicate;
+	t_list				*lst;
+	t_list				*correct;
+	char				*fil;
+	long long int		temp;
 
-	index = numeric(n);
+	if (!n)
+		return (ft_strnew_filler(1, '0'));
+	lst = NULL;
+	correct = NULL;
+	temp = n;
 	if (n == ft_maxmin("long long", "min"))
-		return (print_min_long_long());
-	if (!(result = (char *)malloc(numeric(n) + 1)))
-		return (NULL);
-	hren_indicate = 0;
-	result[index] = '\0';
+		temp = ft_itoa_long_long_shorter(&correct, n);
+	if (temp < 0)
+		temp = temp * -1;
+	while (temp)
+	{
+		fil = ft_strnew_filler(1, temp % 10 + '0');
+		ft_lstadd(&lst, ft_lstnew_without_copy(fil, 1));
+		temp /= 10;
+	}
+	if (correct)
+		ft_lstadd(&lst, correct);
 	if (n < 0)
-	{
-		result[0] = '-';
-		n = shorter(&n, result);
-		hren_indicate = 1;
-	}
-	while (index)
-	{
-		if (!(hren_indicate && n == 0))
-			result[index - 1] = n % 10 + '0';
-		n /= 10;
-		index--;
-	}
-	return (result);
+		ft_lstadd(&lst, ft_lstnew("-", 2));
+	return (ft_lst_strjoin_fr(lst));
 }
