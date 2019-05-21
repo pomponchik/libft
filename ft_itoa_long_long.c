@@ -65,7 +65,7 @@ char					*ft_itoa_long_long(long long int n)
 	lst = NULL;
 	correct = NULL;
 	temp = n;
-	if (n == ft_maxmin("long long", "min"))
+	if (n == ~((long long int)(~((unsigned long long int)0) / 2)))
 		temp = ft_itoa_long_long_shorter(&correct, n);
 	if (temp < 0)
 		temp = temp * -1;
@@ -79,5 +79,5 @@ char					*ft_itoa_long_long(long long int n)
 		ft_lstadd(&lst, correct);
 	if (n < 0)
 		ft_lstadd(&lst, ft_lstnew("-", 2));
-	return (ft_lst_strjoin_fr(lst));
+	return (ft_lst_strjoin_free_cs(lst));
 }

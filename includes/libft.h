@@ -139,6 +139,8 @@ char					*ft_lst_strjoin_counter_out_free_cs(t_list *lst, \
 	size_t *counter);
 char					*ft_lst_strjoin_counter_out_cs(t_list *lst, \
 	size_t *counter);
+char					*ft_lst_strjoin_cs(t_list *lst);
+char					*ft_lst_strjoin_free_cs(t_list *lst);
 size_t					ft_lst_putstr_free_cs(t_list *lst);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
@@ -186,6 +188,7 @@ char					*ft_strnstr(const char *str1, const char *str2, \
 	size_t len);
 char					*ft_strrchr(const char *string, int symbol);
 char					**ft_strsplit(char const *s, char c);
+char					**ft_strsplit_spaces(char const *s);
 char					*ft_strstr(const char *str1, const char *str2);
 char					*ft_strsub(char const *s, unsigned int start, \
 	size_t len);
