@@ -65,7 +65,7 @@ char					*ft_itoa_long_long(long long int n)
 	lst = NULL;
 	correct = NULL;
 	temp = n;
-	if (n == ~((long long int)(~((unsigned long long int)0) / 2)))
+	if (n == ft_maxmin("long long", "min"))
 		temp = ft_itoa_long_long_shorter(&correct, n);
 	if (temp < 0)
 		temp = temp * -1;
