@@ -30,8 +30,8 @@ char		*ft_lst_strjoin_cs(t_list *lst)
 		{
 			max += size;
 			ft_memcpy_safe(temp, lst->content, size);
+			temp = ft_jump_pointer_size_t(temp, size);
 		}
-		temp = ft_jump_pointer_size_t(temp, size);
 		lst = lst->next;
 	}
 	result[max] = '\0';

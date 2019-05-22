@@ -26,9 +26,12 @@ char		*ft_lst_strjoin(t_list *lst)
 	while (lst)
 	{
 		size = ft_strlen_safe((char *)lst->content);
-		max += size;
-		ft_memcpy_safe(temp, lst->content, size);
-		temp = ft_jump_pointer_size_t(temp, size);
+		if (size)
+		{
+			max += size;
+			ft_memcpy_safe(temp, lst->content, size);
+			temp = ft_jump_pointer_size_t(temp, size);
+		}
 		lst = lst->next;
 	}
 	result[max] = '\0';
