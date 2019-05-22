@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 static int				numeric(long long int c)
 {
 	int					result;
@@ -79,5 +79,5 @@ char					*ft_itoa_long_long(long long int n)
 		ft_lstadd(&lst, correct);
 	if (n < 0)
 		ft_lstadd(&lst, ft_lstnew("-", 2));
-	return (ft_lst_strjoin_free_cs(lst));
+	return (ft_lst_strjoin_fr(lst));
 }
