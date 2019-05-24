@@ -19,5 +19,5 @@ t_list		*ft_lst_unit_transfer_with_malloc(t_list *lst)
 	if (!lst)
 		return (NULL);
 	new = ft_lstnew(lst->content, lst->content_size);
-	return (NULL);
+	return (new);
 }
