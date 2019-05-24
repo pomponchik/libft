@@ -6,12 +6,12 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/06 19:31:12 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/20 22:07:34 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/05/24 19:44:47 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 static int				numeric(long long int c)
 {
 	int					result;

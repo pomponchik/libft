@@ -96,7 +96,8 @@ t_list					*ft_lst_monolith_from_array(void *arr, \
 t_list					*ft_lstsearch_cs(t_list *lst, size_t cs);
 t_list					*ft_lstsearch_cs_replace(t_list **lst, size_t cs);
 t_list					*ft_lstsearch_cs_del(t_list *lst, size_t cs);
-t_list					*ft_lstsearch_content(t_list *lst, void *to_search);
+t_list					*ft_lstsearch_content(t_list *lst, \
+	void *to_search, size_t search_size);
 t_list					*ft_lstsearch_str_content(t_list *lst, char *to_search);
 void					ft_lst_free_chain(t_list *chain);
 t_list					*ft_lst_turn(t_list *begin);
@@ -112,6 +113,7 @@ char					*ft_putstr_len(char const *s, size_t len);
 char					*ft_putstr_len_fd(char const *s, size_t len, int fd);
 size_t					ft_lst_chain_len(t_list *begin);
 t_list					*ft_lst_unit_transfer(t_list *lst);
+t_list					*ft_lst_unit_transfer_with_malloc(t_list *lst);
 t_list					*ft_lstsearch_index(t_list *lst, size_t index);
 void					ft_lstadd_to_end(t_list **alst, t_list *new);
 void					ft_lstdel_complite(t_list **this, t_list **first_elem);
@@ -142,6 +144,7 @@ char					*ft_lst_strjoin_counter_out_cs(t_list *lst, \
 char					*ft_lst_strjoin_cs(t_list *lst);
 char					*ft_lst_strjoin_free_cs(t_list *lst);
 size_t					ft_lst_putstr_free_cs(t_list *lst);
+t_list					*ft_lst_deduplication(t_list *orig);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);

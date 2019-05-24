@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_unit_transfer.c                             :+:      :+:    :+:   */
+/*   ft_lst_deduplication.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/20 00:29:35 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/02/20 00:29:48 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/05/24 19:16:51 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/05/24 19:43:53 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lst_unit_transfer(t_list *lst)
+t_list		*ft_lst_deduplication(t_list *orig)
 {
 	t_list	*new;
+	t_list	*temp;
 
-	if (!lst || !(new = (t_list *)malloc(sizeof(t_list))))
+	if (!orig)
 		return (NULL);
-	new->content = lst->content;
-	new->content_size = lst->content_size;
-	new->next = NULL;
+	temp = orig;
+	new = NULL;
+	while (orig)
+	{
+		if (!ft_lstsearch_content(new, orig->content, orig->content_size))
+			ft_lstadd_to_end(&new, ft_lst_unit_transfer_with_malloc(orig));
+		orig = orig->next;
+	}
+	ft_lst_free_chain(temp);
 	return (new);
 }

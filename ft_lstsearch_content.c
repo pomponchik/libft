@@ -12,18 +12,19 @@
 
 #include "libft.h"
 
-t_list		*ft_lstsearch_content(t_list *lst, void *to_search)
+t_list		*ft_lstsearch_content(t_list *lst, \
+	void *to_search, size_t search_size)
 {
-	t_list	*temp;
-
-	if (!lst || !to_search)
+	if (!lst || !to_search || !search_size)
 		return (NULL);
-	temp = lst;
-	while (temp)
+	while (lst)
 	{
-		if (!ft_memcmp(temp->content, to_search, temp->content_size))
-			return (temp);
-		temp = temp->next;
+		if (lst->content_size == search_size)
+		{
+			if (!ft_memcmp(to_search, lst->content, search_size))
+				return (lst);
+		}
+		lst = lst->next;
 	}
 	return (NULL);
 }
