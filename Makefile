@@ -62,7 +62,11 @@ ft_lst_strjoin_counter_out_free.c ft_atoi_llu.c ft_itoa_llu.c \
 ft_lst_strjoin_counter_out_free_cs.c ft_lst_putstr_free_cs.c \
 ft_lst_strjoin_counter_out_cs.c ft_memcpy_safe.c \
 ft_strsplit_spaces.c ft_lst_strjoin_free_cs.c ft_lst_strjoin_cs.c \
-ft_lst_deduplication.c ft_lst_unit_transfer_with_malloc.c
+ft_lst_deduplication.c ft_lst_unit_transfer_with_malloc.c \
+ft_lst_copy_chain.c ft_lst_putstr_sep.c ft_lst_putstr_sep_free.c \
+ft_lst_strjoin_sep.c ft_lst_strjoin_sep_free.c \
+ft_lst_strjoin_sep_counter_out.c ft_lst_strjoin_sep_counter_out_free.c \
+ft_memdup.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 

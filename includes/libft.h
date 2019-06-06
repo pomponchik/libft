@@ -145,6 +145,15 @@ char					*ft_lst_strjoin_cs(t_list *lst);
 char					*ft_lst_strjoin_free_cs(t_list *lst);
 size_t					ft_lst_putstr_free_cs(t_list *lst);
 t_list					*ft_lst_deduplication(t_list *orig);
+char					*ft_lst_strjoin_sep(t_list *lst, char *separator);
+char					*ft_lst_strjoin_sep_free(t_list *lst, char *separator);
+char					*ft_lst_strjoin_sep_counter_out(t_list *lst, \
+  char *separator, size_t *counter);
+char					*ft_lst_strjoin_sep_counter_out_free(t_list *lst, \
+	char *separator, size_t *counter);
+size_t					ft_lst_putstr_sep(t_list *lst, char *separator);
+size_t					ft_lst_putstr_sep_free(t_list *lst, char *separator);
+t_list					*ft_lst_copy_chain(t_list *lst);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);
@@ -259,5 +268,6 @@ unsigned long long int	ft_atoi_llu(char *str);
 char					*ft_itoa_llu(unsigned long long int num);
 void					*ft_memcpy_safe(void *destptr, const void *srcptr, \
 	size_t num);
+void					*ft_memdup(void *mem, size_t size);
 
 #endif
