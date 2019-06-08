@@ -102,7 +102,6 @@ t_list					*ft_lstsearch_str_content(t_list *lst, char *to_search);
 void					ft_lst_free_chain(t_list *chain);
 t_list					*ft_lst_turn(t_list *begin);
 t_list					*ft_lst_join(t_list *first, t_list *second);
-void					ft_lst_putendl(t_list *lst);
 char					*ft_lst_strjoin(t_list *lst);
 char					*ft_lst_strjoin_fr(t_list *lst);
 char					*ft_lst_strjoin_counter_out(t_list *lst, \

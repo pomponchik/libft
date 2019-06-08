@@ -16,8 +16,24 @@ size_t		ft_lst_putstr_free_cs(t_list *lst)
 {
 	char	*str;
 	size_t	str_size;
+	size_t size;
 
-	if (!lst || !(str = ft_lst_strjoin_counter_out_free_cs(lst, &str_size)))
+	if (!lst)
+		return (0);
+	if (!(str = ft_lst_strjoin_counter_out_free_cs(lst, &str_size)))
+	{
+		size = 0;
+		while (lst)
+		{
+			if (lst->content && lst->content_size)
+			{
+				ft_putstr_len(lst->content, lst->content_size);
+				size += lst->content_size;
+			}
+			lst = lst->next;
+		}
+		return (size);
+	}
 		return (0);
 	ft_putstr_len(str, str_size);
 	free(str);
