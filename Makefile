@@ -66,7 +66,9 @@ ft_lst_deduplication.c ft_lst_unit_transfer_with_malloc.c \
 ft_lst_copy_chain.c ft_lst_putstr_sep.c ft_lst_putstr_sep_free.c \
 ft_lst_strjoin_sep.c ft_lst_strjoin_sep_free.c \
 ft_lst_strjoin_sep_counter_out.c ft_lst_strjoin_sep_counter_out_free.c \
-ft_memdup.c
+ft_memdup.c ft_get_all_files_free.c ft_get_all_files.c \
+ft_get_arguments_command_line.c ft_this_all_files_is_same.c \
+ft_this_all_files_is_same_free.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 

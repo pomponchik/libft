@@ -21,7 +21,8 @@ size_t		ft_lst_all_content_size(t_list *lst)
 	result = 0;
 	while (lst)
 	{
-		result += lst->content_size;
+		if (lst->content)
+			result += lst->content_size;
 		lst = lst->next;
 	}
 	return (result);

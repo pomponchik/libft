@@ -268,5 +268,10 @@ char					*ft_itoa_llu(unsigned long long int num);
 void					*ft_memcpy_safe(void *destptr, const void *srcptr, \
 	size_t num);
 void					*ft_memdup(void *mem, size_t size);
+t_list *ft_get_all_files_free(t_list *paths);
+t_list *ft_get_all_files(t_list *paths);
+t_list *ft_get_arguments_command_line(int argc, char **argv);
+int			ft_this_all_files_is_same(t_list *files);
+int			ft_this_all_files_is_same_free(t_list *files);
 
 #endif
