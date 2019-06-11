@@ -34,7 +34,6 @@ size_t		ft_lst_putstr_free_cs(t_list *lst)
 		}
 		return (size);
 	}
-		return (0);
 	ft_putstr_len(str, str_size);
 	free(str);
 	return (str_size);
