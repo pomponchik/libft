@@ -17,7 +17,7 @@ void		*ft_memjoin(void *mem_1, size_t size_1, void *mem_2, size_t size_2)
 	void	*result;
 
 	if ((!size_1 && !size_2) || (!mem_1 && !mem_2) \
-	|| size_1 + size_2 < size_1 || Size_1 + size_2 < size_2)
+	|| size_1 + size_2 < size_1 || size_1 + size_2 < size_2)
 		return (NULL);
 	if (!mem_1 || !size_1)
 		return (ft_memdup(mem_2, size_2));
