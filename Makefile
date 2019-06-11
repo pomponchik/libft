@@ -68,7 +68,7 @@ ft_lst_strjoin_sep.c ft_lst_strjoin_sep_free.c \
 ft_lst_strjoin_sep_counter_out.c ft_lst_strjoin_sep_counter_out_free.c \
 ft_memdup.c ft_get_all_files_free.c ft_get_all_files.c \
 ft_get_arguments_command_line.c ft_this_all_files_is_same.c \
-ft_this_all_files_is_same_free.c
+ft_this_all_files_is_same_free.c ft_memjoin.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
