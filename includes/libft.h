@@ -74,7 +74,7 @@ char					*ft_itoa_long(long int n);
 char					*ft_itoa_long_long(long long int n);
 char					*ft_itoa_float(float num);
 char					*ft_itoa_double(double num);
-char					*ft_itoa_long_double(long double num, size_t accuracy);
+char					*ft_itoa_long_double_old(long double num, size_t accuracy);
 void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void					ft_lst_cut(t_list **list, t_list **previous);
@@ -273,5 +273,8 @@ t_list *ft_get_all_files(t_list *paths);
 t_list *ft_get_arguments_command_line(int argc, char **argv);
 int			ft_this_all_files_is_same(t_list *files);
 int			ft_this_all_files_is_same_free(t_list *files);
+char					*ft_long_arithmetic_string_add(char *n1, char *n2);
+void ft_bits_print(void *mem, size_t num_bytes);
+char					*ft_bits_to_string(void *mem, size_t num_bytes);
 
 #endif

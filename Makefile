@@ -29,7 +29,7 @@ ft_binary_lst_search_str_content.c ft_lstsearch_content.c ft_lstsearch_cs.c \
 ft_lstsearch_str_content.c get_next_line.c \
 ft_lst_free_chain.c ft_lst_turn.c ft_lst_chain_len.c ft_lst_unit_transfer.c \
 ft_lstsearch_index.c ft_lstadd_to_end.c ft_math_rounding_down_float.c \
-ft_itoa_float.c ft_itoa_long.c ft_itoa_double.c ft_itoa_long_double.c \
+ft_itoa_float.c ft_itoa_long.c ft_itoa_double.c ft_itoa_long_double_old.c \
 ft_itoa_long_long.c ft_math_rounding_down_double.c \
 ft_math_rounding_down_l_double.c ft_math_numlen_long.c \
 ft_math_numlen_long_double.c ft_math_long_double_normilize.c \
@@ -68,7 +68,8 @@ ft_lst_strjoin_sep.c ft_lst_strjoin_sep_free.c \
 ft_lst_strjoin_sep_counter_out.c ft_lst_strjoin_sep_counter_out_free.c \
 ft_memdup.c ft_get_all_files_free.c ft_get_all_files.c \
 ft_get_arguments_command_line.c ft_this_all_files_is_same.c \
-ft_this_all_files_is_same_free.c
+ft_this_all_files_is_same_free.c ft_math_long_arithmetic_string_add.c \
+ft_bits_print.c ft_bits_to_string.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
