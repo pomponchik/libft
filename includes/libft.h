@@ -268,6 +268,8 @@ char					*ft_itoa_llu(unsigned long long int num);
 void					*ft_memcpy_safe(void *destptr, const void *srcptr, \
 	size_t num);
 void					*ft_memdup(void *mem, size_t size);
+void					*ft_memjoin(void *mem_1, \
+	size_t size_1, void *mem_2, size_t size_2);
 t_list *ft_get_all_files_free(t_list *paths);
 t_list *ft_get_all_files(t_list *paths);
 t_list *ft_get_arguments_command_line(int argc, char **argv);
