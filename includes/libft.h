@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/05/14 18:40:58 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/06/19 18:43:43 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ char					*ft_itoa_long(long int n);
 char					*ft_itoa_long_long(long long int n);
 char					*ft_itoa_float(float num);
 char					*ft_itoa_double(double num);
-char					*ft_itoa_long_double_old(long double num, size_t accuracy);
+char					*ft_itoa_long_double_old(long double num, size_t \
+	accuracy);
 void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void					ft_lst_cut(t_list **list, t_list **previous);
@@ -147,7 +148,7 @@ t_list					*ft_lst_deduplication(t_list *orig);
 char					*ft_lst_strjoin_sep(t_list *lst, char *separator);
 char					*ft_lst_strjoin_sep_free(t_list *lst, char *separator);
 char					*ft_lst_strjoin_sep_counter_out(t_list *lst, \
-  char *separator, size_t *counter);
+	char *separator, size_t *counter);
 char					*ft_lst_strjoin_sep_counter_out_free(t_list *lst, \
 	char *separator, size_t *counter);
 size_t					ft_lst_putstr_sep(t_list *lst, char *separator);
@@ -270,13 +271,13 @@ void					*ft_memcpy_safe(void *destptr, const void *srcptr, \
 void					*ft_memdup(void *mem, size_t size);
 void					*ft_memjoin(void *mem_1, \
 	size_t size_1, void *mem_2, size_t size_2);
-t_list *ft_get_all_files_free(t_list *paths);
-t_list *ft_get_all_files(t_list *paths);
-t_list *ft_get_arguments_command_line(int argc, char **argv);
-int			ft_this_all_files_is_same(t_list *files);
-int			ft_this_all_files_is_same_free(t_list *files);
+t_list					*ft_get_all_files_free(t_list *paths);
+t_list					*ft_get_all_files(t_list *paths);
+t_list					*ft_get_arguments_command_line(int argc, char **argv);
+int						ft_this_all_files_is_same(t_list *files);
+int						ft_this_all_files_is_same_free(t_list *files);
 char					*ft_long_arithmetic_string_add(char *n1, char *n2);
-void ft_bits_print(void *mem, size_t num_bytes);
+void					ft_bits_print(void *mem, size_t num_bytes);
 char					*ft_bits_to_string(void *mem, size_t num_bytes);
 
 #endif

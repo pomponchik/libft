@@ -61,7 +61,8 @@ static void				ft_round_en(char *u, size_t a, char **o, long double n)
 		if (i)
 		{
 			free(*o);
-			*o = ft_itoa_long_double_old(ft_math_rounding_down_l_double(n) + 1, a);
+			*o = ft_itoa_long_double_old(ft_math_rounding_down_l_double(n) \
+			+ 1, a);
 		}
 	}
 }
@@ -116,7 +117,8 @@ static char				*str_from_l_double(char *s, long double *n, size_t size)
 	return (s);
 }
 
-char					*ft_itoa_long_double_old(long double num, size_t accuracy)
+char					*ft_itoa_long_double_old(long double num, \
+	size_t accuracy)
 {
 	char				*result;
 	char				*temp;
