@@ -52,8 +52,8 @@ static char		*ft_long_arithmetic_string_add_result(char **to_fly, \
 	else
 	{
 		if (size[1])
-			return (ft_strdup(n1));
-		return (ft_strdup(n2));
+			return (ft_strdup(to_fly[0]));
+		return (ft_strdup(to_fly[1]));
 	}
 	if (size[1])
 	{
