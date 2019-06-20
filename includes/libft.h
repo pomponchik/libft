@@ -279,5 +279,11 @@ int						ft_this_all_files_is_same_free(t_list *files);
 char					*ft_long_arithmetic_string_add(char *n1, char *n2);
 void					ft_bits_print(void *mem, size_t num_bytes);
 char					*ft_bits_to_string(void *mem, size_t num_bytes);
+char					*ft_math_long_arithmetic_string_multiplication(char *n1, char *n2);
+char					*ft_math_long_arithmetic_string_add_free_both(char *n1, char *n2);
+char					*ft_math_long_arithmetic_string_add_free_1(char *n1, char *n2);
+char					*ft_math_long_arithmetic_string_exponentiation(char *n1, char *n2);
+char					*ft_math_long_arithmetic_string_subtraction(char *n1, char *n2);
+char					*ft_math_long_arithmetic_string_add(char *n1, char *n2);
 
 #endif

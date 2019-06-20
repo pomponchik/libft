@@ -69,7 +69,13 @@ ft_lst_strjoin_sep_counter_out.c ft_lst_strjoin_sep_counter_out_free.c \
 ft_memdup.c ft_get_all_files_free.c ft_get_all_files.c \
 ft_get_arguments_command_line.c ft_this_all_files_is_same.c \
 ft_this_all_files_is_same_free.c ft_math_long_arithmetic_string_add.c \
-ft_bits_print.c ft_bits_to_string.c ft_memjoin.c
+ft_bits_print.c ft_bits_to_string.c ft_memjoin.c \
+ft_math_long_arithmetic_string_multiplication.c \
+ft_math_long_arithmetic_string_add_free_both.c \
+ft_math_long_arithmetic_string_exponentiation.c \
+ft_math_long_arithmetic_string_subtraction.c \
+ft_math_long_arithmetic_string_add.c \
+ft_math_long_arithmetic_string_add_free_1.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
