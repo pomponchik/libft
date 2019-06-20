@@ -75,7 +75,8 @@ ft_math_long_arithmetic_string_add_free_both.c \
 ft_math_long_arithmetic_string_exponentiation.c \
 ft_math_long_arithmetic_string_subtraction.c \
 ft_math_long_arithmetic_string_add.c \
-ft_math_long_arithmetic_string_add_free_1.c
+ft_math_long_arithmetic_string_add_free_1.c \
+ft_math_long_arithmetic_string_comparison.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 

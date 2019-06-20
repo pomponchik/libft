@@ -285,5 +285,6 @@ char					*ft_math_long_arithmetic_string_add_free_1(char *n1, char *n2);
 char					*ft_math_long_arithmetic_string_exponentiation(char *n1, char *n2);
 char					*ft_math_long_arithmetic_string_subtraction(char *n1, char *n2);
 char					*ft_math_long_arithmetic_string_add(char *n1, char *n2);
+int						ft_math_long_arithmetic_string_comparison(char *n1, char *n2);
 
 #endif
