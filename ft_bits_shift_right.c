@@ -33,5 +33,5 @@ void		ft_bits_shift_right(void *mem, size_t size_bytes, size_t shift_bits)
 		((index + 1) / 8)), (index - (((index + 1) / 8) * 8) - 1)));
 		index++;
 	}
-	ft_bits_fill_mem(mem, 0, shift_bits, 0);
+	ft_bits_filler(mem, 0, shift_bits, 0);
 }

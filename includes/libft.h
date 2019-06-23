@@ -228,7 +228,7 @@ void					ft_sort_quick(void *arr, size_t size, \
 	size_t amount, int (*f)(void *, void *));
 char					*ft_str_disnuller_end(char *str);
 int						ft_this_files_is_same(char *fn1, char *fn2);
-void					ft_free_both(void *p1, void *p2);
+void					*ft_free_both(void *p1, void *p2);
 char					*ft_itoa_long_double_wrapper(long double num, \
 	size_t accuracy);
 int						ft_strcmp_no_spaces(const char *str1, const char *str2);
@@ -254,7 +254,7 @@ void					ft_bits_reverse_bits_in_byte(void *byte);
 void					ft_bits_reverse_bits_in_bytes(void *byte, \
 	size_t num_bytes);
 void					ft_bits_reverse_memory(void *memory, size_t mem_size);
-void					ft_bits_fill_mem(void *mem, size_t first_bit, \
+void					ft_bits_filler(void *mem, size_t first_bit, \
 	size_t num_bits, unsigned char value);
 void					ft_bits_shift_right(void *mem, size_t size_bytes, \
 	size_t shift_bits);
@@ -276,22 +276,22 @@ t_list					*ft_get_all_files(t_list *paths);
 t_list					*ft_get_arguments_command_line(int argc, char **argv);
 int						ft_this_all_files_is_same(t_list *files);
 int						ft_this_all_files_is_same_free(t_list *files);
-char					*ft_long_arithmetic_string_add(char *n1, char *n2);
+char					*ft_math_longar_str_add(char *n1, char *n2);
 void					ft_bits_print(void *mem, size_t num_bytes);
 char					*ft_bits_to_string(void *mem, size_t num_bytes);
-char					*ft_math_long_arithmetic_string_multi(char *n1, char *n2);
-char					*ft_math_long_arithmetic_string_add_free_both(char *n1, \
+char					*ft_math_longar_str_multi(char *n1, char *n2);
+char					*ft_math_longar_str_add_free_both(char *n1, \
 	char *n2);
-char					*ft_math_long_arithmetic_string_add_free_1(char *n1, char *n2);
-char					*ft_math_long_arithmetic_string_exponentiation(char *n1, \
+char					*ft_math_longar_str_add_free_1(char *n1, char *n2);
+char					*ft_math_longar_str_exponent_mix(char *num, \
+	unsigned long int exponent);
+char					*ft_math_longar_str_add(char *n1, char *n2);
+int						ft_math_longar_str_comparison(char *n1, char *n2);
+char					*ft_math_longar_str_multi_free_both(char *n1, \
 	char *n2);
-char					*ft_math_long_arithmetic_string_subtraction(char *n1, char *n2);
-char					*ft_math_long_arithmetic_string_add(char *n1, char *n2);
-int						ft_math_long_arithmetic_string_comparison(char *n1, char *n2);
-char					*ft_math_long_arithmetic_string_multi_free_both(char *n1, \
-	char *n2);
-char					*ft_math_long_arithmetic_string_multi_free_1(char *n1, char *n2);
-size_t					ft_bits_copy(void *src, void *dst, size_t amount, size_t begin);
-char					*ft_math_long_arithmetic_string_multi_free_both(char *n1, char *n2);
+char					*ft_math_longar_str_multi_free_1(char *n1, char *n2);
+size_t					ft_bits_copy(void *src, void *dst, \
+	size_t amount, size_t begin);
+char					*ft_math_longar_str_multi_free_both(char *n1, char *n2);
 
 #endif

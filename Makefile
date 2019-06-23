@@ -55,7 +55,7 @@ ft_lst_strjoin.c ft_strnew_not_bzero.c ft_lst_strjoin_free.c \
 ft_lst_strnew.c ft_jump_pointer_size_t.c ft_lst_join.c \
 ft_lstsearch_cs_del.c ft_str_upper.c ft_str_lower.c ft_bits_write_bit.c \
 ft_bits_reverse_bits_in_byte.c ft_bits_reverse_bits_in_bytes.c \
-ft_bits_reverse_memory.c ft_bits_read_bit.c ft_bits_fill_mem.c \
+ft_bits_reverse_memory.c ft_bits_read_bit.c ft_bits_filler.c \
 ft_bits_shift_left.c ft_bits_shift_right.c ft_bits_shift.c \
 ft_issorted.c ft_lst_putstr_free.c ft_lst_strjoin_counter_out.c \
 ft_lst_strjoin_counter_out_free.c ft_atoi_llu.c ft_itoa_llu.c \
@@ -68,18 +68,16 @@ ft_lst_strjoin_sep.c ft_lst_strjoin_sep_free.c \
 ft_lst_strjoin_sep_counter_out.c ft_lst_strjoin_sep_counter_out_free.c \
 ft_memdup.c ft_get_all_files_free.c ft_get_all_files.c \
 ft_get_arguments_command_line.c ft_this_all_files_is_same.c \
-ft_this_all_files_is_same_free.c ft_math_long_arithmetic_string_add.c \
+ft_this_all_files_is_same_free.c \
 ft_bits_print.c ft_bits_to_string.c ft_memjoin.c \
-ft_math_long_arithmetic_string_multi.c \
-ft_math_long_arithmetic_string_add_free_both.c \
-ft_math_long_arithmetic_string_exponentiation.c \
-ft_math_long_arithmetic_string_subtraction.c \
-ft_math_long_arithmetic_string_add.c \
-ft_math_long_arithmetic_string_add_free_1.c \
-ft_math_long_arithmetic_string_comparison.c \
-ft_math_long_arithmetic_string_multi_free_1.c \
-ft_math_long_arithmetic_string_multi_free_both.c ft_bits_copy.c \
-ft_math_long_arithmetic_string_multi_free_both.c
+ft_math_longar_str_multi.c \
+ft_math_longar_str_add_free_both.c \
+ft_math_longar_str_exponent_mix.c \
+ft_math_longar_str_add.c \
+ft_math_longar_str_add_free_1.c \
+ft_math_longar_str_comparison.c \
+ft_math_longar_str_multi_free_1.c ft_bits_copy.c \
+ft_math_longar_str_multi_free_both.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 

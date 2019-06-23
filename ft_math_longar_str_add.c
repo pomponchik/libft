@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math_long_arithmetic_string_add.c               :+:      :+:    :+:   */
+/*   ft_math_longar_str_add.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 18:45:23 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/06/19 19:15:27 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/06/23 22:44:06 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static char		*ft_lasatemp(char *str, size_t size, char residue)
 {
@@ -60,11 +61,13 @@ static char		*ft_long_arithmetic_string_add_result(char **to_fly, \
 		s = size[1];
 		temp = to_fly[0];
 	}
-	if (size[2])
+	else if (size[2])
 	{
 		s = size[2];
 		temp = to_fly[1];
 	}
+	else
+		return (temp_res);
 	if (!(temp = ft_strjoin_fr_both(ft_lasatemp(temp, s, residue), temp_res)))
 		return (ft_strnew_filler(1, '0'));
 	return (temp);
@@ -98,7 +101,7 @@ static char		*ft_long_arithmetic_string_add_work(char **fly, \
 	return (ft_long_arithmetic_string_add_result(fly, size, lst, residue));
 }
 
-char			*ft_math_long_arithmetic_string_add(char *n1, char *n2)
+char			*ft_math_longar_str_add(char *n1, char *n2)
 {
 	size_t		size[3];
 	char		*to_fly[2];

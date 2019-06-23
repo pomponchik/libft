@@ -1,18 +1,11 @@
 #include <stdlib.h>
 #include "libft.h"
+#include <stdio.h>
 
 int main()
 {
-
-
-	// ft_putstr(ft_math_long_arithmetic_string_subtraction(ft_strdup("15"), ft_strdup("7")));
-	// ft_putstr("\n");
-	int i = 0;
-	ft_bits_print(&i, sizeof(int));
-	ft_putchar('\n');
-	int b = 0;
-	ft_bits_copy(&i, &b, sizeof(int) * 8, 0);
-	ft_bits_print(&b, sizeof(int));
-	ft_putchar('\n');
+	//printf("\n\n%s", ft_math_longar_str_add("5", "1"));
+	//printf("%s\n", ft_math_longar_str_multi("125", "5"));
+	printf("%s\n", ft_math_longar_str_exponent_mix("2",1));
 	return (0);
 }
