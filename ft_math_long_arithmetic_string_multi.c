@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 static char *summer(t_list *nums)
 {
@@ -85,7 +84,7 @@ static char *ft_math_la_multiplication_work(char *n1, char *n2)
 	return (temp);
 }
 
-char *ft_math_long_arithmetic_string_multiplication(char *n1, char *n2)
+char *ft_math_long_arithmetic_string_multi(char *n1, char *n2)
 {
 	size_t minuses;
 	char *result;
