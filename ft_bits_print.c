@@ -18,7 +18,7 @@ void		ft_bits_print(void *mem, size_t num_bytes)
 	size_t	index2;
 	char	*temp;
 
-	if (!mem)
+	if (!mem || !num_bytes)
 		return ;
 	index = 0;
 	temp = (char *)mem;
