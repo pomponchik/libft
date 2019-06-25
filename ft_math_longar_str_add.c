@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char		*ft_lasatemp(char *str, size_t size, char residue)
 {
@@ -113,6 +112,13 @@ char			*ft_math_longar_str_add(char *n1, char *n2)
 
 	if (!n1 || !n2)
 		return (NULL);
+	if (n1[0] != '-' && n2[0] == '-')
+		return (ft_math_longar_str_subtraction(n1, ft_jump(n2, 1)));
+	if (n1[0] == '-' && n2[0] != '-')
+		return (ft_math_longar_str_subtraction(n2, ft_jump(n1, 1)));
+	if (n1[0] == '-' && n2[0] == '-')
+		return (ft_strjoin_free_2("-", ft_math_longar_str_add(ft_jump(n1, 1), \
+		ft_jump(n2, 1))));
 	size[1] = ft_strlen(n1);
 	size[2] = ft_strlen(n2);
 	if (size[1] > size[2])
