@@ -22,9 +22,9 @@ int			ft_issorted(void *array, size_t arr_size, size_t piece_size, \
 	index = 0;
 	while (index < arr_size - 1)
 	{
-		if (f(array, ft_jump_pointer_size_t(array, piece_size)) < 0)
+		if (f(array, ft_jump(array, piece_size)) < 0)
 			return (0);
-		array = ft_jump_pointer_size_t(array, piece_size);
+		array = ft_jump(array, piece_size);
 		index++;
 	}
 	return (1);

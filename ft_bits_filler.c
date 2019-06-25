@@ -23,7 +23,7 @@ void		ft_bits_filler(void *mem, size_t begin, \
 	if (begin > 7)
 	{
 		jump = begin / 8;
-		mem = ft_jump_pointer_size_t(mem, jump);
+		mem = ft_jump(mem, jump);
 		begin -= jump * 8;
 	}
 	index = 0;
@@ -34,7 +34,7 @@ void		ft_bits_filler(void *mem, size_t begin, \
 		if (begin == 8)
 		{
 			begin = 0;
-			mem = ft_jump_pointer_size_t(mem, 1);
+			mem = ft_jump(mem, 1);
 		}
 		index++;
 	}

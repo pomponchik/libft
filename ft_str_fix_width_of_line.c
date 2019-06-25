@@ -36,7 +36,7 @@ static char	*ft_fix_join_width(char *str, char filler, size_t len, char *flags)
 
 static char	*ft_fix_crop_begin(char *str, size_t len, size_t size)
 {
-	str = ft_jump_pointer_size_t(str, size - len);
+	str = ft_jump(str, size - len);
 	return (ft_strdup(str));
 }
 

@@ -29,13 +29,13 @@ static size_t ft_bits_copy_helper(void *src, void *dst, \
 		{
 			//printf("n1\n");
 			begin = 0;
-			src = ft_jump_pointer_size_t(src, 1);
+			src = ft_jump(src, 1);
 		}
 		if (index == 8)
 		{
 			//printf("n2\n");
 			index = 0;
-			dst = ft_jump_pointer_size_t(dst, 1);
+			dst = ft_jump(dst, 1);
 		}
 		result++;
 		y++;
@@ -54,7 +54,7 @@ size_t ft_bits_copy(void *src, void *dst, size_t amount, size_t begin)
 	if (begin > 7)
 	{
 		jump = (begin) / 8;
-		src = ft_jump_pointer_size_t(src, jump);
+		src = ft_jump(src, jump);
 		begin -= jump * 8;
 	}
 	//printf("begin = %lu, amount = %lu\n", begin, amount);

@@ -26,6 +26,6 @@ void		*ft_memjoin(void *mem_1, size_t size_1, void *mem_2, size_t size_2)
 	if (!(result = malloc(size_1 + size_2)))
 		return (NULL);
 	ft_memcpy(result, mem_1, size_1);
-	ft_memcpy(ft_jump_pointer_size_t(result, size_1), mem_2, size_2);
+	ft_memcpy(ft_jump(result, size_1), mem_2, size_2);
 	return (result);
 }

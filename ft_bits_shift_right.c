@@ -26,10 +26,10 @@ void		ft_bits_shift_right(void *mem, size_t size_bytes, size_t shift_bits)
 	index = 0;
 	while (index <= (size_bytes * 8 - 1) - shift_bits)
 	{
-		ft_bits_write_bit(ft_jump_pointer_size_t(mem, ((index + \
+		ft_bits_write_bit(ft_jump(mem, ((index + \
 		shift_bits + 1) / 8)), ((index + shift_bits) - ((((index + \
 		shift_bits) + 1) / 8) * 8) - 1), \
-		ft_bits_read_bit(ft_jump_pointer_size_t(mem, \
+		ft_bits_read_bit(ft_jump(mem, \
 		((index + 1) / 8)), (index - (((index + 1) / 8) * 8) - 1)));
 		index++;
 	}

@@ -67,7 +67,12 @@ static char		*ft_long_arithmetic_string_add_result(char **to_fly, \
 		temp = to_fly[1];
 	}
 	else
-		return (temp_res);
+	{
+		if (!residue)
+			return (temp_res);
+		return (ft_strjoin_free_2("1", temp_res));
+	}
+
 	if (!(temp = ft_strjoin_fr_both(ft_lasatemp(temp, s, residue), temp_res)))
 		return (ft_strnew_filler(1, '0'));
 	return (temp);

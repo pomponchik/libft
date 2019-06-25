@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_jump_pointer_size_t.c                           :+:      :+:    :+:   */
+/*   ft_jump.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void		*ft_jump_pointer_size_t(void *pointer, size_t n)
+void		*ft_jump(void *pointer, size_t n)
 {
 	if (!pointer)
 		return (NULL);

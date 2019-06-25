@@ -25,8 +25,8 @@ t_list		*ft_lst_monolith_from_array(void *arr, size_t size, size_t amount)
 	{
 		temp_lst = ft_lst_monolith_lstnew(arr, temp_arr, size);
 		ft_lstadd_to_end(&result, temp_lst);
-		arr = ft_jump_pointer_size_t(arr, size);
-		temp_lst = ft_jump_pointer_size_t(temp_lst, sizeof(t_list));
+		arr = ft_jump(arr, size);
+		temp_lst = ft_jump(temp_lst, sizeof(t_list));
 		amount--;
 	}
 	return (result);

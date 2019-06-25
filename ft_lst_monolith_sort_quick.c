@@ -20,7 +20,7 @@ static void		link_content_repair(t_list *begin, void *contents)
 	while (begin)
 	{
 		begin->content = contents;
-		contents = ft_jump_pointer_size_t(contents, size);
+		contents = ft_jump(contents, size);
 		begin = begin->next;
 	}
 }
@@ -33,7 +33,7 @@ static void		link_repair(t_list *begin, size_t amount)
 	index = 0;
 	while (index != amount)
 	{
-		temp = (t_list *)ft_jump_pointer_size_t(begin, index * sizeof(t_list));
+		temp = (t_list *)ft_jump(begin, index * sizeof(t_list));
 		temp->next = temp + sizeof(t_list);
 		index++;
 	}

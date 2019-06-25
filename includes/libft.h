@@ -223,7 +223,7 @@ char					ft_range_str(char *str);
 void					ft_swap_byte(void *x, void *y);
 void					ft_swap_n_bytes(void *a, void *b, size_t n);
 void					*ft_jump_pointer_to_n(void *pointer, int n);
-void					*ft_jump_pointer_size_t(void *pointer, size_t n);
+void					*ft_jump(void *pointer, size_t n);
 void					ft_sort_quick(void *arr, size_t size, \
 	size_t amount, int (*f)(void *, void *));
 char					*ft_str_disnuller_end(char *str);
@@ -295,5 +295,6 @@ size_t					ft_bits_copy(void *src, void *dst, \
 char					*ft_math_longar_str_multi_free_both(char *n1, char *n2);
 char					*ft_itoa_long_double(long double num/*, size_t accuracy*/);
 char					*ft_bits_listing(void *mem, size_t num_bytes);
+char					*ft_math_longar_str_subtraction(char *n1, char *n2);
 
 #endif

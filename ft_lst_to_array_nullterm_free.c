@@ -29,11 +29,11 @@ void		*ft_lst_to_array_nullterm_free(t_list *lst)
 	while (temp_lst)
 	{
 		ft_memcpy(temp_arr, temp_lst->content, lst->content_size);
-		temp_arr = ft_jump_pointer_size_t(temp_arr, lst->content_size);
+		temp_arr = ft_jump(temp_arr, lst->content_size);
 		temp_lst = temp_lst->next;
 	}
 	len *= lst->content_size;
-	ft_bzero(ft_jump_pointer_size_t(result, len), lst->content_size);
+	ft_bzero(ft_jump(result, len), lst->content_size);
 	ft_lst_free_chain(lst);
 	return (result);
 }

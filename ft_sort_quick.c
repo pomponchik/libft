@@ -33,7 +33,7 @@ static void	quick_swaper(void **begin, void **end, void **pivot, size_t size)
 {
 	ft_swap_n_bytes(*begin, *end, size);
 	*pivot = pivot_swap(*begin, *end, *pivot);
-	*begin = ft_jump_pointer_size_t(*begin, size);
+	*begin = ft_jump(*begin, size);
 	*end = ft_jump_pointer_to_n(*end, (int)size * -1);
 }
 
@@ -46,13 +46,13 @@ void		ft_sort_quick(void *a, size_t size, \
 
 	if (!a || !f || amount <= 1 || !size)
 		return ;
-	pivot = ft_jump_pointer_size_t(a, (amount - 1) * size);
+	pivot = ft_jump(a, (amount - 1) * size);
 	begin = a;
 	end = pivot;
 	while (begin <= end)
 	{
 		while (f(begin, pivot) < 0)
-			begin = ft_jump_pointer_size_t(begin, size);
+			begin = ft_jump(begin, size);
 		while (f(end, pivot) > 0)
 			end = ft_jump_pointer_to_n(end, (int)size * -1);
 		if (begin <= end)
@@ -60,6 +60,6 @@ void		ft_sort_quick(void *a, size_t size, \
 	}
 	if (a < end)
 		ft_sort_quick(a, size, pivot_shift(a, end, size) + 1, f);
-	if (begin < ft_jump_pointer_size_t(a, (amount - 1) * size))
+	if (begin < ft_jump(a, (amount - 1) * size))
 		ft_sort_quick(begin, size, amount - pivot_shift(a, begin, size), f);
 }

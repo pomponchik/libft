@@ -27,7 +27,7 @@ void		*ft_lst_to_array(t_list *lst)
 	while (temp_lst)
 	{
 		ft_memcpy(temp_arr, temp_lst->content, lst->content_size);
-		temp_arr = ft_jump_pointer_size_t(temp_arr, lst->content_size);
+		temp_arr = ft_jump(temp_arr, lst->content_size);
 		temp_lst = temp_lst->next;
 	}
 	return (result);
