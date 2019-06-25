@@ -59,5 +59,5 @@ char		*ft_str_fix_width_of_line(char *str, char filler, \
 			return (ft_strdup_n(str, size));
 		return (ft_strdup_n(str, len));
 	}
-	return (str);
+	return (ft_strdup(str));
 }
