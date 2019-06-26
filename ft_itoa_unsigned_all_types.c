@@ -10,7 +10,7 @@ char *ft_itoa_unsigned_all_types(void *num, unsigned int num_bits)
 		return (NULL);
 	if (!(result = ft_strdup("0")))
 		return (ft_free(listing));
-	index = 0;
+	index = 0 + (num_bits % 8) ? num_bits - (num_bits - (num_bits % 8)) : 0;
 	ft_str_reverse(listing);
 	while (listing[index] && num_bits)
 	{
