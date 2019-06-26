@@ -296,5 +296,8 @@ char					*ft_math_longar_str_multi_free_both(char *n1, char *n2);
 char					*ft_itoa_long_double(long double num/*, size_t accuracy*/);
 char					*ft_bits_listing(void *mem, size_t num_bytes);
 char					*ft_math_longar_str_subtraction(char *n1, char *n2);
+void					*ft_free(void *p);
+char					*ft_math_longar_str_exponent_mix_free(char *num, \
+	unsigned long int exponent);
 
 #endif
