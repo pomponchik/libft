@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_fix_width_of_line.c                         :+:      :+:    :+:   */
+/*   ft_str_width.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,10 +22,10 @@ static char	*ft_fix_join_width(char *str, char filler, size_t len, char *flags)
 	different = len - size;
 	half = different / 2;
 	if (flags && (ft_strstr(flags, "alignment: right") \
-	|| ft_strstr(flags, "align: right")))
+	|| ft_strstr(flags, "align: right") || ft_strstr(flags, "right")))
 		return (ft_strjoin_free_2(str, ft_strnew_filler(different, filler)));
 	if (flags && (ft_strstr(flags, "alignment: left") \
-	|| ft_strstr(flags, "align: left")))
+	|| ft_strstr(flags, "align: left") || ft_strstr(flags, "left")))
 		return (ft_strjoin_free_1(ft_strnew_filler(different, filler), str));
 	if (half)
 		str = ft_strjoin_free_1(ft_strnew_filler(half, filler), str);
@@ -40,7 +40,7 @@ static char	*ft_fix_crop_begin(char *str, size_t len, size_t size)
 	return (ft_strdup(str));
 }
 
-char		*ft_str_fix_width_of_line(char *str, char filler, \
+char		*ft_str_width(char *str, char filler, \
 	size_t len, char *flags)
 {
 	size_t	size;
@@ -55,7 +55,7 @@ char		*ft_str_fix_width_of_line(char *str, char filler, \
 		if (flags && ft_strstr(flags, "crop: begin"))
 			return (ft_fix_crop_begin(str, len, size));
 		if (flags && (ft_strstr(flags, "crop: no") || \
-		ft_strstr(flags, "not crop")))
+		ft_strstr(flags, "not crop") || ft_strstr(flags, "no")))
 			return (ft_strdup_n(str, size));
 		return (ft_strdup_n(str, len));
 	}

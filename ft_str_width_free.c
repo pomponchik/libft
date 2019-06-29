@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_fix_width_of_line_free.c                    :+:      :+:    :+:   */
+/*   ft_str_width_free.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-char		*ft_str_fix_width_of_line_free(char *str, \
+char		*ft_str_width_free(char *str, \
 	char filler, size_t len, char *flags)
 {
 	char	*result;
 
-	result = ft_str_fix_width_of_line(str, filler, len, flags);
+	result = ft_str_width(str, filler, len, flags);
 	free(str);
 	return (result);
 }
