@@ -84,7 +84,7 @@ void					ft_lstdelone(t_list **alst, \
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list					*ft_lstnew(void const *content, size_t content_size);
-t_list					*ft_lstnew_without_copy(void *content, \
+t_list					*ft_lstnew_no_copy(void *content, \
 	size_t content_size);
 t_list					*ft_lst_monolith_lstnew(void *content, \
 	void *new_lst, size_t content_size);

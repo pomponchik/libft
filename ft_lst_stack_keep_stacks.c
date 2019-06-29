@@ -42,7 +42,7 @@ t_list				**ft_lst_stack_keep_stacks(int free_all)
 	{
 		if (!(stacks = (t_list **)malloc(sizeof(t_list *))))
 			return (NULL);
-		*stacks = ft_lstnew_without_copy(NULL, 0);
+		*stacks = ft_lstnew_no_copy(NULL, 0);
 	}
 	return (stacks);
 }

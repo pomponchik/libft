@@ -60,7 +60,7 @@ static char	*ft_math_la_multiplication_one_num(char *n1, char n2)
 	while (n1[index])
 	{
 		temp = ft_math_la_multiplication_one_to_one(n1[index], n2, index);
-		ft_lstadd(&result, ft_lstnew_without_copy(temp, 1));
+		ft_lstadd(&result, ft_lstnew_no_copy(temp, 1));
 		index++;
 	}
 	ft_str_reverse(n1);
@@ -89,7 +89,7 @@ static char	*ft_math_la_multiplication_work(char *n1, char *n2)
 			temp = ft_strjoin_fr_both(ft_math_la_multiplication_one_num(n1, \
 				n2[index]), ft_strnew_filler(index, '0'));
 		}
-		ft_lstadd(&result, ft_lstnew_without_copy(temp, 1));
+		ft_lstadd(&result, ft_lstnew_no_copy(temp, 1));
 		index++;
 	}
 	ft_str_reverse(n2);

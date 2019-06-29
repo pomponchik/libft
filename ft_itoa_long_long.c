@@ -43,7 +43,7 @@ static long long int	ft_itoa_long_long_shorter(t_list **lst, long long int n)
 		minus /= 10;
 	}
 	minus *= -1;
-	*lst = ft_lstnew_without_copy(ft_strnew_filler(1, minus + '0'), 1);
+	*lst = ft_lstnew_no_copy(ft_strnew_filler(1, minus + '0'), 1);
 	while (size)
 	{
 		minus *= 10;
@@ -72,7 +72,7 @@ char					*ft_itoa_long_long(long long int n)
 	while (temp)
 	{
 		fil = ft_strnew_filler(1, temp % 10 + '0');
-		ft_lstadd(&lst, ft_lstnew_without_copy(fil, 1));
+		ft_lstadd(&lst, ft_lstnew_no_copy(fil, 1));
 		temp /= 10;
 	}
 	if (correct)

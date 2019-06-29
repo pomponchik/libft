@@ -22,7 +22,7 @@ static void		lst_middle_insert(t_list *lst, char *separator)
 	{
 		if (lst->next)
 		{
-			new = ft_lstnew_without_copy(ft_memdup(separator, \
+			new = ft_lstnew_no_copy(ft_memdup(separator, \
 				str_size), str_size);
 			new->next = lst->next;
 			lst->next = new;

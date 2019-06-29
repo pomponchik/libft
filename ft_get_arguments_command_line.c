@@ -25,7 +25,7 @@ t_list		*ft_get_arguments_command_line(int argc, char **argv)
 	result = NULL;
 	while (index < argc)
 	{
-		new = ft_lstnew_without_copy(ft_strdup(argv[index + 1]), \
+		new = ft_lstnew_no_copy(ft_strdup(argv[index + 1]), \
 		ft_strlen(argv[index + 1]) + 1);
 		ft_lstadd(&result, new);
 		index++;

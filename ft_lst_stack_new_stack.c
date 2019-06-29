@@ -22,7 +22,7 @@ t_list		*ft_lst_stack_new_stack(size_t channel)
 	if ((temp = ft_lstsearch_cs_replace(keeper, channel)))
 		return (temp);
 	stacks = *keeper;
-	if (!(temp = ft_lstnew_without_copy(NULL, 0)))
+	if (!(temp = ft_lstnew_no_copy(NULL, 0)))
 		return (NULL);
 	ft_lstadd_to_end(&stacks, temp);
 	temp->content_size = channel;

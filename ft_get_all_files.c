@@ -25,7 +25,7 @@ t_list		*ft_get_all_files(t_list *paths)
 	{
 		if (paths->content)
 		{
-			if (!(new = ft_lstnew_without_copy(ft_get_file(paths->content, \
+			if (!(new = ft_lstnew_no_copy(ft_get_file(paths->content, \
 				&size), size)))
 			{
 				ft_lst_free_chain(result);

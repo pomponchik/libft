@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_without_copy.c                           :+:      :+:    :+:   */
+/*   ft_lstnew_no_copy.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_list		*ft_lstnew_without_copy(void *content, size_t content_size)
+t_list		*ft_lstnew_no_copy(void *content, size_t content_size)
 {
 	t_list	*new;
 
