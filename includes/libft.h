@@ -293,12 +293,10 @@ char					*ft_math_longar_str_multi_free_1(char *n1, char *n2);
 size_t					ft_bits_copy(void *src, void *dst, \
 	size_t amount, size_t begin);
 char					*ft_math_longar_str_multi_free_both(char *n1, char *n2);
-char					*ft_itoa_long_double(long double num/*, size_t accuracy*/);
 char					*ft_bits_listing(void *mem, size_t num_bytes);
 char					*ft_math_longar_str_subtraction(char *n1, char *n2);
 void					*ft_free(void *p);
 char					*ft_math_longar_str_exponent_mix_free(char *num, \
 	unsigned long int exponent);
-char					*ft_itoa_unsigned_all_types(void *num, unsigned int num_bits);
 
 #endif

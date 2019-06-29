@@ -77,9 +77,9 @@ ft_math_longar_str_add.c \
 ft_math_longar_str_add_free_1.c \
 ft_math_longar_str_comparison.c \
 ft_math_longar_str_multi_free_1.c ft_bits_copy.c \
-ft_math_longar_str_multi_free_both.c ft_itoa_long_double.c \
+ft_math_longar_str_multi_free_both.c \
 ft_bits_listing.c ft_math_longar_str_subtraction.c ft_free.c \
-ft_math_longar_str_exponent_mix_free.c ft_itoa_unsigned_all_types.c
+ft_math_longar_str_exponent_mix_free.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 

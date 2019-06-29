@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_math_longar_str_subtraction.c                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/29 19:51:53 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/06/29 19:54:16 by ahalmon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static void minder(char *num)
+static void	minder(char *num)
 {
-	size_t index;
+	size_t	index;
 
 	index = 0;
 	while (num[index])
@@ -21,11 +33,11 @@ static void minder(char *num)
 	}
 }
 
-static char *ft_subtraction_worker(char *s1, char *s2)
+static char	*ft_subtraction_worker(char *s1, char *s2)
 {
-	size_t index;
-	char *n1;
-	char *n2;
+	size_t	index;
+	char	*n1;
+	char	*n2;
 
 	index = 0;
 	n1 = s1;
@@ -48,10 +60,10 @@ static char *ft_subtraction_worker(char *s1, char *s2)
 	return (n1);
 }
 
-static char *ft_subtraction_cut(char *n1, char *n2)
+static char	*ft_subtraction_cut(char *n1, char *n2)
 {
-	char *result;
-	size_t count;
+	char	*result;
+	size_t	count;
 
 	if (n2[0] == '0')
 		return (ft_strdup(n2));
@@ -67,10 +79,10 @@ static char *ft_subtraction_cut(char *n1, char *n2)
 	return (result);
 }
 
-static char *ft_subtraction_gasket(char *n1, char *n2, int ind)
+static char	*ft_subtraction_gasket(char *n1, char *n2, int ind)
 {
-	int prove;
-	char *result;
+	int		prove;
+	char	*result;
 
 	if (!n1 || !n2)
 		return (ft_free_both(n1, n2));
@@ -94,9 +106,9 @@ static char *ft_subtraction_gasket(char *n1, char *n2, int ind)
 	return (NULL);
 }
 
-char *ft_math_longar_str_subtraction(char *n1, char *n2)
+char		*ft_math_longar_str_subtraction(char *n1, char *n2)
 {
-	char *result;
+	char	*result;
 
 	if (!n1 || !n2)
 		return (NULL);
@@ -114,7 +126,7 @@ char *ft_math_longar_str_subtraction(char *n1, char *n2)
 	}
 	if (n1[0] == '-' && n2[0] != '-')
 	{
-		result = ft_strjoin_free_2("-", ft_math_longar_str_add(ft_jump(n1, 1), n2));
+		result = ft_strjoin_free_2("-", ft_math_longar_str_add(n1 + 1, n2));
 		ft_free_both(n1, n2);
 		return (result);
 	}

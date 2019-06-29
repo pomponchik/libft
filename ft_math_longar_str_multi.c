@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/23 21:47:33 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/06/23 21:49:18 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/06/29 20:08:39 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,7 @@ static char	*ft_math_la_multiplication_work(char *n1, char *n2)
 	while (n2[index])
 	{
 		if (!index)
-		{
 			temp = ft_math_la_multiplication_one_num(n1, n2[index]);
-		}
-
 		else
 		{
 			temp = ft_strjoin_fr_both(ft_math_la_multiplication_one_num(n1, \

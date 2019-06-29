@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 18:45:23 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/06/23 22:44:06 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/06/29 20:03:12 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,23 @@ static char		*ft_lasatemp(char *str, size_t size, char residue)
 	return (ft_lst_strjoin_counter_out_cs(lst, &size));
 }
 
+static int		resizes(char **to_fly, size_t *size, char **temp, size_t *s)
+{
+	if (size[1])
+	{
+		*s = size[1];
+		*temp = to_fly[0];
+		return (0);
+	}
+	else if (size[2])
+	{
+		*s = size[2];
+		*temp = to_fly[1];
+		return (0);
+	}
+	return (1);
+}
+
 static char		*ft_long_arithmetic_string_add_result(char **to_fly, \
 	size_t *size, t_list *lst, char residue)
 {
@@ -55,23 +72,12 @@ static char		*ft_long_arithmetic_string_add_result(char **to_fly, \
 			return (ft_strdup(to_fly[0]));
 		return (ft_strdup(to_fly[1]));
 	}
-	if (size[1])
-	{
-		s = size[1];
-		temp = to_fly[0];
-	}
-	else if (size[2])
-	{
-		s = size[2];
-		temp = to_fly[1];
-	}
-	else
+	if (resizes(to_fly, size, &temp, &s))
 	{
 		if (!residue)
 			return (temp_res);
 		return (ft_strjoin_free_2("1", temp_res));
 	}
-
 	if (!(temp = ft_strjoin_fr_both(ft_lasatemp(temp, s, residue), temp_res)))
 		return (ft_strnew_filler(1, '0'));
 	return (temp);
@@ -117,8 +123,7 @@ char			*ft_math_longar_str_add(char *n1, char *n2)
 	if (n1[0] == '-' && n2[0] != '-')
 		return (ft_math_longar_str_subtraction(n2, ft_jump(n1, 1)));
 	if (n1[0] == '-' && n2[0] == '-')
-		return (ft_strjoin_free_2("-", ft_math_longar_str_add(ft_jump(n1, 1), \
-		ft_jump(n2, 1))));
+		return (ft_strjoin_free_2("-", ft_math_longar_str_add(n1 + 1, n2 + 1)));
 	size[1] = ft_strlen(n1);
 	size[2] = ft_strlen(n2);
 	if (size[1] > size[2])
