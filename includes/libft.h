@@ -235,9 +235,9 @@ int						ft_strcmp_no_spaces(const char *str1, const char *str2);
 char					*ft_strnew_filler(size_t size, char filler);
 char					*ft_strdup_n(const char *src, size_t n);
 char					*ft_strdup_n_free(char *src, size_t n);
-char					*ft_str_fix_width_of_line(char *str, \
+char					*ft_str_width(char *str, \
 	char filler, size_t len, char *flags);
-char					*ft_str_fix_width_of_line_free(char *str, \
+char					*ft_str_width_free(char *str, \
 	char filler, size_t len, char *flags);
 void					ft_free_two_dimensional_array(void **arr);
 void					ft_mem_reverse(void *mem, size_t size, size_t amount);
