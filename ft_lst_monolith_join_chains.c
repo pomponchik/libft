@@ -18,5 +18,5 @@ t_list	*ft_lst_monolith_join_chains(t_list *l1, t_list *l2)
 		return (l2);
 	if (!l2)
 		return (l1);
-	return (ft_lst_monolith_convert_to_monolith(ft_lst_join_chains(l1, l2)));
+	return (ft_lst_monolith_convert_to_monolith(ft_lst_join(l1, l2)));
 }
