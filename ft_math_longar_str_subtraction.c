@@ -67,6 +67,8 @@ static char	*ft_subtraction_cut(char *n1, char *n2)
 
 	if (n2[0] == '0')
 		return (ft_strdup(n2));
+	if ((count = ft_strlen(n1)) == ft_strlen(n2) && count == 1)
+		return (ft_strnew_filler(1, *n1 - *n2 + '0'));
 	if (!(result = ft_subtraction_worker(n1, n2)))
 		return (NULL);
 	count = 0;

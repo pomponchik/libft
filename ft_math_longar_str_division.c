@@ -73,6 +73,10 @@ char *ft_math_longar_str_division(char *n1, char *n2)
 		result = ft_strjoin_free_2("-", result);
 	}
 	else
+	{
+		if (ft_math_longar_str_comparison(n2, n1) > 0)
+			return (ft_strdup("0"));
 		result = ft_math_longar_str_division_helper(n1, n2);
+	}
 	return (result);
 }
