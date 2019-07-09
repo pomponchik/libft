@@ -300,5 +300,11 @@ char					*ft_math_longar_str_exponent_mix_free(char *num, \
 	unsigned long int exponent);
 char					*ft_math_longar_str_division(char *n1, char *n2);
 char					*ft_math_longar_str_remainder_of_division(char *n1, char *n2);
+void					*ft_free_and_return(void *to_free, void *to_return);
+int						ft_issign(int ch);
+t_list					*ft_lst_cut_numbers(char *exp);
+void					ft_nuller_double_point(void **point_1, void **point_2);
+void					ft_nuller_double_size_t(size_t *s_1, size_t *s_2);
+char					*ft_math_longar_str_basic_calc(char *exp);
 
 #endif

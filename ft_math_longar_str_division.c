@@ -1,15 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_math_longar_str_division.c                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/09 18:30:41 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/07/09 18:41:33 by ahalmon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char *ft_math_longar_str_division_adder(char *n1, char *n2, char *begin)
+static char	*ft_math_longar_str_division_adder(char *n1, char *n2, char *begin)
 {
-	char *temp;
-	int cmp;
+	char	*temp;
+	int		cmp;
 
 	temp = ft_math_longar_str_multi(n2, begin);
 	if ((cmp = ft_math_longar_str_comparison(temp, n1)) < 0)
 	{
 		free(temp);
-		return (ft_math_longar_str_division_adder(n1, n2, ft_strjoin_free_1(begin, "0")));
+		return (ft_math_longar_str_division_adder(n1, n2, \
+			ft_strjoin_free_1(begin, "0")));
 	}
 	else if (cmp == 0)
 	{
@@ -20,43 +33,44 @@ static char *ft_math_longar_str_division_adder(char *n1, char *n2, char *begin)
 	return (ft_strdup_n_free(begin, ft_strlen(begin) - 1));
 }
 
-static char *ft_math_longar_str_division_helper(char *n1, char *n2)
+static void	ft_division_norme_crutch(char *str, char *str2)
 {
-	char *temp;
-	char *temp_mult;
-	size_t index;
+	free(str2);
+	(*str)--;
+}
 
-	temp = ft_math_longar_str_division_adder(n1, n2, ft_strdup("1"));
+static char	*ft_math_longar_str_division_helper(char *n1, char *n2)
+{
+	t_iter	i;
+	size_t	index;
+
+	i.s = ft_math_longar_str_division_adder(n1, n2, ft_strdup("1"));
 	index = 0;
-	while (temp[index])
+	while (i.s[index])
 	{
-		while (temp[index] <= '9')
+		while (i.s[index] <= '9')
 		{
-			temp_mult = ft_math_longar_str_multi(n2, temp);
-			if (ft_math_longar_str_comparison(temp_mult, n1) > 0)
+			i.chr = ft_math_longar_str_multi(n2, i.s);
+			if (ft_math_longar_str_comparison(i.chr, n1) > 0)
 			{
-				temp[index]--;
-				free(temp_mult);
+				ft_division_norme_crutch(&(i.s[index]), i.chr);
 				break ;
 			}
-			else if (ft_math_longar_str_comparison(temp_mult, n1) == 0)
-			{
-				free(temp_mult);
-				return (temp);
-			}
-			free(temp_mult);
-			if (temp[index] == '9')
+			else if (ft_math_longar_str_comparison(i.chr, n1) == 0)
+				return (ft_free_and_return(i.chr, i.s));
+			free(i.chr);
+			if (i.s[index] == '9')
 				break ;
-			temp[index]++;
+			i.s[index]++;
 		}
 		index++;
 	}
-	return (temp);
+	return (i.s);
 }
 
-char *ft_math_longar_str_division(char *n1, char *n2)
+char		*ft_math_longar_str_division(char *n1, char *n2)
 {
-	char *result;
+	char	*result;
 
 	if (!n1 || !n2 || n2[0] == '0')
 		return (NULL);
