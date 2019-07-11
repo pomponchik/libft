@@ -306,5 +306,8 @@ t_list					*ft_lst_cut_numbers(char *exp);
 void					ft_nuller_double_point(void **point_1, void **point_2);
 void					ft_nuller_double_size_t(size_t *s_1, size_t *s_2);
 char					*ft_math_longar_str_basic_calc(char *exp);
+int						ft_lst_stack_turn(size_t channel);
+int						ft_lst_stack_push_back(size_t channel, \
+	void *content, size_t content_size);
 
 #endif
