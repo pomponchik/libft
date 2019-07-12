@@ -309,5 +309,7 @@ char					*ft_math_longar_str_basic_calc(char *exp);
 int						ft_lst_stack_turn(size_t channel);
 int						ft_lst_stack_push_back(size_t channel, \
 	void *content, size_t content_size);
+void		*ft_memjoin_free_1(void *mem_1, \
+	size_t size_1, void *mem_2, size_t size_2);
 
 #endif

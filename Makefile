@@ -83,7 +83,7 @@ ft_math_longar_str_exponent_mix_free.c ft_math_longar_str_division.c \
 ft_math_longar_str_remainder_of_division.c ft_free_and_return.c \
 ft_issign.c ft_lst_cut_numbers.c ft_nuller_double_point.c \
 ft_nuller_double_size_t.c ft_math_longar_str_basic_calc.c \
-ft_lst_stack_turn.c ft_lst_stack_push_back.c
+ft_lst_stack_turn.c ft_lst_stack_push_back.c ft_memjoin_free_1.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 
