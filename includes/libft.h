@@ -299,7 +299,8 @@ void					*ft_free(void *p);
 char					*ft_math_longar_str_exponent_mix_free(char *num, \
 	unsigned long int exponent);
 char					*ft_math_longar_str_division(char *n1, char *n2);
-char					*ft_math_longar_str_remainder_of_division(char *n1, char *n2);
+char					*ft_math_longar_str_remainder_of_division(char *n1, \
+	char *n2);
 void					*ft_free_and_return(void *to_free, void *to_return);
 int						ft_issign(int ch);
 t_list					*ft_lst_cut_numbers(char *exp);
@@ -309,7 +310,7 @@ char					*ft_math_longar_str_basic_calc(char *exp);
 int						ft_lst_stack_turn(size_t channel);
 int						ft_lst_stack_push_back(size_t channel, \
 	void *content, size_t content_size);
-void		*ft_memjoin_free_1(void *mem_1, \
+void					*ft_memjoin_free_1(void *mem_1, \
 	size_t size_1, void *mem_2, size_t size_2);
 
 #endif
