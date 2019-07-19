@@ -24,7 +24,10 @@ t_list		*ft_lst_deduplication(t_list *orig)
 	while (orig)
 	{
 		if (!ft_lstsearch_content(new, orig->content, orig->content_size))
-			ft_lstadd_to_end(&new, ft_lst_unit_transfer_with_malloc(orig));
+		{
+			if (orig->content && orig->content_size)
+				ft_lstadd_to_end(&new, ft_lst_unit_transfer_with_malloc(orig));
+		}
 		orig = orig->next;
 	}
 	ft_lst_free_chain(temp);
