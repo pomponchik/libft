@@ -269,7 +269,6 @@ int						ft_this_all_files_is_same(t_list *files);
 int						ft_this_all_files_is_same_free(t_list *files);
 char					*ft_math_longar_str_add(char *n1, char *n2);
 void					ft_bits_print(void *mem, size_t num_bytes);
-char					*ft_bits_to_string(void *mem, size_t num_bytes);
 char					*ft_math_longar_str_multi(char *n1, char *n2);
 char					*ft_math_longar_str_add_free_both(char *n1, \
 	char *n2);
