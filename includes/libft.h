@@ -44,15 +44,6 @@ typedef struct			s_iterators
 	t_list				*l;
 }						t_iter;
 
-void					ft_binary_lst_strdel(t_two_list **alst);
-void					ft_binary_lstadd(t_two_list **alst, t_two_list *new);
-t_two_list				*ft_binary_lstnew(void const *content, \
-	size_t content_size);
-t_two_list				*ft_binary_lstsea_cs(t_two_list *alst, \
-	size_t to_search);
-t_two_list				*ft_binary_lstseaconb(t_two_list *alst, \
-	void *to_search);
-t_two_list				*ft_binary_lstseacon(t_two_list *alst, char *to_search);
 float					ft_math_root(float num, unsigned int root_index);
 long long int			ft_maxmin(char *type, char *maxmin);
 size_t					ft_numch(char *str, char ch);
