@@ -18,12 +18,10 @@ t_list		*ft_lst_get_end(t_list *lst)
 
 	if (!lst)
 		return (NULL);
+	if (!lst->next)
+		return (lst);
 	temp = lst;
 	while (lst->next)
-	{
-		if (temp == lst)
-			return (NULL);
 		lst = lst->next;
-	}
 	return (lst);
 }
