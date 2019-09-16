@@ -145,6 +145,8 @@ char					*ft_lst_strjoin_sep_counter_out_free(t_list *lst, \
 size_t					ft_lst_putstr_sep(t_list *lst, char *separator);
 size_t					ft_lst_putstr_sep_free(t_list *lst, char *separator);
 t_list					*ft_lst_copy_chain(t_list *lst);
+t_list					*ft_lst_insert(t_list *lst, \
+	t_list *to_insert, size_t position);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);
@@ -302,5 +304,6 @@ int						ft_lst_stack_push_back(size_t channel, \
 	void *content, size_t content_size);
 void					*ft_memjoin_free_1(void *mem_1, \
 	size_t size_1, void *mem_2, size_t size_2);
+int						ft_isdigits(char *str);
 
 #endif
