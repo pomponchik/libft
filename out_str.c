@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigits.c                                      :+:      :+:    :+:   */
+/*   out_str.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kbethany <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 04:49:09 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/10/30 04:49:15 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/04/01 16:05:37 by kbethany          #+#    #+#             */
+/*   Updated: 2019/04/18 18:07:37 by kbethany         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-int	ft_isdigits(char *str)
+size_t	out_str(char *str)
 {
-	if (!str)
-		return (0);
-	while (*str)
-	{
-		if (!(ft_isdigit(*str)))
-			return (0);
-		str++;
-	}
-	return (1);
+	size_t len;
+
+	len = ft_strlen(str);
+	ft_putstr_len(str, len);
+	return (len);
 }

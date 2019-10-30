@@ -82,7 +82,16 @@ ft_math_longar_str_remainder_of_division.c ft_free_and_return.c \
 ft_issign.c ft_lst_cut_numbers.c ft_nuller_double_point.c \
 ft_nuller_double_size_t.c \
 ft_lst_stack_turn.c ft_lst_stack_push_back.c ft_memjoin_free_1.c \
-ft_lst_insert.c ft_isdigits.c
+ft_isdigits.c check_flags.c first_flag_before.c \
+flag_begin_chek.c \
+flag_nuller.c ft_itoa_base_long.c ft_printf.c is_it_flag.c \
+just_to_print_len.c ok.c only_1_flag.c out_from_flag.c out_str.c \
+post_persent.c print_flag_d.c print_flag_f.c print_flag_o.c \
+print_flag_p.c print_flag_sc.c print_flag_u.c print_flag_x.c \
+second_flag.c size_flag.c printer.c ft_itoa_specific.c \
+ft_itoa_specific_part_1.c ft_itoa_specific_part_2.c fixer_free.c \
+fixer_num.c fixer_p.c fixer_str.c fixer.c charer.c print_lst.c \
+print_flag_bonus.c
 OUT = $(FILES:.c=.o)
 INCLUDES = includes/
 

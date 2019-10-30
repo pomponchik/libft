@@ -145,8 +145,6 @@ char					*ft_lst_strjoin_sep_counter_out_free(t_list *lst, \
 size_t					ft_lst_putstr_sep(t_list *lst, char *separator);
 size_t					ft_lst_putstr_sep_free(t_list *lst, char *separator);
 t_list					*ft_lst_copy_chain(t_list *lst);
-t_list					*ft_lst_insert(t_list *lst, \
-	t_list *to_insert, size_t position);
 void					*ft_memalloc(size_t size);
 void					*ft_memccpy(void *d, const void *s, int ch, size_t c);
 void					*ft_memchr(const void *buffer, int ch, size_t count);

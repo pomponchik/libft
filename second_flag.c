@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigits.c                                      :+:      :+:    :+:   */
+/*   second_flag.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kbethany <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 04:49:09 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/10/30 04:49:15 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/04/03 17:24:08 by kbethany          #+#    #+#             */
+/*   Updated: 2019/04/18 18:18:51 by kbethany         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-int	ft_isdigits(char *str)
+int	second_flag(char *a, t_flag *flag)
 {
-	if (!str)
-		return (0);
-	while (*str)
+	if (ft_isdigit(*a))
 	{
-		if (!(ft_isdigit(*str)))
-			return (0);
-		str++;
+		flag->before_flag = 1;
+		flag->before_dot = ft_atoi(a);
+		return (ft_math_numlen_long((long int)flag->before_dot));
 	}
-	return (1);
+	return (0);
 }
