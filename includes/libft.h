@@ -303,5 +303,7 @@ int						ft_lst_stack_push_back(size_t channel, \
 void					*ft_memjoin_free_1(void *mem_1, \
 	size_t size_1, void *mem_2, size_t size_2);
 int						ft_isdigits(char *str);
+t_list					*ft_lst_get_number_item(t_list *lst, \
+	size_t number_item);
 
 #endif
