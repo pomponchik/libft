@@ -64,5 +64,6 @@ unsigned char		*ft_get_file_as_string(char *filename)
 		return (ft_free(file));
 	result[new_size] = '\0';
 	ft_get_file_as_string_filler(result, (unsigned char *)file, new_size);
+	free(file);
 	return (result);
 }
