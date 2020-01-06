@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 21:20:15 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/06/19 18:43:43 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2020/01/06 15:37:51 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,5 +305,6 @@ void					*ft_memjoin_free_1(void *mem_1, \
 int						ft_isdigits(char *str);
 t_list					*ft_lst_get_number_item(t_list *lst, \
 	size_t number_item);
+unsigned char			*ft_get_file_as_string(char *filename);
 
 #endif
